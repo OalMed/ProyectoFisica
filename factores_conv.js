@@ -3,7 +3,22 @@ class Factor{
         this.nombre=Unidad_Medida;
         this.razon=equivalecia;
     }
+    NameIs(Nombre){
+        return this.nombre ==Nombre
+    }
+    getRazon(){
+        return this.razon
+    }
 }
+function UnidadATipoMedida(unidad){
+    nombres=['distancia','volumen']
+    distancia=[]
+    volumen=[]
+    tiempo=[]
+    angulo=[]
+    
+}
+
 function getFactoresFor(sistema){
     let factores=[];
     //para convertir hay que efectuar la operacion:
@@ -70,4 +85,14 @@ function getFactoresFor(sistema){
         factores.push(new Factor('',))
     }
     return factores
+}
+function DescomponerUnidad(unidad_compuesta){
+    return unidad_compuesta.split('/') 
+}
+function transformarUnidad(cantidad, medidaOrigen, medidaDestino){
+    medidaOrigen=DescomponerUnidad(medidaOrigen)
+    medidaDestino=DescomponerUnidad(medidaDestino)
+    for( let index in medidaOrigen){
+        
+    }
 }
