@@ -85,7 +85,7 @@ function getFactoresFor(sistema){
         elevacion=elevarString(2)
 
     }else if(sistema=='Volumen'){
-        alert('ELEVACION 3')
+        // alert('ELEVACION 3')
         elevacion=elevarString(3)
     }
 
@@ -107,31 +107,31 @@ function getFactoresFor(sistema){
     else if(sistema==='Volumen'){
          
         // respecto al litro
-        factores.push(new Factor('centimetro','cm',1000))
-        factores.push(new Factor('metro','m',0.001))
-        factores.push(new Factor('pie','ft',0.03531))
-        factores.push(new Factor('pulgada','in',61.02))
+        factores.push(new Factor('centimetro','cm'+elevacion,1000))
+        factores.push(new Factor('metro','m'+elevacion,0.001))
+        factores.push(new Factor('pie','ft'+elevacion,0.03531))
+        factores.push(new Factor('pulgada','in'+elevacion,61.02))
         // a los anteriores a este hay que marcales elevacion al cubo
-        factores.push(new Factor('galon','galon',.264))
-        factores.push(new Factor('litro','l',.264))
+        factores.push(new Factor('galon','galon'+elevacion,.264))
+        factores.push(new Factor('litro','l'+elevacion,.264))
     }
     else if(sistema==='Tiempo'){
          
         //respecto a minutos
-        factores.push(new Factor('hora','h',1/60))
-        factores.push(new Factor('minutos','min',1/60))
-        factores.push(new Factor('segundos','s',60))
-        factores.push(new Factor('dia','d',1/60/24))
-        factores.push(new Factor('año','año',1/60/24/360))
+        factores.push(new Factor('hora','h'+elevacion,1/60))
+        factores.push(new Factor('minutos','min'+elevacion,1/60))
+        factores.push(new Factor('segundos','s'+elevacion,60))
+        factores.push(new Factor('dia','d'+elevacion,1/60/24))
+        factores.push(new Factor('año','año'+elevacion,1/60/24/360))
 
     }
     else if(sistema==='Angulo'){
          
         // respecto a los grados
-        factores.push(new Factor('Radianes','rad',))
-        factores.push(new Factor('Grados','rad',))
-        factores.push(new Factor('Revolucion','rad',))
-        factores.push(new Factor('Revolucion por minuto','rad',))
+        factores.push(new Factor('Radianes','rad'+elevacion,))
+        factores.push(new Factor('Grados','rad'+elevacion,))
+        factores.push(new Factor('Revolucion','rad'+elevacion,))
+        factores.push(new Factor('Revolucion por minuto','rad'+elevacion,))
     }
     else if(sistema==='Masa'){
         factores.push(new Factor('Kilogramo',))
