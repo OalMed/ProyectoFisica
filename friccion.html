@@ -4,17 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .parrafo {
+            text-align: justify;
+            padding: 0 3%;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#tiposFriccion">Tipos de fricción</a></li>
+            <li><a href="#unidades">Unidades de medida y fórmulas</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <h1>Fricción</h1>
+        <h1>Fricción</h1> <br>
 
         <div class="parrafo">
             La <strong>fuerza de fricción</strong> es una fuerza de contacto que se resiste al desplazamiento entre superficies.
             Se genera debido a las imperfecciones, que en mayor parte son microscópicas, entre las superficies de contacto, aunque también existen
-            fenómenos de interacción electrostática etre superficies.
+            fenómenos de interacción electrostática entre superficies. Estas imperfecciones hacen que la fuerza <strong>R</strong> entre ambas
+            superficies no sea perfectamente perpendicular, generando un ángulo con la <i>normal</i> <strong>N</strong>. Por lo tanto, 
+            la fuerza resultante se compone de la fuerza normal <strong>N</strong> y de la fuerza de rozamiento <strong>F</strong>.
         </div>  
-        <img src="/images/Friccion.png">
+        <img src="./images/Friccion.png">
 
         <div class="parrafo">
             Para que un objeto se mueva, debe levantarse hasta que los picos puedan rebasar la superficie de abajo. Por tanto, tan solo una fuerza 
@@ -22,8 +43,60 @@
             las superficies en contacto, por lo que aun las superficies perfectamente lisas presentan fricción. Tales fuerzas también dependen de las sustancias 
             de las que están hechas las superficies.
         </div>
-        <img src="/images/supRugoso.png">
+        <img src="./images/supRugoso.png">
 
+        <div class="parrafo">
+            Pero para entender los conceptos de los que se estarán hablando, y para comprender de una mejor manera cómo funciona la fricción, es necesario definir 
+            algunos conceptos básicos relacionados con este tema.
+            <ul>
+                <li>Coeficiente de fricción (<i>μ</i>): un número, típicamente entre 0 y 1, que describe la aspereza entre las superficies; mientras mayor sea el número, 
+                más aspero será, y viceversa. Una razón de la fuerza de fricción con la fuerza normal. El coeficiente de fricción estático <i>μ<sub>s</sub></i> 
+                es para superficies no deslizantes, mientras que el cinético <i>μ<sub>k</sub></i> es para superficies deslizantes. <br>
+                Este coeficiente es un número adimensional, es decir que carece de unidades y, por tanto, de dimensiones físicas. Más adelante veremos el porqué. </li> <br>
+                <li>Fuerza Normal (<i>F<sub>n</sub></i>): es una fuerza de contacto, que ejerce una superficie sobre un cuerpo apoyado sobre ella para evitar que los objetos 
+                sólidos se atraviesen entre sí. Esta es de igual magnitud y dirección, pero de sentido contrario a la fuerza ejercida por el cuerpo sobre la superficie.</li>
+            </ul>
+        </div> 
+
+        <div class="parrafo">
+            Con esto en mente, podemos pasar a hablar sobre las características que hay en el rozamiento entre dos cuerpos:
+            <ul>
+                <li>La fuerza de rozamiento tiene dirección paralela a la superficie de apoyo.</li>
+                <li>El coeficiente de rozamiento depende exclusivamente de la naturaleza de los cuerpos en contacto, así como del estado en que estén sus superficies.</li>
+                <li>La fuerza máxima de rozamiento es directamente proporcional a la fuerza normal que actúa entre las superficies.</li>
+                <li>Para el mismo par de cuerpos, el rozamiento es mayor un momento antes de que comience el movimiento que cuando ya ha comenzado (es por eso que es más 
+                    fácil mover un objeto en movimiento que uno en reposo). </li>
+            </ul> <br>
+            
+            Algunos autores sintetizan las leyes del comportamiento de la fricción en estos dos postulados:
+            <ol>
+                <li>La resistencia al deslizamiento tangencial entre dos cuerpos es proporcional a la fuerza normal ejercida entre los mismos.</li>
+                <li>La resistencia al deslizamiento tangencial entre dos cuerpos es independiente de las dimensiones de contacto entre ambos (es decir 
+                    que la fuerza de arrastre de un objeto será la misma en cualquiera de sus "caras" o "lados"). </li>
+            </ol>
+        </div>
+        <img src="./images/ilustracionFriccion.png" width="40%"> <br> <br>
+
+        <h2 id="tiposFriccion">Tipos de fricción</h2>
+        <div class="parrafo">
+            Existen dos tipos de rozamiento o fricción: la <strong>fricción estática</strong> (<i>F<sub>f,s</sub></i>, <i>F<sub>s</sub></i> o <i>F<sub>e</sub></i>) 
+            y la <strong>fricción dinámica o cinética</strong> (<i>F<sub>f,k</sub></i>, <i>F<sub>k</sub></i> o <i>F<sub>d</sub></i>). <br>
+            La <strong>fuerza de fricción estática</strong> es una fuerza entre dos superficies que impide que estas se deslicen o derrapen una sobre la otra. 
+            Esta fricción "empuja" en la dirección que evita que el objeto se deslice, lo que da como resultado el movimiento del objeto, si es que la fuerza aplicada 
+            es mayor a la fuerza de fricción. <br>
+            La <strong>fuerza dinámica o cinética</strong>, de magnitud considerada constante, siempre se opone al deslizamiento, una vez comenzado, y trata de reducir 
+            la rapidez a la cual las superficies se deslizan una sobre la otra. <br>
+            En pocas palabras, lo que las diferencia es que la primera actúa cuando los cuerpos están en reposo, mientras que la segunda lo hace cuando ya están en movimiento.
+        </div>
+        <img src="./images/friccionDyE.png"> <br><br>
+
+        <h2 id="unidades">Unidades de medida y fórmulas</h2>
+        <div class="parrafo">
+            La fricción generalmente es medida en Newtons, pero por el hecho de ser una fuerza, también puede ser medida en libras, dinas, kilopondios, entre otros, 
+            solo se tendría que hacer una conversión en caso de querer conocer su equivalencia en otra medida.
+            <i>F<sub>e máx</sub> = μ<sub>e</sub>F<sub>n</sub></i>
+
+        </div>
     </div>
 
 </body>
