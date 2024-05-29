@@ -18,13 +18,63 @@ function UnidadATipoMedida(unidad){
     angulo=[]
     
 }
+function UnidadCompuesta(unidad){
+    let unidCompuestas=['Rapidez','Aceleracion','Presion','Potencia']
+    if (unidCompuestas.indexOf(unidad)!=-1){
+        return true
+    }
+    return false
+}
+
+function TipoMedidaHasUnidades(tipo_unidad){
+    let unidades=[]
+    if (tipo_unidad=='Longitud' || tipo_unidad=='Area'){        
+        unidades.push('metro(m)','centimetros(cm)',' milimetros(mm)','Milesima de milimetro(μm)',' Nanometro(nm)','Kilometro(km)','milla(mi)','pie(ft)','pulgada(in)')
+    }
+    else if(tipo_unidad=='Volumen'){
+        unidades.push('centimetro(cm)','metro(m)','pie(ft)','pulgada(in)','galon','litro(l)')
+    }
+    else if(tipo_unidad=='Tiempo'){
+        unidades.push('hora(h)','segundos(s)','dia','año')
+    }
+    else if(tipo_unidad=='Angulo'){
+        unidades.push('Radianes(rad)','Grados(°)','°/Radianes','Revolucion','Revolucion por minuto(rpm)')
+    }
+    else if(tipo_unidad=='Rapidez'){
+        
+    }
+    else if(tipo_unidad=='Aceleracion'){
+
+    }
+    else if(tipo_unidad=='Masa'){
+
+    }
+    else if(tipo_unidad=='Fuerza'){
+
+    }
+    else if(tipo_unidad=='Presion'){
+
+    }
+    else if(tipo_unidad=='Energia'){
+
+    }
+    else if(tipo_unidad=='Masa-Energia'){
+
+    }
+    else{
+        // 'Potencia'
+    }
+    return unidades
+}
+
+
 
 function getFactoresFor(sistema){
     let factores=[];
     //para convertir hay que efectuar la operacion:
     //      Cantidad de la unidad a convertir * Factor de conversion 2(destino) / Factor de conversion 1(base)
     
-    if (sistema==='Longitud' || sistema=='Area'){
+    if (sistema==='Longitud' || sistema==='Area'){
         // Respecto al metro
         // x mediada == 1 metro
         factores.push(new Factor('cm',100))

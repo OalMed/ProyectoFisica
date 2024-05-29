@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>Conversiones</title>
+        <link rel="stylesheet" href="CSS/conversion.css">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+        <div class="container">
+            <h1 class="text-center">CONVERSION DE UNIDADES</h1>
+            <br>
+            <section class="row">
+                <span class="col-6 text-rigth">Unidades de Medida:</span>
+                
+                <select class="col-4" name="UnidadesMedida" value="HOLA" id="">
+                    <option >Longitud</option>
+                    <option >Area</option>
+                    <option >Volumen</option>
+                    <option >Tiempo</option>
+                    <option >Angulo</option>
+                    <option >Rapidez</option>
+                    <option >Aceleracion</option>
+                    <option >Masa</option>
+                    <option >Fuerza</option>
+                    <option >Presion</option>
+                    <option >Energia</option>
+                    <option >Masa-energia</option>
+                    <option >Potencia</option>
+                </select>
+            </section>
+            <br><br><br>
+
+            <section class="row">
+                <!-- columna 1 -->
+                <span class="col-md-2 col-1"></span>
+                <span class="col-md-3 col-sm-4 col-10">
+                    <div class="row">
+                        <select name="select1" class="col-12 mainSelect" id="">
+                            <option >...</option>
+                        </select>
+                        <select name="selSup1" class="SelectSoporte col-6"></select>
+                        <input type="text" class="col-9 input Active" placeholder="Unidad Base" >
+                        <input type="text" class="col-3" disabled>
+                    </div>
+                </span>
+
+                <!-- centro -->
+                <span class="col-1 col-sm-2 simbolo-flechas">
+                    <img id="soporte2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybwLN4PoxBg-XCAm89zK3jJVzdm57riIni7XE5KVQBQ&s" alt="">
+                </span>
+                
+                <!-- columna 2 -->
+                <span class="col-1" id="soporte"></span>
+                <span class="col-md-3 col-sm-4 col-10">
+                    <div class="row">
+                        <select name="select2" class="col-12 mainSelect" id="">
+                            <option >...</option>
+                        </select>       
+                        <select name="selSup1" class="SelectSoporte col-6"></select>
+                        <input type="text" class="col-9 input" disabled placeholder="Unidad Destino">
+                        <input type="text" class="col-3" disabled>
+                    </div>
+                </span>
+                
+                <!-- boton de Convertir -->
+                <span class="col-4"></span>
+                <div class="boton text-center col-4">Convertir</div>                    
+
+            </section>
+
+        </div>
+    </body>
+
+
+    <script src="JS/factores_conv.js"></script>
+    <script>
+        function centrar_options(){
+
+            let options=document.getElementsByTagName('option')
+            
+            for(let index=0;index<options.length;index++){
+                let clases=options[index].classList
+                if(clases.contains('text-center')==false){
+                    clases.add('text-center')
+                }
+            }
+        }
+        function ALterarSelectSoporte(activo){
+            let soportes=document.getElementsByClassName('SelectSoporte')
+            let mainSelects=document.getElementsByClassName('mainSelect')
+            let claseAbuscar,newClass
+            if (activo){
+                //hay que hacer que el select de soporte se manifieste
+                activo=''
+                claseAbuscar='col-12'
+                newClass='col-6'
+            }else{
+                //hay que desaparecer el select de soporte
+                activo='none'
+                claseAbuscar='col-6'
+                newClass='col-12'
+            }
+
+            for(let index=0;index<soportes.length;index++){
+                soportes[index].style.display=activo
+                
+                let indexClass=buscarEnClase(mainSelects[index].classList,claseAbuscar)
+                if(indexClass!=-1){
+                    //exite la clase
+                    mainSelects[index].classList.replace(claseAbuscar,newClass)
+                }
+            }
+        }
+        function buscarEnClase(class_list,incidencia){
+            for(let index=0;index<class_list.length;index++){
+                if(class_list[index].split(incidencia).length!=1){
+                    return index
+                }
+            }
+            return -1
+        }
+        let uni=document.getElementsByName('UnidadesMedida')[0]
+        uni.anterior=null
+        let selects,factores
+
+        function cambiarSelects(){
+            // alert('pressed')
+            let compuesto=UnidadCompuesta(this.value)
+            console.log(this.value);
+            console.log(compuesto);
+            ALterarSelectSoporte(compuesto)
+            
+            selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
+            factores=TipoMedidaHasUnidades(this.value)
+            console.log(factores);
+
+            for(let index=0;index<selects.length;index++){
+                console.error(index);
+                selects[index].innerHTML=''
+                // if(selects[index].children[0].value=='...'){
+                //     selects[index].children[0].remove()
+                // }
+                for(let SelIndex=0;SelIndex<factores.length;SelIndex++){
+                    selects[index].innerHTML+='<option class="text-center">'+factores[SelIndex]+'</option>'
+                }
+                if(compuesto==false){
+                    index+=1
+                }
+            }
+            // document.getElementsByName('select1')
+            // console.log(this.anterior,'=?',this.value);
+        }
+
+        uni.addEventListener('change',cambiarSelects)
+        
+        uni.dispatchEvent(new Event('change'))
+
+        let inversor=document.getElementsByClassName('simbolo-flechas')[0]
+        let inputs;
+        
+        inversor.addEventListener('click',function cambiarLugares(){
+            inputs=document.getElementsByClassName('input')
+            for(let index=0;index<inputs.length;index++){
+                if(inputs[index].classList.contains('Active')){
+                    inputs[index].classList.remove('Active')
+                    inputs[index].disabled=true
+                }else{
+                    inputs[index].classList.add('Active')
+                    inputs[index].disabled=false
+                }
+            }
+
+        }) 
+
+        centrar_options()
+        ALterarSelectSoporte(false)
+    </script>
+
+    <!-- <script src="JS/bloquear_None.js"></script> -->
+</html>
