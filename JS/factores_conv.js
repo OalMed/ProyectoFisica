@@ -1,13 +1,16 @@
 class Factor{
-    constructor(nombre,Unidad_Medida,equivalecia){
+    constructor(nombre,Unidad_Medida,equivalecia,elevacion){
         this.nombre=nombre
         this.simbolo=Unidad_Medida;
         this.razon=equivalecia;
-
-        let elevaciones=getElevaciones(this.simbolo)
-        console.log('eleva',elevaciones)
-        if(elevaciones.length>0){
-            this.nombre+=' '+elevacionToString(elevaciones[0],this.nombre)
+        this.elevacion=elevacion;
+        // let elevaciones=getElevaciones(this.simbolo)
+        if(elevacion!=null){
+        // if(elevaciones.length>0){
+            // this.nombre+=' ',elevacionToString(elevaciones[0],this.nombre)
+            let nombre_elevado=elevacionToString(elevacion,this.nombre)
+            //console.log('nombre elevado=',nombre_elevado);
+            this.nombre+=' '+nombre_elevado
         }
         
     }
@@ -22,6 +25,9 @@ class Factor{
     }
     getRazon(){
         return this.razon
+    }
+    getElevacion(){
+        return this.elevacion
     }
 }
 function UnidadATipoMedida(unidad){
@@ -53,9 +59,10 @@ function TipoMedidaHasUnidades(tipo_unidad){
         if(tipo_unidad==='Rapidez'){
             factores[0].push(new Factor('Furlong','furlong',))
             // el furlong ese tal vexz me de problemas ya que es dividido entre 14 dias para dar m/s
-        }
-        
-        factores[1]=getFactoresFor('Tiempo')
+            factores[1]=getFactoresFor('Tiempo')
+        }else{
+            factores[1]=getFactoresFor('Tiempo',2)
+        }        
     }
     else if(tipo_unidad==='Presion'){
         factores[0]=getFactoresFor('Fuerza')
@@ -71,16 +78,11 @@ function TipoMedidaHasUnidades(tipo_unidad){
 
     return factores
 } 
-
-function getFactoresFor(sistema){
-    let factores=[];
-    //para convertir hay que efectuar la operacion:
-    //      Cantidad de la unidad a convertir * Factor de conversion 2(destino) / Factor de conversion 1(base)
-    elevacion=''
-    if(sistema==='Rapidez' || sistema=='Aceleracion' ||  sistema==='Presion' ){
-        return factores
+function efectuarElevacion(sistema,elevado){
+    elevacion='1'
+    if (elevado!=undefined){
+        elevacion=elevarString(elevado)
     }
-
     if(sistema=='Area'){
         elevacion=elevarString(2)
 
@@ -88,82 +90,104 @@ function getFactoresFor(sistema){
         // alert('ELEVACION 3')
         elevacion=elevarString(3)
     }
+    return elevacion
+}
+function getFactoresFor(sistema,elevado){
+    let factores=[];
+    //para convertir hay que efectuar la operacion:
+    //      Cantidad de la unidad a convertir * Factor de conversion 2(destino) / Factor de conversion 1(base)
+    if(sistema==='Rapidez' || sistema=='Aceleracion' ||  sistema==='Presion' ){
+        return factores
+    }
+
+    elevacion=efectuarElevacion(sistema,elevado)  
 
     if (sistema==='Longitud' || sistema==='Area'){
         // Respecto al metro
         // x mediada == 1 metro
          
-        factores.push(new Factor('metro','m'+elevacion,1))
-        factores.push(new Factor('centimetros','cm'+elevacion,100))
-        factores.push(new Factor('milimetros','mm'+elevacion,1000))
-        factores.push(new Factor('Milesima de milimetro','μm'+elevacion,Math.pow(10,6)))
-        factores.push(new Factor('Nanometro','nm'+elevacion,Math.pow(10,9)))
-        factores.push(new Factor('Kilometro','km'+elevacion,0.001))
-        factores.push(new Factor('milla','mi'+elevacion,0.0006214))
-        factores.push(new Factor('pie','ft'+elevacion,3.281))
-        factores.push(new Factor('pulgada','in'+elevacion,39.37))
+        factores.push(new Factor('metro','m',1,elevacion))
+        factores.push(new Factor('centimetros','cm',100,elevacion))
+        factores.push(new Factor('milimetros','mm',1000,elevacion))
+        factores.push(new Factor('Milesima de milimetro','μm',Math.pow(10,6),elevacion))
+        factores.push(new Factor('Nanometro','nm',Math.pow(10,9),elevacion))
+        factores.push(new Factor('Kilometro','km',0.001,elevacion))
+        factores.push(new Factor('milla','mi',0.0006214,elevacion))
+        factores.push(new Factor('pie','ft',3.281,elevacion))
+        factores.push(new Factor('pulgada','in',39.37,elevacion))
         // si es de area hay que elevar esa cantidad al cuadrado
     } 
     else if(sistema==='Volumen'){
          
         // respecto al litro
-        factores.push(new Factor('centimetro','cm'+elevacion,1000))
-        factores.push(new Factor('metro','m'+elevacion,0.001))
-        factores.push(new Factor('pie','ft'+elevacion,0.03531))
-        factores.push(new Factor('pulgada','in'+elevacion,61.02))
+        factores.push(new Factor('centimetro','cm',1000,elevacion))
+        factores.push(new Factor('metro','m',0.001,elevacion))
+        factores.push(new Factor('pie','ft',0.03531,elevacion))
+        factores.push(new Factor('pulgada','in',61.02,elevacion))
         // a los anteriores a este hay que marcales elevacion al cubo
-        factores.push(new Factor('galon','galon'+elevacion,.264))
-        factores.push(new Factor('litro','l'+elevacion,.264))
+        factores.push(new Factor('galon','galon',.264))
+        factores.push(new Factor('litro','l',.264))
     }
     else if(sistema==='Tiempo'){
          
         //respecto a minutos
-        factores.push(new Factor('hora','h'+elevacion,1/60))
-        factores.push(new Factor('minutos','min'+elevacion,1/60))
-        factores.push(new Factor('segundos','s'+elevacion,60))
-        factores.push(new Factor('dia','d'+elevacion,1/60/24))
-        factores.push(new Factor('año','año'+elevacion,1/60/24/360))
+        factores.push(new Factor('minutos','min',1,elevacion))
+        factores.push(new Factor('hora','h',1/60,elevacion))
+        factores.push(new Factor('segundos','s',60,elevacion))
+        factores.push(new Factor('dia','d',1/60/24,elevacion))
+        factores.push(new Factor('año','año',1/60/24/360,elevacion))
 
     }
     else if(sistema==='Angulo'){
          
         // respecto a los grados
-        factores.push(new Factor('Radianes','rad'+elevacion,))
-        factores.push(new Factor('Grados','rad'+elevacion,))
-        factores.push(new Factor('Revolucion','rad'+elevacion,))
-        factores.push(new Factor('Revolucion por minuto','rad'+elevacion,))
+        factores.push(new Factor('Radianes','rad',1/57.3,elevacion))
+        factores.push(new Factor('Grados','°',1,elevacion))
+        factores.push(new Factor('Revolucion','revolucion',1/360,elevacion))
+        // tal vex haya que modificar esta opcion, sae de la norma general
+        // pendiente
+        // factores.push(new Factor('Revolucion por minuto','rpm',equiv,elevacion))
     }
     else if(sistema==='Masa'){
-        factores.push(new Factor('Kilogramo',))
-        factores.push(new Factor('libra',))
-        factores.push(new Factor('gramos',))
-        factores.push(new Factor('slug',))
-        factores.push(new Factor('Dalton','u',))
+        // rspecto al kg
+        factores.push(new Factor('Kilogramo','kg',1))
+        factores.push(new Factor('libra','lb',2.205))
+        factores.push(new Factor('gramos','g',1000))
+        factores.push(new Factor('slug','slug',0.0685))
+        factores.push(new Factor('Dalton','u',1.661*Math.pow(10,-27)))
     }
     else if(sistema==='Fuerza'){
-        factores.push(new Factor('Newton','N'))
-        factores.push(new Factor('Dinas','dinas'))
-        factores.push(new Factor('libra','lb'))
+        // respecto al Newton
+        factores.push(new Factor('Newton','N',1))
+        factores.push(new Factor('Dinas','dinas',Math.pow(10,5)))
+        factores.push(new Factor('libra','lb',0.2248))
     }
     else if(sistema==='Energia'){
-        factores.push(new Factor('Jules','J'))
-        factores.push(new Factor('Jules','ergs'))
-        factores.push(new Factor('Jules','cal'))
-        // factores.push(new Factor('Jules','ft*lb'))
-        factores.push(new Factor('Jules','Btu'))
-        factores.push(new Factor('Jules','eV'))
-        factores.push(new Factor('Jules','kWh'))
+        // respecto a calorias
+        factores.push(new Factor('Jules','J',4184))
+        factores.push(new Factor('Ergio','ergs',.239/Math.pow(10,7)))
+        factores.push(new Factor('Caloria','cal',1))
+        // factores.push(new Factor('Jules','ft*lb',equiv))
+        factores.push(new Factor('Unidad Termica Britanica','Btu',1/252))
+        factores.push(new Factor('Electronvoltio','eV',equiv))
+        // pendiente
+        // factores.push(new Factor('Kilovatio por hora ','kWh',equiv))
     }
     else if(sistema==='Masa-energia'){
-        factores.push(new Factor('Kilogramo','kg'))
-        factores.push(new Factor('Kilogramo','J'))
-        factores.push(new Factor('Kilogramo','u'))
-        factores.push(new Factor('Kilogramo','MeV'))
-        factores.push(new Factor('Kilogramo','eV'))
+        // respecto a kg
+        factores.push(new Factor('Kilogramo','kg',1))
+        factores.push(new Factor('Julio','J',8.988*Math.pow(10,10)))
+        // pendientes
+        factores.push(new Factor('Dalton','u',equiv))
+        factores.push(new Factor('Mega-electron voltio','MeV',equiv))
+        factores.push(new Factor('Electron-Voltio','eV',equiv))
     }
     else if(sistema==='Potencia'){
-        factores.push(new Factor('Whatts','W',))
-        factores.push(new Factor('Whatts','hp',))
+        // respecto al Vatio
+        factores.push(new Factor('Vatio','W',1))
+        factores.push(new Factor('Caballo de fuerza','hp',1/746))
+        factores.push(new Factor('Julio por segundo','J/s',1))
+        factores.push(new Factor('Unidad Terminca Britanica','Btu',1/.293))
         //tambien regresa tiempo como un soporte
     }
     return factores
