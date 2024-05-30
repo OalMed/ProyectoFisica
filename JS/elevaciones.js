@@ -1,5 +1,6 @@
 function elevarString(potencia){
-    return '^'+potencia
+    // return '^'+potencia
+    return potencia
 }
 function getElevaciones(string){
     let separados=string.split('^')
@@ -25,10 +26,10 @@ function obtener(cadena){
 function elevacionToString(elevacion,sujeto){
     let elevaString=''
     // alert(sujeto+' tiene '+elevacion)
-    console.error('ELEVACION=',elevacion);
-    console.error('SUJETO=',sujeto);
-    if (elevacion==1){
-        return
+    //console.error('ELEVACION=',elevacion);
+    //console.error('SUJETO=',sujeto);
+    if (elevacion==1|| elevacion=='' || elevacion==null){
+        return ''
     }
     if (elevacion==2){
         elevaString= 'cuadrad'
@@ -38,7 +39,7 @@ function elevacionToString(elevacion,sujeto){
         elevaString= 'cubic'
     } 
 
-    if (sujeto.endsWith('a') || sujeto.charAt(sujeto.length-2)=='a'){
+    if ((sujeto.endsWith('a') || sujeto.charAt(sujeto.length-2)=='a') && sujeto!='dia' ){
         elevaString+='a'
     }else{
         elevaString+='o'
@@ -48,7 +49,7 @@ function elevacionToString(elevacion,sujeto){
         elevaString+='s'
     }
 
-    console.log(elevaString);
+    //console.log(elevaString);
     return elevaString
 }
-console.log(getElevaciones('16 m ^  2 / 34kg^ 3 '));
+//console.log(getElevaciones('16 m ^  2 / 34kg^ 3 '));

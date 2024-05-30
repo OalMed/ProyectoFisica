@@ -7,10 +7,10 @@ function invertirUnidadIngresada(){
         for(let index=0;index<inputs.length;index++){
             if(inputs[index].classList.contains('Active')){
                 inputs[index].classList.remove('Active')
-                inputs[index].disabled=true
+                // inputs[index].disabled=true
             }else{
                 inputs[index].classList.add('Active')
-                inputs[index].disabled=false
+                // inputs[index].disabled=false
             }
         }
     
