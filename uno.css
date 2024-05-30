@@ -29,5 +29,15 @@
 
 .parrafo {
     text-align: justify;
-            padding: 0 3%;
+}
+
+*{
+    padding: 0.5%;
+}
+body{
+    padding: 1%;
+}
+
+h2{
+    text-align: center;
 }
