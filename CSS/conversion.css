@@ -4,12 +4,12 @@
     text-align: right;
 }
 .simbolo-flechas{
-    background-image: url(
-        /* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybwLN4PoxBg-XCAm89zK3jJVzdm57riIni7XE5KVQBQ&s */
+    /* background-image: url(
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybwLN4PoxBg-XCAm89zK3jJVzdm57riIni7XE5KVQBQ&s
     );
     background-size: 10vh;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
     display: flex;
     justify-content: center;
 }
@@ -22,6 +22,7 @@ select,input{
 img{ 
     margin: 0;
     height: 10vh;
+    width: 70%;
     max-width: 100%;
 }
 .active{
@@ -30,13 +31,18 @@ img{
     /* color:white; */
 } 
 
-@media screen and (min-width:576px) {
+@media screen and (min-width:700px) {
     #soporte{
         display: none !important;
     }
 }
-@media screen and (max-width:576px) {
+@media screen and (max-width:768px) {
     #soporte2{
         display: none;
     }
+}
+
+section.row{
+    justify-content: center;
+    padding:0px 5%;
 }
