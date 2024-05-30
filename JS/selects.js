@@ -71,7 +71,7 @@ function cambiarSelects(e){
             selects[index].innerHTML+='<option class="text-center option-medida" data-simbolo="'
                 +factores[index_factores][SelIndex].getSimbolo()
                 +'" data-expo="'+factores[index_factores][SelIndex].getElevacion()
-                +'">'+factores[index_factores][SelIndex].getName()
+                +'" data-razon="'+factores[index_factores][SelIndex].getRazon()+'">'+factores[index_factores][SelIndex].getName()
             +'</option>'
         }
         

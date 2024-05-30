@@ -108,6 +108,7 @@
             return false
         }
         let inputs;
+
         function conversionAuto(){
             inputs=document.getElementsByClassName('input')
 
@@ -135,9 +136,21 @@
                     // alert(pasado)
                     inputs[pasado].value=''
                     
+                    // selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
+                    
+
+                    // for(let index=0;index<selects.length;index++){
+                    //     IndexOption.push(selects[selects[index].options[[index].selectedIndex]])
+                    // }
                 })
             }
         }
+        let IndexOption=[];
+
+        function convertirUnidad(cantidad, FactorBase,FactorDestino){
+
+        }
+
         conversionAuto()
     </script>
 

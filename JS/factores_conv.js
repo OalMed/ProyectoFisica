@@ -191,14 +191,11 @@ function getFactoresFor(sistema,elevado){
         //tambien regresa tiempo como un soporte
     }
     return factores
-}
-function DescomponerUnidad(unidad_compuesta){
-    return unidad_compuesta.split('/') 
-}
-function transformarUnidad(cantidad, medidaOrigen, medidaDestino){
-    medidaOrigen=DescomponerUnidad(medidaOrigen)
-    medidaDestino=DescomponerUnidad(medidaDestino)
-    for( let index in medidaOrigen){
+} 
+// function transformarUnidad(cantidad, medidaOrigen, medidaDestino){
+//     medidaOrigen=DescomponerUnidad(medidaOrigen)
+//     medidaDestino=DescomponerUnidad(medidaDestino)
+//     for( let index in medidaOrigen){
         
-    }
-}
+//     }
+// }
