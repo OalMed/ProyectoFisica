@@ -1,0 +1,33 @@
+.cont{
+    display: flex;
+}
+
+.card{
+    border-radius: 20px;
+    margin-left: 10px;
+    height: auto;
+    background-color: #3D5A73;
+    flex: 1;
+    transition: 6 all ease;
+}
+
+.card:hover{
+    flex: 1;
+    background-color: #3B5242;
+}
+
+.pp{
+    margin: 20px;
+    padding: auto;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.parrafo {
+    text-align: justify;
+            padding: 0 3%;
+}
