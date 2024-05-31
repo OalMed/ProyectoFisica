@@ -18,23 +18,113 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <!--li><a href="#tiposFriccion">Tipos de fricción</a></li>
-            <li><a href="#unidades">Unidades de medida y fórmulas</a></li>
-            <li><a href="#aplicaciones">Aplicaciones de la fricción</a></li>
-            <li><a href="#ejercicios">Ejercicios resueltos</a></li-->
-        </ul>
-    </nav>
 
     <div class="container">
         <h1>Potencia</h1>
 
         <div class="parrafo">
             La <strong>potencia</strong> es una medida de la tasa a la que se realiza un trabajo o a la que se transfiere energía;
-            dicho de otra manera, mide la proporción en la cuál alguien o algo realiza <strong>trabajo</strong>.
+            dicho de otra manera, mide la proporción en la cuál alguien o algo realiza <strong>trabajo</strong> en una unidad de tiempo.
         </div>
+
+        <img src="./images/potenciaNiño.png">
+
+        <div class="parrafo">
+            Hay al menos tres formas en las que se expresa la potencia que son relevantes:
+            <ul>
+                <li>Potencia instantánea (<i>P<sub>i</sub></i>): es la potencia medida en un instante dado en el tiempo. Si se toma en 
+                cuenta la ecuación para la potencia <i>P = &Delta;E / &Delta;t</i>, entonces esta es la medición que se obtiene cuando 
+                <i>&Delta;t</i> es infinitesimalmente pequeño.</li>
+                
+                <li>Potencia media (<i>P<sub>m</sub></i>): es la potencia medida durante un largo período, es decir, cuando en la ecuación 
+                &Delta;t es muy grande. Una manera de obtenerla es usando integrales, para medir el área bajo la curva y dividirla entre el
+                tiempo total. Aunque también es posible hacer una estimación usando unicamente geometría.</li>
+                
+                <li>Potencia pico (<i>P<sub>pc</sub></i>): es el valor máximo que puede tener la potencia instantánea en un sistema.</li>
+            </ul>
+        </div>
+
+        <h2 id="unidades">Unidades de medida</h2>
+        <div class="parrafo">
+            La unidad estándar, del Sistema Internacional de Unidades, para medir la potencia es el vatio o watt, cuyo símbolo es <i><b>W</b></i>.
+            Su nombre se debe al inventor escocés James Watt. Por definición, un watt es igual a un Joule (<i><b>J</b></i>) de trabajo realizado 
+            por segundo. <br>
+            Otra unidad de medida es el caballo de fuerza (<i><b>hp</b></i> por sus siglas en inglés), con orígenes en el siglo XVII, donde se refería 
+            a la potencia de un caballo típico utilizado para activar un cabrestante. Desde entonces, un <i>caballo de fuerza métrico</i>, conocido también 
+            como "caballo de vapor", se ha definido como la potencia necesaria para levantar 75 kg una distancia de 1 metro en 1 segundo. Esto equivale a 
+            735.5 W. Otra definición de caballo de fuerza, porque hay varias diferentes, es la llamada <i>caballo de fuerza mecánico</i>, o "imperial", que 
+            es equivalente a 745.7 W. <br>
+            Ademas, hay otra unidad de medida que son las BTU/h (British Thermal Unit), que se utilizan normalmente en la definición de la potencia de refrigeración 
+            de los sistemas de aire acondicionado, así como del poder calorífico de los combustibles. 1 BTU/h equivale a 3.412 W.
+        </div>
+
+        <h2 id="tiposPotencia">Tipos de potencia y sus fórmulas</h2>
+        <div class="parrafo">
+            <h3>Potencia mecánica</h3>
+            La <i>potencia mecánica</i> aplicada sobre un sólido rígido viene dada por el producto de la fuerza resultante aplicada por la velocidad: <br>
+            <img src="./images/potenciaMec.png" width="110px"> <br>
+            Si además existe rotación del sólido y las fuerzas aplicadas cambian su velocidad angular: <br>
+            <img src="./images/potenciaMecAng.png" width="190px"> <br>
+            Donde <b>F</b> es la fuerza resultante, <b>M</b> el momento resultante, <b>v</b> velocidad del punto donde se calculó la resultante efectiva, y 
+            <b>&omega;</b> la velocidad angular del sólido. <br> <br>
+            Para un sólido deformable o un medio continuo general la expresión es más compleja. La variación de energía cinética viene dada por: <br>
+            <img src="./images/potenciaMecTens.png" width="330px"> <br>
+            Donde <i><b>T<sub>ij</sub></b></i> son los componentes del tensor de tensiones de Cauchy, y <i><b>D<sub>ij</sub></b></i> los componentes del tensor de velocidad de deformación.
+            <br><br>
+
+            <h3>Potencia eléctrica</h3>
+            La <i>potencia eléctrica</i> desarrollada en un cierto instante por un dispositivo viene dada por la expresión: <br>
+            <img src="./images/potenciaElec.png" width="140px"> <br>
+            Donde <i><b>P(t)</b></i> es la potencia instantánea, <i><b>I(t)</b></i> la corriente que circula por él, y <i><b>V(t)</b></i> la diferencia de potencial a través del componente. <br> <br>
+            Si el componente es una resistencia, tenemos: <br>
+            <img src="./images/potenciaElecComp.png" width="140px"> <br>
+            Donde <i><b>P</b></i> es la potencia, <i><b>I</b></i> la corriente, <i><b>V</b></i> el voltaje, y <i><b>R</b></i> la resistencia. <br> <br>
+
+            <h3>Potencia calorífica</h3>
+            La <i>potencia calorífica</i> de un dispositivo es la cantidad de calor que libera por la unidad de tiempo: <br>
+            <img src="./images/potenciaCalor.png" width="75px"> <br>
+            Donde  <i><b>P</b></i> es la potencia instantánea, <i><b>E</b></i> la energía proporcionada, y <i><b>t</b></i> el tiempo. <br> <br>
+
+            <h3>Potencia sonora</h3>
+            La <i>potencia sonora</i>, considerada como la cantidad de energía que transporta la onda sonora por unidad de tiempo a través de una superficie, depende de la intensidad 
+            de la onda y de la superficie; su expresión es: <br>
+            <img src="./images/potenciaSonora.png" width="125px"> <br>
+            Donde <i><b>P<sub>s</sub></b></i> es la potencia, <i><b>I<sub>s</sub></b></i> la intensidad sonora, y <i><b>dS</b></i> el elemento de superficie alcanzado por la onda sonora.
+        </div>
+
+        <h2 id="aplicaciones">Aplicaciones de la potencia</h2>
+        <div class="parrafo">
+            En nuestro día a día hacemos uso de la potencia sin que nos demos cuenta, la usamos para todo: para iniciar un movimiento, para lanzar un objeto, 
+            para arrancar nuestro carro, para levantar cosas, y un infinito etcétera. Pero en donde más se identifica el uso de la potencia es en los aparatos 
+            electrónicos, pues la identificamos por el uso de watts (W). 
+            Por ejemplo, para accionar cualquier dispositivo que necesite una entrada de energía eléctrica, ya sea una computadora, un refrigerador, una pantalla,
+            cargar nuestro celular, entre muchos otros ejemplos. <br>
+            Otra aplicación es en las compañías de electricidad o en las plantas generadoras de energía eléctrica, que necesitan medir la cantidad de energía utilizada
+            en ciertos períodos de tiempo o en algún punto de este, así como calcular la potencia promedio.
+            Hay un sin fin de aplicaciones que nos ayudan en nuestra vida cotidiana y que satisfacen nuestras necesidades, además de que sigue siendo indispensable el 
+            medir con precisión la potencia para la comprensión de cómo hacer un mejor uso de los recursos energéticos que hay en el mundo actual.
+        </div>
+        <img src="./images/potenciaPesas.png">
+
+        <h2 id="ejercicios">Ejercicios resueltos de potencia</h2>
+        <div class="parrafo">
+            Ahora, para comprender un poco mejor el tema de <b>potencia</b>, se mostrarán paso a paso dos ejercicios comunes y sencillos. <br> <br>
+            <b>Ejemplo 1.-</b> Se tiene un auto, cuya masa es de 1200 kg, está en reposo, y le toma 5 segundos alcanzar los 10 metros por segundo. Hallar la potencia media de 
+            salida del motor. <br> <br>
+            Se utiliza la fórmula del trabajo realizado entre el tiempo. <br>
+            <img src="./images/formFric1.png" width="80px"> <br>
+            Sustituir el trabajo <i>T</i> por la fórmula de energía cinética que se le dió al auto. <br>
+            <img src="./images/formFric2.png" width="120px"> <br>
+            Sustituir las variables por los valores conocidos. <br>
+            <img src="./images/formFric3.png" width="250px"> <br>
+            Calcular. Y recordemos la fórmula del Joule, que en la fórmula se simplifica.<br>
+            <img src="./images/formFric4.png" width="130px"> <img src="./images/Joule.png" width="100px"> <br>
+            Obtener el resultado de la potencia promedio. Recordemos que un watt equivale a un Joule sobre segundo.<br>
+            <img src="./images/formFric5.png" width="140px">
+        </div>
+        
     </div>
+    
 </body>
 </html>
 
