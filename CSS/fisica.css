@@ -1,0 +1,1457 @@
+/*cada seccion de definiciones tiene su css y su "@media" junto con estos, para no confundir 
+y que no esten todos haste el final*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+    font-family: "Greycliff CF";
+}
+
+/*------------------------------------------------------------navegador-----------------------------------------------------*/
+.header {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    position: relative;
+}
+.logof {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.logof a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul {
+    list-style: none;
+    z-index: 1000;
+}
+
+.header .navigation ul li {
+    float: left;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.336));
+}
+
+.header .navigation ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.header .navigation ul li a:hover {
+    background-color: rgba(51, 21, 80, 0.658);
+}
+
+.header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1, 1, 1);
+    display: none;
+}
+
+.header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+
+.header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+
+}
+
+.header .navigation ul li ul li {
+    width: 100%;
+    background-color: black;
+
+}
+
+.header .navigation ul li:hover>ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+
+}
+
+@media (max-width:950px) {
+    .header label {
+        display: initial;
+    }
+
+    .header {
+        padding: 20px 10%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: rgba(0, 0, 0, 0.438);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked~.navigation {
+        display: block;
+    }
+}
+
+
+
+
+/*---------------------------------------video------------------------------------*/
+#hero {
+    min-height: 100vh;
+    position: relative;
+    mask-image: linear-gradient(black 90%, transparent);
+
+}
+
+.promo {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.promo h1 {
+    font-size: 80px;
+    margin-bottom: 5%;
+    color: white;
+}
+
+.promo p {
+    font-size: 20px;
+    margin-bottom: 5%;
+    color: white;
+    text-align: center;
+
+}
+
+.promo a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    min-width: 20%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: rgba(24, 186, 214, 0.719);
+    transition: all 1s;
+}
+
+.promo a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px black;
+    transition: all 1s;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+}
+
+
+/*----------------------------------------texto (definicion de fisica y ejemplo)-------------------------------- */
+#seccioninf {
+    width: 100%;
+    min-height: 50vh;
+}
+
+#seccioninf .titulo {
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+#seccioninf .titulo h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+#seccioninf .sec {
+    display: flex;
+    width: 100%;
+    min-height: 50vh;
+    background-color: rgba(212, 210, 210, 0.034);
+}
+
+.sec .se1 {
+    width: 50%;
+    padding: 5%;
+}
+
+.sec .se1 p {
+    font-size: 20px;
+    color: white;
+}
+
+.sec .se2 {
+    width: 50%;
+    padding: 5%;
+}
+
+.sec .se2 p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sec .se2 .vid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
+.sec .se2 .vid video {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width:800px) {
+    #seccioninf .sec {
+        flex-direction: column;
+    }
+
+    .sec .se1,
+    .sec .se2 {
+        width: 100%;
+    }
+
+}
+/*-------------------------------------------------------relaciones--------------------------------------------------*/
+.rel {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: white;
+    overflow: hidden;
+}
+.rel .mate,
+.rel .astro,
+.rel .bio,
+.rel .quimica,
+.rel .mine {
+    min-height: 100vh;
+
+    background: #fff;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 100vh;
+    padding: 10%;
+    position: relative;
+}
+.rel .mate::after,
+.rel .astro::after,
+.rel .bio::after,
+.rel .quimica::after,
+.rel .mine::after {
+    content: '';
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.774);
+    box-shadow: 15px 15px 15px 30px  rgb(233, 27, 27);
+    position: absolute;
+    z-index: 1;
+}
+.rel .mate h1,
+.rel .astro h1,
+.rel .bio h1,
+.rel .quimica h1,
+.rel .mine h1{
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 7%;
+    position: relative;;
+    z-index: 2;
+}
+
+.rel .mate p,
+.rel .astro p,
+.rel .bio p,
+.rel .quimica p,
+.rel .mine p {
+    text-align: center;
+    font-size: 23px;
+    position: relative;
+    z-index: 2;
+}
+.rel #mate {
+    background-image: url('../imagenes_y_videos/mate.jpg');
+}
+.rel #astro {
+    background-image: url('https://skyandaluz.com/wp-content/uploads/2021/10/astronomia-de-posicion.jpg');
+}
+.rel #bio {
+    background-image: url('https://www.iucn.org/sites/default/files/content/images/2019/dna_pixabay.jpg');
+}
+.rel #quimica {
+    background-image: url('https://idunmedicinaestetica.es/wp-content/uploads/que-aporta-la-quimica-en-la-medicina-1.webp');
+}
+.rel #mine {
+    background-image: url('https://beiz.jp/images_P/twinkle/twinkle_00063.jpg');
+}
+@media (max-width:700px) {
+    .rel .mate h1,
+    .rel .astro h1,
+    .rel .bio h1,
+    .rel .quimica h1,
+    .rel .mine h1 {
+        font-size: 50px;
+        margin-left: 0px;
+    }
+    .rel .mate p,
+    .rel .astro p,
+    .rel .bio p,
+    .rel .quimica p,
+    .rel .mine p {
+        font-size: 20px;
+    }
+}
+@media (max-width:530px) {
+    .rel .mate h1,
+    .rel .astro h1,
+    .rel .bio h1,
+    .rel .quimica h1,
+    .rel .mine h1 {
+        font-size: 30px;
+        margin-left: 0px;
+    }
+    .rel .mate p,
+    .rel .astro p,
+    .rel .bio p,
+    .rel .quimica p,
+    .rel .mine p {
+        font-size: 18px;
+    }
+}
+#rel,
+#rel2,
+#rel3,
+#rel4,
+#rel5,
+#botonocultrel {
+    display: none;
+}
+/*-----------ocultar relaciones boton-----------*/
+.ocurel {
+    width: 100%;
+    margin-top: 10%;
+}
+.ocurel button {
+    width: 30%;
+    padding: 15px;
+    border: none;
+    border: 2px solid rgb(173, 22, 67);
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-size: 17px;
+    transition: all 1s ;
+
+}
+.ocurel button:hover {
+    background: rgb(88, 11, 11);
+    box-shadow: inset 2px 2px 150px rgb(0, 0, 0),
+        0 0 5px #3d0b0b, 0 0 15px #b32828,
+        0 0 25px #d61d1db6, 0 0 60px #fd0000cc;
+    transform: translateY(-5px);
+    transition: all 1s ;
+}
+/*---------------------------------------- tipos de fisica img diferente---------------------------*/
+
+.tipo-fis {
+    width: 100%;
+}
+.tipo-fis .cont-fis {
+    display: flex;
+    width: 100%;
+}
+.tipo-fis .cont-fis  .sec1-fis,
+.tipo-fis .cont-fis  .sec2-fis {
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+}
+.tipo-fis .cont-fis  .sec2-fis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tipo-fis .cont-fis  .sec1-fis .text1-fis {
+    color: white;
+}
+.tipo-fis .cont-fis  .sec1-fis .text1-fis h1 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.tipo-fis .cont-fis  .sec1-fis .text1-fis p {
+    font-size: 20px;
+}
+.container {
+    position: relative;
+    width: 250px;
+    min-height: 55vh;
+    background: rgb(0, 0, 0);
+    transform: rotate(-20deg) skew(25deg);
+}
+.container img {
+    position: absolute;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.container:hover img:nth-child(4) {
+    transform: translate(120px, -120px);
+    opacity: 1;
+}
+.container:hover img:nth-child(3) {
+    transform: translate(90px, -90px);
+    opacity: .8;
+}
+.container:hover img:nth-child(2) {
+    transform: translate(60px, -60px);
+    opacity: .6;
+}
+.container:hover img:nth-child(1) {
+    transform: translate(30px, -30px);
+    opacity: .4;
+}
+
+@media (max-width:1032px) {
+    .tipo-fis  .cont-fis {
+        flex-direction: column;
+    }
+    .tipo-fis  .cont-fis .sec1-fis,
+    .tipo-fis  .cont-fis .sec2-fis {
+        width: 100%;
+        margin: 0px;
+    }
+    .tipo-fis  .cont-fis .sec1-fis {
+        margin-bottom: 25%;
+    }
+}
+@media (max-width:555px) {
+    .tipo-fis  .cont-fis .sec1-fis,
+    .tipo-fis  .cont-fis .sec2-fis {
+        margin-left: 0px;
+    }
+    .tipo-fis  .cont-fis .sec1-fis .text1-fis {
+        padding-inline-start: 20px;
+        
+    } 
+    .tipo-fis  .cont-fis .sec2-fis .container img {
+        width:60%;
+        margin-left: 60%;
+    }
+}
+/*-------------------------------------------------boton para ver los tipos de fisica-------------------------*/
+
+.boton-vertf {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.boton-vertf button {
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: black;
+    box-shadow: 0 0 5px #03f467, 0 0 15px #03f403;
+    transition: all 1s ;
+    
+}
+
+.boton-vertf button:hover {
+    /* -webkit-box-reflect: below
+            0.5px linear-gradient(transparent, #0005); */
+    background: rgb(22, 57, 71);
+    box-shadow: inset 2px 2px 150px rgb(75, 180, 107),
+        0 0 5px #000000, 0 0 15px #40a72b,
+        0 0 25px #3daa27b6, 0 0 60px #09cf1acc;
+    transform: translateY(-5px);
+    transition: all 1s ;
+}
+
+/*-------------------texto de presentacion a la fisica moderna y clasica-----------------*/
+.ficmod,
+.ficlas {
+    width: 100%;
+    min-height: 70vh;
+}
+.ficmod h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-image: url('https://img.freepik.com/free-vector/abstract-design-background-with-blue-purple-gradient_1048-13167.jpg');
+    background-attachment: fixed;
+}
+.ficmod .parrafo {
+    width: 45%;
+    min-height: 60vh;
+    margin-left: 2%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-image: url('https://us.123rf.com/450wm/tchastudio/tchastudio2310/tchastudio231000961/214527178-fondo-de-luz-abstracto-papel-tapiz-colorido-degradado-borroso-suave-colores-pastel-suave-dise%C3%B1o-de.jpg?ver=6');
+    background-attachment: fixed;
+}
+.ficlas h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 3%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-image: url('https://st2.depositphotos.com/1575949/7848/v/450/depositphotos_78486728-stock-illustration-abstract-triangle-spectrum-colors-texture.jpg');
+    background-attachment: fixed;
+}
+.ficlas .parrafo {
+    width: 45%;
+    min-height: 60vh;
+    margin-left: 2%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+    background-image: url('https://www.gratistodo.com/wp-content/uploads/2017/02/degradados-wallpapers-1.jpg');
+    background-attachment: fixed;
+}
+.ficmod .parrafo p,
+.ficlas .parrafo p {
+    color: white;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+@media (max-width:800px) {
+    .ficmod .parrafo {
+        width: 100%;
+        padding: 20px;
+    }
+    .ficlas .parrafo {
+        width: 100%;
+        padding: 20px;
+    }
+}
+/*----------------------------------paginas de los tipos de fisicas---------------------------------------------*/
+.tipos-fisica1 {
+    width: 100%;
+    min-height: 50vh;
+    padding: 10px;
+}
+
+.tipos-fisica1 .contenido1 {
+    display: flex;
+    width: 100%;
+    background-color: rgba(37, 73, 97, 0.726);
+}
+
+.tipos-fisica1 .contenido1 .textos1,
+.tipos-fisica1 .contenido1 .video1 {
+    width: 50%;
+}
+
+.tipos-fisica1 .contenido1 .textos1 {
+
+    padding: 40px;
+    color: white;
+}
+
+.tipos-fisica1 .contenido1 .textos1 h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-transform: uppercase;
+}
+
+.tipos-fisica1 .contenido1 .textos1 p {
+    font-size: 20px;
+}
+
+.tipos-fisica1 .contenido1 .video1 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:700px) {
+    .contenido1 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tipos-fisica1 .contenido1 .textos1,
+    .tipos-fisica1 .contenido1 .video1 {
+        width: 100%;
+    }
+}
+
+/*---------------------sec 2------------*/
+.tipos-fisica2 {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.tipos-fisica2 .contenido2 {
+    display: flex;
+    color: white;
+}
+
+.tipos-fisica2 .contenido2 .derecha,
+.tipos-fisica2 .contenido2 .izquierda {
+    width: 50%;
+    height: 101.5vh;
+}
+
+.tipos-fisica2 .contenido2 .derecha {
+    background-color: rgba(37, 73, 97, 0.726);
+
+}
+
+/*configuracion derecha (estoy cansado jefe)*/
+.tipos-fisica2 .contenido2 .derecha .video2 {
+    width: 100%;
+    height: 50%;
+}
+
+.tipos-fisica2 .contenido2 .derecha .video2 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tipos-fisica2 .contenido2 .derecha .textos2 h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tipos-fisica2 .contenido2 .derecha .textos2 p {
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*configuracion izquierda */
+.tipos-fisica2 .contenido2 .izquierda {
+    min-height: 100vh;
+}
+
+
+.tipos-fisica2 .contenido2 .izquierda .b1,
+.tipos-fisica2 .contenido2 .izquierda .b2,
+.tipos-fisica2 .contenido2 .izquierda .b3 {
+    display: flex;
+    background-color: rgba(37, 73, 97, 0.726);
+    height: 33.33vh;
+    padding: 10px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .copia1,
+.tipos-fisica2 .contenido2 .izquierda .copia2,
+.tipos-fisica2 .contenido2 .izquierda .copia3 {
+    margin-right: 5px;
+    margin-left: 0px;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .b1 .textob11,
+.tipos-fisica2 .contenido2 .izquierda .b1 .imagen1,
+.tipos-fisica2 .contenido2 .izquierda .b2 .textob22,
+.tipos-fisica2 .contenido2 .izquierda .b2 .imagen2,
+.tipos-fisica2 .contenido2 .izquierda .b3 .textob11,
+.tipos-fisica2 .contenido2 .izquierda .b3 .imagen3 {
+    width: 50%;
+    padding: 10px;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .b1 .textob11 h1,
+.tipos-fisica2 .contenido2 .izquierda .b2 .textob22 h1,
+.tipos-fisica2 .contenido2 .izquierda .b3 .textob11 h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .b1 .imagen1 {
+    background-image: url('https://concepto.de/wp-content/uploads/2018/08/mecanica-cuantica-atomo-e1533932163277.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: auto;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .b2 .imagen2 {
+    background-image: url('https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2023/03/teorias-einstein-2989094.jpg?tf=3840x');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: auto;
+}
+
+.tipos-fisica2 .contenido2 .izquierda .b3 .imagen3 {
+    background-image: url('https://abdatum.com/media/images/fisica-nuclear.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: auto;
+}
+
+@media (max-width:980px) {
+    .tipos-fisica2 .contenido2 {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .tipos-fisica2 .contenido2 .derecha {
+        margin-top: 15px
+    }
+
+    .tipos-fisica2 .contenido2 .derecha,
+    .tipos-fisica2 .contenido2 .izquierda {
+        width: 100%;
+    }
+
+    .tipos-fisica2 .contenido2 .izquierda .b1,
+    .tipos-fisica2 .contenido2 .izquierda .b2,
+    .tipos-fisica2 .contenido2 .izquierda .b3 {
+        margin-left: 0px;
+        margin-bottom: 5px;
+    }
+
+    .tipos-fisica2 .contenido2 .izquierda .b1 {
+        margin-top: 5px;
+    }
+
+    .tipos-fisica2 .contenido2 .izquierda .copia1,
+    .tipos-fisica2 .contenido2 .izquierda .copia2,
+    .tipos-fisica2 .contenido2 .izquierda .copia3 {
+        margin-right: 0px;
+    }
+
+}
+
+/*----------------------------------3era seccion -----------------*/
+.tipos-fisica3 {
+    width: 100%;
+    padding: 5px;
+}
+
+.tipos-fisica3 .contenido3 {
+    display: flex;
+    width: 100%;
+    color: white;
+}
+
+.tipos-fisica3 .contenido3 .sec1,
+.tipos-fisica3 .contenido3 .sec2,
+.tipos-fisica3 .contenido3 .sec3 {
+    min-height: 50vh;
+    background-color: rgba(37, 73, 97, 0.726);
+    margin: 5px;
+    padding: 10px;
+
+}
+
+.tipos-fisica3 .contenido3 .sec1 {
+    width: 40%;
+    display: flex;
+}
+
+.tipos-fisica3 .contenido3 .sec2 {
+    width: 60%;
+    display: flex;
+}
+
+.tipos-fisica3 .contenido3 .sec1 .sectext {
+    width: 50%;
+}
+
+.tipos-fisica3 .contenido3 .sec1 .sectext h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+.tipos-fisica3 .contenido3 .sec1 .sectext p {
+    padding: 15px;
+    font-size: 18px;
+
+}
+
+.tipos-fisica3 .contenido3 .sec2 .sec2text2 h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 27px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.tipos-fisica3 .contenido3 .sec2 .sec2text2 p {
+    padding: 15px;
+    font-size: 18px;
+}
+
+.tipos-fisica3 .contenido3 .sec1 .sec1img {
+    width: 50%;
+    height: 50vh;
+    background-image: url('https://img.freepik.com/fotos-premium/ilustracion-abstracta-fisica-nuclear-reaccion_361394-1032.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.tipos-fisica3 .contenido3 .sec2 .sec2text2 {
+    width: 50%;
+}
+
+.tipos-fisica3 .contenido3 .sec2 .sec2img {
+    width: 50%;
+    height: 50vh;
+    background-image: url('https://www.ull.es/institutos/instituto-universitario-estudios-avanzados-fisica-atomica-molecular-fotonica/wp-content/uploads/sites/7/2019/07/atomica2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.tipos-fisica3 .contenido3 .sec3 .sec3img {
+    width: 50%;
+    height: 50vh;
+    background-image: url('https://www.ull.es/institutos/instituto-universitario-estudios-avanzados-fisica-atomica-molecular-fotonica/wp-content/uploads/sites/7/2019/07/atomica2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+@media (max-width:1000px) {
+    .tipos-fisica3 .contenido3 {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .tipos-fisica3 .contenido3 .sec1,
+    .tipos-fisica3 .contenido3 .sec2 {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    .tipos-fisica3 .contenido3 .sec1 .sectext,
+    .tipos-fisica3 .contenido3 .sec2 .sec2text2,
+    .tipos-fisica3 .contenido3 .sec1 .sec1img,
+    .tipos-fisica3 .contenido3 .sec2 .sec2img {
+        width: 100%;
+    }
+}
+
+/*--------------------------ultima de tipos de fisica ------------------*/
+.tipos-fisica-ult {
+    width: 100%;
+}
+
+.tipos-fisica-ult .contenido-ult {
+    display: flex;
+    width: 100%;
+    color: white;
+    min-height: 60vh;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult1,
+.tipos-fisica-ult .contenido-ult .sec-ult2,
+.tipos-fisica-ult .contenido-ult .sec-ult3 {
+    width: 33.33%;
+    background-color: rgba(37, 73, 97, 0.726);
+    margin: 9px;
+    padding: 20px;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult1 .ult-imagen1 {
+    width: 100%;
+    height: 270px;
+    background-image: url('https://blogs.ugto.mx/rea/wp-content/uploads/sites/71/2022/03/10186702.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult2 .ult-imagen2 {
+    width: 100%;
+    height: 250px;
+    background-image: url('https://i0.wp.com/www.adelantosdigital.com/web/wp-content/uploads/2016/02/TEORIA-LUZ.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult3 .ult-imagen3 {
+    width: 100%;
+    height: 250px;
+    background-image: url('https://images.griddo.universitatcarlemany.com/c/cover/q/65/w/1344/h/768/f/jpeg/depositphotos-13997617-s');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult1 .ulttext1 h1,
+.tipos-fisica-ult .contenido-ult .sec-ult2 .ulttext2 h1,
+.tipos-fisica-ult .contenido-ult .sec-ult3 .ulttext3 h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+
+.tipos-fisica-ult .contenido-ult .sec-ult1 .ulttext1 p,
+.tipos-fisica-ult .contenido-ult .sec-ult2 .ulttext2 p,
+.tipos-fisica-ult .contenido-ult .sec-ult3 .ulttext3 p {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+@media (max-width:1240px) {
+    .contenido-ult {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .tipos-fisica-ult .contenido-ult .sec-ult1,
+    .tipos-fisica-ult .contenido-ult .sec-ult2,
+    .tipos-fisica-ult .contenido-ult .sec-ult3 {
+        width: 96%;
+    }
+
+}
+/*ocultar todo para que los botones funcionen*/
+
+#todo_f_moderno0,
+#todo_f_moderno,
+#todo_f_moderno2,
+#todo_f_moderno3,
+#todo_f_moderno4,
+#todo_f_clasico,
+#todo_f_clasico2,
+#todo_f_clasico3,
+#todo_f_clasico4,
+#todo_f_clasico0 {
+    display: none;
+} 
+/*-------------boton ver fisica clasica----------*/
+.boton-verfic {
+    width: 100%;
+}
+
+.boton-verfic button {
+    margin: 10%;
+    padding: 20px;
+    border-style: none;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 25px;
+    border: 2px solid rgb(22, 230, 91);
+    color: white;
+    background-color: black;
+    transition: all 1s;
+
+}
+
+.boton-verfic button:hover {
+    transform: translateY(-5px);
+    box-shadow: inset 2px 2px 150px rgb(23, 168, 66),
+        0 0 5px #000000, 0 0 15px #12b86a,
+        0 0 25px #36d331b6, 0 0 60px #1cd195cc;
+
+    transition: all 1s;
+}
+
+/*-------------boton ocultar todo----------*/
+.boton-ocult {
+    width: 100%;
+}
+
+.boton-ocult button {
+    margin: 10%;
+    padding: 20px;
+    border-style: none;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 25px;
+    border: 2px solid rgb(104, 26, 26);
+    color: white;
+    background-color: black;
+    transition: all 1s;
+
+}
+
+.boton-ocult button:hover {
+    transform: translateY(-5px);
+    text-shadow: 2px 2px 10px white;
+    box-shadow: inset 2px 2px 150px rgb(122, 14, 46),
+        0 0 5px #000000, 0 0 15px #f52727,
+        0 0 25px #f32054b6, 0 0 60px #d41565cc;
+
+    transition: all 1s;
+}
+/*------------------------------seccion de sistemas de medicion------------------------*/
+.sm {
+    width: 100%;
+    min-height: 100vh;
+}
+.sm .contenido-sm {
+    width: 100%;
+    display: flex;
+    padding: 30px;
+    overflow: hidden;
+
+}
+.sm .contenido-sm .sec1sm,
+.sm .contenido-sm .sec2sm {
+    width: 50%;
+}
+
+.sm .contenido-sm .sec1sm h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+.sm .contenido-sm .sec1sm p {
+    font-size: 22px;
+    letter-spacing: .5px;
+    color: white;
+    margin-bottom: 15%;
+}
+.sm .contenido-sm .sec1sm .a button {
+  margin-left: 30%;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  border: 5px solid rgb(149, 223, 241);
+  border-radius: 40px; 
+  background-color: black;
+  transition: all 1s;
+}
+.sm .contenido-sm .sec1sm .a button:hover {
+    box-shadow: 5px 5px 10px rgb(200, 79, 236);
+    border-color: pink;
+    transition: all 1s;
+}
+@media (max-width:1054px) {
+    .sm {
+        margin-bottom: 10%;
+    }
+    .sm .contenido-sm {
+        flex-direction: column;
+    }
+    .sm .contenido-sm .sec1sm,
+    .sm .contenido-sm .sec2sm {
+        width: 100%;
+    }
+    .sm .contenido-sm .sec2sm {
+        margin-top: 10%;
+    }
+    .sm .contenido-sm .sec2sm img {
+        width: 100%;
+    }
+}
+/*--------------------------------------------------------def de los sistemas-------------------------------------------*/
+.sist {
+    width: 100%;
+}
+.sist .contenido-sist {
+    display: flex;
+    width: 100%;
+}
+.sist .contenido-sist .sec1-sist,
+.sist .contenido-sist .sec2-sist {
+    width: 50%;
+    color: white;
+    padding: 2%;
+    margin: 3%
+}
+.sist .contenido-sist .sec1-sist .text1-sist h1,
+.sist .contenido-sist .sec2-sist  h1 {
+    text-align: left;
+    text-transform: uppercase;
+    border-bottom: 10px solid white;
+    margin-bottom: 5%;
+}
+
+.sist .contenido-sist .sec2-sist .text1-sist {
+    font-size: 18.5px;
+}
+.sist .contenido-sist .sec1-sist .text1-sist  {
+    text-align: center;
+    font-size: 17px;
+}
+@media (max-width:750px) {
+    .contenido-sist {
+        flex-direction: column;
+        width: 100%;
+    }
+    .sist .contenido-sist .sec1-sist,
+    .sist .contenido-sist .sec2-sist {
+    width: 90%;
+}
+}
+#sistemas,
+#sistemas2{
+    display: none;
+}
+/*-----------------boton de ocultar y link de los sistemas--------------------*/
+.linkconv {
+    margin-left: 60%;
+}
+.link1-irpagconv{
+    margin: 15%;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(29, 167, 177);
+    text-align: center;
+    
+}
+.link1-irpagconv:hover {
+    text-decoration: underline;
+}
+.boton1-ocultarsis  {
+        width: 30%;
+        padding: 15px;
+        margin: 5%;
+        border: none;
+        border: 2px solid rgb(173, 22, 67);
+        border-radius: 30px;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+        font-size: 17px;
+        transition: all 1s ;
+}
+.boton1-ocultarsis:hover {
+    background: rgb(88, 11, 11);
+    box-shadow: inset 2px 2px 150px rgb(0, 0, 0),
+        0 0 5px #3d0b0b, 0 0 15px #b32828,
+        0 0 25px #d61d1db6, 0 0 60px #fd0000cc;
+    transform: translateY(-5px);
+    transition: all 1s ;
+}
+/*---------------------------------conversiones------------------------------------*/
+.conv {
+    width: 100%;
+}
+.conv .conv-content {
+    display: flex;
+    width: 100%;
+}
+.conv .conv-content .image-conv,
+.conv .conv-content  .text-conv {
+    margin: 10px;
+    padding: 15px;
+}
+.conv .conv-content .image-conv {
+    width: 40%;
+}
+.conv .conv-content .image-conv img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.conv .conv-content  .text-conv {
+    width: 60%;
+    color: white;   
+    overflow: hidden;
+}
+.conv .conv-content  .text-conv h1{
+    font-size: 4vw;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 15%;
+} 
+.conv .conv-content  .text-conv p {
+    font-size: 20px;
+    margin-bottom: 15%;
+}
+.conv .conv-content  .text-conv a {
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition:all 1s ;
+}
+
+.conv .conv-content  .text-conv a:hover {
+    border-color: rgb(23, 131, 150);
+    box-shadow: 5px 5px 10px rgb(24, 58, 68);
+    transition:all 1s ;
+}
+@media (max-width:900px) {
+    .conv-content{
+        flex-direction: column;
+    }
+    .conv-content .text-conv ,
+    .conv-content  .image-conv {
+        width: 100% !important;
+    }
+    .conv-content .text-conv p {
+        width: 90%;
+        padding: 10px;
+    }
+    .conv-content .text-conv a{
+        margin-left: 5%;
+    }
+    
+
+}
+/*----------------------------------footer---------------------------*/
+footer {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+}
+
+footer .con-fo {
+    color: white;
+}
+
+footer .con-fo .cyl {
+    width: 100%;
+    display: flex;
+    margin-left: 10%;
+
+}
+
+.con-fo .cyl .carrera,
+.con-fo .cyl .lugar {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .cyl .carrera h2,
+.con-fo .cyl .lugar h2 {
+    text-transform: capitalize;
+}
+
+
+.con-fo .gya {
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+
+}
+
+.con-fo .gya .grado,
+.con-fo .gya .asignatura {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .docente {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 10%;
+
+}
+
+.con-fo .iyl {
+    width: 100%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .integrantes,
+.con-fo .iyl .links {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.con-fo .iyl .integrantes h1,
+.con-fo .iyl .links h1 {
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.con-fo .iyl .integrantes ul li {
+    list-style: none;
+}
+
+.con-fo .iyl .links ul li,
+.con-fo .iyl .integrantes ul li p {
+    list-style: none;
+    padding: 3px;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .links ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.con-fo .iyl .links ul li a:hover {
+    text-decoration: underline;
+}
+
+.con-fo .esc {
+    width: 100%;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    font-size: 23px;
+
+}
+
+@media (max-width:1000px) {
+
+    footer .con-fo,
+    footer .con-fo .cyl,
+    footer .con-fo .gya,
+    footer .con-fo .iyl {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .con-fo .cyl,
+    .con-fo .gya,
+    .con-fo .docente,
+    .con-fo .iyl {
+        width: 100vw;
+    }
+
+    .con-fo .docente {
+        margin-left: 0px;
+    }
+
+    .con-fo .esc {
+        font-size: 17px;
+    }
+}

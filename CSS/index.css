@@ -1,0 +1,278 @@
+:root{
+    --color-accent:#000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Manrope";
+    overflow: hidden;
+}
+
+video, img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1000; */
+}
+
+.overlay .overlay-content{
+    width: 40%;
+}
+.overlay .overlay-content  .imagenes{
+    position: relative;
+    height: 550px;
+}
+ .img-holder{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.img-holder img{
+    position: absolute;
+    top: 0;
+    left: -100%;
+}
+.text {
+    position: relative;
+    margin: 1em 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0%, 100%);
+    max-width: 100%; 
+    overflow: hidden;
+}
+
+.counter, .logo p {
+    font-size: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 100%; 
+    overflow: hidden;
+}
+
+.counter p{
+    line-height: 100%;
+}
+
+.counter p span, .logo p span{
+    position: relative;
+    z-index: -2;
+    color: white;
+}
+.logo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo p{
+    line-height: 100%;
+}
+
+.logo p span{
+    position: relative;
+    top: 200px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 1);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: -200px;
+    z-index: 1000;
+}
+
+.logof {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: white;
+}
+.logof a{
+    text-decoration: none;
+    color: white;
+}
+.navigation ul {
+    list-style: none;
+}
+
+.header .navigation ul li  {
+    float: left;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.336));
+}
+
+.header .navigation ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.header .navigation ul li a:hover {
+    background-color: rgba(51, 21, 80, 0.658);
+}
+
+.header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1,1,1);
+    display: none;
+}
+
+.header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+
+.header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+
+}
+
+.header .navigation ul li ul li {
+    width: 100%;
+    background-color: black;
+
+}
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+    
+}
+
+@media (max-width:950px) {
+    .header label {
+        display: initial;
+    }
+    .header {
+        padding: 20px 10%;
+    }
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10%;
+        
+    }
+    .header .navigation ul li ul  {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    .header .navigation ul li ul li {
+        background-color: rgba(0, 0, 0, 0.438);
+    }
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+}
+
+
+
+
+
+
+.menu{
+    display: flex;
+    justify-content: center;
+}
+
+.shop{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+}
+.hero{
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero img{
+    transform: scale(2);
+}
+.hero-copy {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.hero-copy  h1{
+    font-weight: 400;
+    font-size: 30vw;
+    line-height: 100%;
+    color: #9c9c9c;
+    text-shadow: 0  2px  0   #000000,
+               0  4px  0   #000000,
+               0  6px  0   #000000, 
+               0  8px  0   #000000, 
+               0 10px  0   #000000,
+               0 12px  0   #000000,
+              3px 8px 15px rgba(0,0,0,0.1),
+              3px 8px  5px rgba(0,0,0,0.3);
+}
+.hero-copy  h1 span{
+    position: relative;
+    top: 30vw;
+}
+
+@media(max-width: 900px){
+    .overlay-content {
+        width: 75%;
+    }
+    .counter, .logo p{
+        font-size: 100px;
+    }
+}    

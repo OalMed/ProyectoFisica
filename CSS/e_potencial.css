@@ -1,0 +1,876 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+    font-family: "Greycliff CF";
+
+}
+
+/*------------------------------------------------------------navegador-----------------------------------------------------*/
+.header {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    position: relative;
+}
+
+.logof {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.logof a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul {
+    list-style: none;
+    z-index: 1000;
+}
+
+.header .navigation ul li {
+    float: left;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.336));
+}
+
+.header .navigation ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.header .navigation ul li a:hover {
+    background-color: rgba(51, 21, 80, 0.658);
+}
+
+.header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1, 1, 1);
+    display: none;
+}
+
+.header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+
+.header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+
+}
+
+.header .navigation ul li ul li {
+    width: 100%;
+    background-color: black;
+
+}
+
+.header .navigation ul li:hover>ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+
+.menu {
+    width: 45px;
+    height: 35px;
+
+}
+
+@media (max-width:950px) {
+    .header label {
+        display: initial;
+    }
+
+    .header {
+        padding: 20px 10%;
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li {
+        background-color: rgba(0, 0, 0, 0.438);
+    }
+
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #toggle:checked~.navigation {
+        display: block;
+    }
+}
+/*---------------------------------------video del inicio ------------------------------------*/
+#hero {
+    min-height: 100vh;
+    position: relative;
+    mask-image: linear-gradient(black 90%, transparent);
+}
+.promo {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.promo h1 {
+    font-size: 80px;
+    margin-bottom: 5%;
+    color: white;
+    text-shadow: 4px 4px 5px black;
+}
+
+.promo p {
+    font-size: 23px;
+    margin-bottom: 5%;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 5px black;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+}
+@media(max-width:600px) {
+    .promo h1 {
+        font-size: 60px;
+    }
+}
+@media(max-width:370px) {
+    .promo h1 {
+        font-size: 40px;
+    }
+}
+/*--------------------------------------imagen y texto----------------------*/
+.tyimg {
+    width: 100%;
+    min-height: 100vh;
+}
+.tyimg .contenido-ty {
+    display: flex;
+    width: 100%;
+}
+.tyimg .contenido-ty .text-ty,
+.tyimg .contenido-ty  .img-ty {
+    width: 50%;
+    margin: 3%;
+    padding: 3%;
+}
+.tyimg .contenido-ty .text-ty {
+    padding: 20px;
+}
+.tyimg .contenido-ty .text-ty p {
+    margin-top: 10%;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    color: white;
+}
+.tyimg .contenido-ty  .img-ty {
+    width: 50%;
+    height: 60vh;
+    background-image: url('../img_en_potencial/imm.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+@media (max-width:1033px) {
+    .tyimg .contenido-ty {
+        flex-direction: column;
+    }
+    .tyimg .contenido-ty .text-ty,
+    .tyimg .contenido-ty .img-ty {
+        width: 94% ;
+    }
+}
+/*------------------------------------------Energía potencial gravitatoria cards ---------------*/
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    perspective: 1000px;
+
+}
+
+.card {
+    width: 325px;
+    background-image: linear-gradient(135deg,#000000, #4b1936, #140638,#140638, #4b1936,#000000);
+                background-size: 500%;
+                animation: fanimado 10s infinite;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    position: relative;
+    transition: transform 0.3s ease; 
+    transform-style: preserve-3d; 
+}
+@keyframes fanimado {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position:0% 50% ;
+    }
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-content {
+    padding: 16px;
+}
+.card-content p{
+    color: white;
+    font-size: 15px;
+    line-height: 1.3;
+
+}
+.card:hover {
+    transform: rotateY(20deg) rotateX(10deg) scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);  
+}
+
+
+/*------------------------------------contenido----------------------------------*/
+/* .container {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.parrafo {
+    width: 100%;
+}
+
+.parrafo .contenido-parrafo {
+    display: flex;
+    width: 100%;
+}
+
+.contenido-parrafo .info-parr,
+.contenido-parrafo .img-parr {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.contenido-parrafo .info-parr {
+    font-size: 20px;
+    color: white;
+}
+
+.contenido-parrafo .img-parr img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+@media (max-width:1100px) {
+    .contenido-parrafo {
+        flex-direction: column;
+    }
+
+    .contenido-parrafo .info-parr {
+        width: 95% !important;
+    }
+
+    .contenido-parrafo .img-parr {
+        width: 100% !important;
+    }
+
+} */
+
+/*----------------------------------------------------cards-------------------------------------*/
+
+/* .container .cont {
+    display: flex;
+    padding: 1%;
+    margin: 3%;
+    margin-left: 0px;
+}
+
+.parrafo {
+    color: white;
+}
+
+.card {
+    padding: 3%;
+    border-radius: 20px;
+    margin-left: 60px;
+    height: auto;
+    background-color: black;
+    border: 3px solid white;
+    flex: 1;
+    position: relative;
+    transition: 1s all;
+}
+
+.card::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #642B73;
+    background: -webkit-linear-gradient(to right, #C6426E, #642B73);
+    background: linear-gradient(to right, #C6426E, #642B73);
+    width: 100%;
+    height: 30px;
+    filter: blur(15px);
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+
+.card .pp {
+    color: white;
+}
+
+.card:hover::after {
+    flex: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #ff00cc;
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+    background: linear-gradient(to right, #333399, #ff00cc);
+    width: 100%;
+    height: 30px;
+    filter: blur(25px);
+    transition: all 1s;
+    z-index: -1;
+}
+
+
+
+
+
+.card2 {
+    padding: 3%;
+    border-radius: 20px;
+    margin-left: 60px;
+    height: auto;
+    background-color: black;
+    border: 3px solid white;
+    flex: 1;
+    position: relative;
+    transition: 1s all;
+}
+
+.card2::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #0099F7;
+    background: -webkit-linear-gradient(to right, #F11712, #0099F7);
+    background: linear-gradient(to right, #F11712, #0099F7);
+
+    width: 100%;
+    height: 30px;
+    filter: blur(15px);
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+
+.card2 .pp {
+    color: white;
+}
+
+.card2:hover::after {
+    flex: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #ff00cc;
+    background: #2980b9;
+    background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
+    background: linear-gradient(to right, #2c3e50, #2980b9);
+
+    width: 100%;
+    height: 30px;
+    filter: blur(25px);
+    transition: all 1s;
+    z-index: -1;
+}
+
+
+
+
+
+
+.card3::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #360033;
+    background: -webkit-linear-gradient(to right, #0b8793, #360033);
+    background: linear-gradient(to right, #0b8793, #360033);
+    width: 100%;
+    height: 30px;
+    filter: blur(15px);
+    transition: all 1s;
+    z-index: -1;
+}
+
+.card3:hover::after {
+    flex: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #73C8A9;
+    background: -webkit-linear-gradient(to right, #373B44, #73C8A9);
+    background: linear-gradient(to right, #373B44, #73C8A9);
+    width: 100%;
+    height: 30px;
+    filter: blur(25px);
+    transition: all 1s;
+    z-index: -1;
+}
+
+
+
+
+
+.card4::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+
+    width: 100%;
+    height: 30px;
+    filter: blur(15px);
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+
+.card4:hover::after {
+    flex: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #D38312;
+    background: -webkit-linear-gradient(to right, #A83279, #D38312);
+    background: linear-gradient(to right, #A83279, #D38312);
+    height: 30px;
+    filter: blur(25px);
+    transition: all 1s;
+    z-index: -1;
+}
+
+
+
+.card5::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #ff0084;
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    background: linear-gradient(to right, #33001b, #ff0084);
+
+
+    width: 100%;
+    height: 30px;
+    filter: blur(15px);
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+
+.card5:hover::after {
+    flex: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: '';
+    border-radius: 30px;
+    background: #00bf8f;
+    background: -webkit-linear-gradient(to right, #001510, #00bf8f);
+    background: linear-gradient(to right, #001510, #00bf8f);
+    height: 30px;
+    filter: blur(25px);
+    transition: all 1s;
+    z-index: -1;
+}
+.pp {
+    margin: 15px;
+    padding: auto;
+} */
+
+/*---------------------------------dato responsive bordes--------------------------------*/
+.dato {
+    padding: 10px;
+    margin: 10px;
+}
+/*----------------------------------------------------------------------------preguntas--------------------------------------*/
+.cascada-ej {
+    width: 100%;
+    min-height: 300vh;
+    background-image: url('../img_en_potencial/prueba.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(0deg, black 90%, transparent);
+    z-index: 0;
+}
+.cascada-ej::before {
+    content: '';
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.452);
+    position: absolute;
+    z-index: 1; 
+}
+.cascada-ej .pregs {
+    width: 100%;
+    min-height: 300vh;
+
+    z-index: 2;
+
+}
+.cascada-ej .pregs .ej1,
+.cascada-ej .pregs .ej2,
+.cascada-ej .pregs .ej3,
+.cascada-ej .pregs .ej4 {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.cascada-ej .pregs .ej1 h1,
+.cascada-ej .pregs .ej2 h1,
+.cascada-ej .pregs .ej3 h1,
+.cascada-ej .pregs .ej4 h1
+.cascada-ej .pregs .ej1 p,
+.cascada-ej .pregs .ej2 p,
+.cascada-ej .pregs .ej3 p,
+.cascada-ej .pregs .ej4 p{
+    position: relative;
+    z-index: 3;
+}
+.cascada-ej .pregs .ej1 {
+    color: white;
+    padding: 10px;
+    margin: 15px;
+    text-shadow: 3px 3px 6px black;
+}
+.cascada-ej .pregs .ej1 h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 80px;
+    text-align: center;
+}
+.cascada-ej .pregs .ej1 p {
+    text-align: left;
+    font-size: 20px;
+    text-shadow: 3px 3px 6px black;
+}
+.cascada-ej .pregs .ej2 {
+    color: white;
+    width: 100%;
+    background-color: rgba(31, 99, 67, 0.747);
+    clip-path: polygon(25% 0%, 100% 0, 75% 100%, 0% 100%);
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+.cascada-ej .pregs .ej2 h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-left: 10%;
+}
+.cascada-ej .pregs .ej2 p {
+    font-size: 20px;
+    margin-left: 14%;
+    width: 80%;
+}
+.cascada-ej .pregs .ej3 {
+    color: white;
+    margin-left: 10%;
+}
+.cascada-ej .pregs .ej3 h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 5vw;
+
+}
+.cascada-ej .pregs .ej3 p {
+    font-size: 20px;
+    line-height: 2;
+    width: 70%;
+}
+
+.cascada-ej .pregs .ej4 {
+    color: white;
+    margin-left: 10%;
+}
+.cascada-ej .pregs .ej4 h1 {
+    text-align: right;
+    margin-right: 10%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 5vw;
+}
+.cascada-ej .pregs .ej4 p {
+    text-align: right;
+    margin-right: 10%;
+    font-size: 20px;
+    line-height: 2;
+    width: 90%;
+}
+
+@media (max-width:1200px) {
+    .cascada-ej .pregs .ej1 h1,
+    .cascada-ej .pregs .ej3 h1
+    .cascada-ej .pregs .ej4 h1 {
+        font-size: 60px;
+    }
+    .cascada-ej .pregs .ej2 {
+        clip-path: none;
+    }
+}
+@media (max-width:400px) {
+    .cascada-ej .pregs .ej1 h1,
+    .cascada-ej .pregs .ej3 h1
+    .cascada-ej .pregs .ej4 h1 {
+        font-size: 40px;
+    }
+}
+/*----------------------------------footer---------------------------*/
+footer {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
+    padding: 100px 0 30px;
+    mask-image: linear-gradient(0deg, black 90%, transparent);
+
+}
+
+footer .con-fo {
+    color: white;
+}
+
+footer .con-fo .cyl {
+    width: 100%;
+    display: flex;
+    margin-left: 10%;
+
+}
+
+.con-fo .cyl .carrera,
+.con-fo .cyl .lugar {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .cyl .carrera h2,
+.con-fo .cyl .lugar h2 {
+    text-transform: capitalize;
+}
+
+
+.con-fo .gya {
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+
+}
+
+.con-fo .gya .grado,
+.con-fo .gya .asignatura {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .docente {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    margin-left: 10%;
+
+}
+
+.con-fo .iyl {
+    width: 100%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .integrantes,
+.con-fo .iyl .links {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.con-fo .iyl .integrantes h1,
+.con-fo .iyl .links h1 {
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.con-fo .iyl .integrantes ul li {
+    list-style: none;
+}
+
+.con-fo .iyl .links ul li,
+.con-fo .iyl .integrantes ul li p {
+    list-style: none;
+    padding: 3px;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .links ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.con-fo .iyl .links ul li a:hover {
+    text-decoration: underline;
+}
+
+.con-fo .esc {
+    width: 100%;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    font-size: 23px;
+
+}
+
+@media (max-width:1000px) {
+
+    footer .con-fo,
+    footer .con-fo .cyl,
+    footer .con-fo .gya,
+    footer .con-fo .iyl {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .con-fo .cyl,
+    .con-fo .gya,
+    .con-fo .docente,
+    .con-fo .iyl {
+        width: 100vw;
+    }
+
+    .con-fo .docente {
+        margin-left: 0px;
+    }
+
+    .con-fo .esc {
+        font-size: 17px;
+    }
+}
