@@ -258,6 +258,7 @@ video, img{
     font-weight: 400;
     font-size: 25vw;
     line-height: 100%;
+    text-justify: center;
     color: #9c9c9c;
     text-shadow: 0  2px  0   #000000,
                0  4px  0   #000000,
