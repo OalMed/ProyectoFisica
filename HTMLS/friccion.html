@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.freepik.com/512/3334/3334091.png">
-    <link rel="stylesheet" href="../CSS/friccion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Fricción | Física</title>
+    <link rel="stylesheet" href="../CSS/friccion.css">
 </head>
 <body>
     <header class="header">
@@ -38,14 +38,203 @@
         </nav>
     </header>
 
+    <style>
+        .container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="container">
-    <img src="https://images.pexels.com/photos/9785609/pexels-photo-9785609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-    <img src="https://images.pexels.com/photos/9785609/pexels-photo-9785609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-    <img src="https://images.pexels.com/photos/9785609/pexels-photo-9785609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-    <img src="https://images.pexels.com/photos/9785609/pexels-photo-9785609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-</div>
+        .parrafo {
+            text-align: justify;
+            padding: 0 3%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#definicion">Definición de fricción</a></li>
+            <li><a href="#tiposFriccion">Tipos de fricción</a></li>
+            <li><a href="#unidades">Unidades de medida y fórmulas</a></li>
+            <li><a href="#aplicaciones">Aplicaciones de la fricción</a></li>
+            <li><a href="#ejercicios">Ejercicios resueltos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 id="definicion">Fricción</h1> <br>
+
+        <div class="parrafo">
+            La <strong>fuerza de fricción</strong> es una fuerza de contacto que se resiste al desplazamiento entre superficies.
+            Se genera debido a las imperfecciones, que en mayor parte son microscópicas, entre las superficies de contacto, aunque también existen
+            fenómenos de interacción electrostática entre superficies. Estas imperfecciones hacen que la fuerza <strong>R</strong> entre ambas
+            superficies no sea perfectamente perpendicular, generando un ángulo con la <i>normal</i> <strong>N</strong>. Por lo tanto, 
+            la fuerza resultante se compone de la fuerza normal <strong>N</strong> y de la fuerza de rozamiento <strong>F</strong>.
+        </div>  
+        <img src="../poten_fric/Friccion.png">
+
+        <div class="parrafo">
+            Para que un objeto se mueva, debe levantarse hasta que los picos puedan rebasar la superficie de abajo. Por tanto, tan solo una fuerza 
+            es necesaria para poner al objeto en movimiento. Gran parte de la fricción se debe en realidad a las fuerzas atractivas entre las moléculas de 
+            las superficies en contacto, por lo que aun las superficies perfectamente lisas presentan fricción. Tales fuerzas también dependen de las sustancias 
+            de las que están hechas las superficies.
+        </div>
+        <img src="../poten_fric/supRugoso.png">
+
+        <div class="parrafo">
+            Pero para entender los conceptos de los que se estarán hablando, y para comprender de una mejor manera cómo funciona la fricción, es necesario definir 
+            algunos conceptos básicos relacionados con este tema.
+            <ul>
+                <li>Coeficiente de fricción (<i>μ</i>): un número, típicamente entre 0 y 1, que describe la aspereza entre las superficies; mientras mayor sea el número, 
+                más aspero será, y viceversa. Una razón de la fuerza de fricción con la fuerza normal. El coeficiente de fricción estático <i>μ<sub>s</sub></i> 
+                es para superficies no deslizantes, mientras que el cinético <i>μ<sub>k</sub></i> es para superficies deslizantes. <br>
+                Este coeficiente es un número adimensional, es decir que carece de unidades y, por tanto, de dimensiones físicas. Más adelante veremos el porqué. </li> <br>
+                <li>Fuerza Normal (<i>F<sub>n</sub></i>): es una fuerza de contacto, que ejerce una superficie sobre un cuerpo apoyado sobre ella para evitar que los objetos 
+                sólidos se atraviesen entre sí. Esta es de igual magnitud y dirección, pero de sentido contrario a la fuerza ejercida por el cuerpo sobre la superficie.</li>
+            </ul>
+        </div> 
+
+        <div class="parrafo">
+            Con esto en mente, podemos pasar a hablar sobre las características que hay en el rozamiento entre dos cuerpos:
+            <ul>
+                <li>La fuerza de rozamiento tiene dirección paralela a la superficie de apoyo.</li>
+                <li>El coeficiente de rozamiento depende exclusivamente de la naturaleza de los cuerpos en contacto, así como del estado en que estén sus superficies.</li>
+                <li>La fuerza máxima de rozamiento es directamente proporcional a la fuerza normal que actúa entre las superficies.</li>
+                <li>Para el mismo par de cuerpos, el rozamiento es mayor un momento antes de que comience el movimiento que cuando ya ha comenzado (es por eso que es más 
+                    fácil mover un objeto en movimiento que uno en reposo). </li>
+            </ul> <br>
+            
+            Algunos autores sintetizan las leyes del comportamiento de la fricción en estos dos postulados:
+            <ol>
+                <li>La resistencia al deslizamiento tangencial entre dos cuerpos es proporcional a la fuerza normal ejercida entre los mismos.</li>
+                <li>La resistencia al deslizamiento tangencial entre dos cuerpos es independiente de las dimensiones de contacto entre ambos (es decir 
+                    que la fuerza de arrastre de un objeto será la misma en cualquiera de sus "caras" o "lados"). </li>
+            </ol>
+        </div>
+        <img src="../poten_fric/ilustracionFriccion.png" width="40%"> <br> <br>
+
+        <h2 id="tiposFriccion">Tipos de fricción</h2>
+        <div class="parrafo">
+            Existen dos tipos de rozamiento o fricción: la <strong>fricción estática</strong> (<i>F<sub>f,s</sub></i>, <i>F<sub>s</sub></i> o <i>F<sub>e</sub></i>) 
+            y la <strong>fricción dinámica o cinética</strong> (<i>F<sub>f,k</sub></i>, <i>F<sub>k</sub></i> o <i>F<sub>d</sub></i>). <br>
+            La <strong>fuerza de fricción estática</strong> es una fuerza entre dos superficies que impide que estas se deslicen o derrapen una sobre la otra. 
+            Esta fricción "empuja" en la dirección que evita que el objeto se deslice, lo que da como resultado el movimiento del objeto, si es que la fuerza aplicada 
+            es mayor a la fuerza de fricción. <br>
+            La <strong>fuerza dinámica o cinética</strong>, de magnitud considerada constante, siempre se opone al deslizamiento, una vez comenzado, y trata de reducir 
+            la rapidez a la cual las superficies se deslizan una sobre la otra. <br>
+            En pocas palabras, lo que las diferencia es que la primera actúa cuando los cuerpos están en reposo, mientras que la segunda lo hace cuando ya están en movimiento.
+        </div>
+        <img src="../poten_fric/friccionDyE.png"> <br><br>
+
+        <h2 id="unidades">Unidades de medida y fórmulas</h2>
+        <div class="parrafo">
+            La fricción generalmente es medida en Newtons, pero por el hecho de ser una fuerza, también puede ser medida en libras, dinas, kilopondios, entre otros, 
+            solo se tendría que hacer una conversión en caso de querer conocer su equivalencia en otra unidad de medida. <br> <br>
+            La ecuación para calcular la <strong>fuerza de fricción estática</strong> es la siguiente: <br>
+
+            <img src="../poten_fric/ecuaFricEstat.png"> <br>
+            Donde <i>|F<sub>e</sub>|</i> es la fricción estática, en Newtons, pudiendo ser menor o igual a la fuerza de fricción estática máxima.<br>
+            <i>μ<sub>e</sub></i> es el coeficiente de fricción estática. <br>
+            <i>|F<sub>n</sub>|</i> es la fuerza normal, medida en Newtons, generalmente. <br><br>
+
+            La ecuación para calcular la <strong>fuerza de fricción dinámica</strong> es la siguiente: <br>
+            <img src="../poten_fric/ecuacFricDinam.png"> <br>
+            Donde <i>|F<sub>d</sub>|</i> es la fricción dinámica en Newtons. <br>
+            <i>μ<sub>d</sub></i> es el coeficiente de fricción dinámica. <br>
+            <i>|F<sub>n</sub>|</i> es la fuerza normal en Newtons. <br> <br>
+
+            De estas dos fórmulas se puede obtener el coeficiente de rozamiento, haciendo uso de álgebra, quedando de la siguiente forma: <br>
+            <img src="../poten_fric/formCoefFric.png"> <br>
+            Donde <i>μ</i> es el coficiente de rozamient. <br>
+            |<i>F<sub>f</sub></i>| es la fuerza de fricción. <br>
+            |<i>F<sub>n</sub></i>| es la fuerza normal.
+        </div>
+
+        <h2 id="aplicaciones">Aplicaciones de la fricción</h2>
+        <div class="parrafo">
+            Aunque no nos demos cuenta, o ni siquiera pensemos en ello, la fuerza de fricción está siempre presente, por ejemplo: la <strong>fuerza de fricción estática</strong> 
+            es la que nos permite caminar, ya que al apoyar nuestro pie sobre el suelo, "nos agarramos" a éste y lo empujamos hacia atrás, y la respuesta que éste devuelve es 
+            que nos empuja hacia delante, sin resbalar; si fuera lo contrario y nos deslizaramos, no seríamos capaces de caminar y nos quedaríamos en el mismo lugar, actuando, 
+            por el contrario, la <strong>fuerza de fricción dinámica</strong>. <br>
+            Otro ejemplo de fricción estática ocurre al avanzar un carro, ya que las llantas se "agarran" del suelo y le permite al auto seguir adelante, pero ¿cómo es esto posible?
+            Pues bien, la parte baja de la rueda es la que se encuentra en contacto con el pavimento, y por tanto, está momentaneamente en reposo con respecto a la calle; el resto de la 
+            llanta rota alrededor del punto de contacto, permitiendo a la llanta girar y, eventualmente, al carro avanzar, y así continúa cambiando el punto de contacto conforme la llanta rueda.
+            Pero, ¿qué pasaría si se acelera a fondo o se frena de golpe? Entonces habría un derrape y entraría en acción la fricción dinámica, ya que en el primer caso la llanta giraría tan 
+            rápido que no tendría tiempo de "agarrarse" a la calle, hasta que el auto comience a avanzar y entonces logre haber fricción estática; en el segundo caso, la rueda dejaría de girar 
+            y se deslizaría por el pavimento hasta que el carro se detenga. <br>
+            
+            <img src="../poten_fric/aplicacionesFriccion.png" width="50%"> <br>
+
+            Por otro lado, para la <strong>fuerza de fricción dinámica</strong> podemos encontrar ejemplos como al empujar o jalar algún mueble, pues se está deslizando a través del suelo; 
+            o al frotar piedras o madera para obtener fuego, pues la fricción genera calor; también al lavar la ropa en un lavadero, pues tallamos nuestras prendas contra los relieves de la piedra,
+            generando espuma y así poder quitarle la suciedad; o en deportes como en béisbol cuando un jugador se barre a segunda base, o en patinaje sobre hielo, en donde se usan patines para que 
+            el desplazamiento sea mayor y así poder hacer aquellas piruetas y vueltas que caracterizan a aquél deporte. <br>
+            Como ven, hay literalmente una infinidad de ejemplos y aplicaciones que implican la fuerza de fricción, ya sea estática o dinámica, desde actividades cotidianas y simples, hasta trabajos 
+            duros y complejos, pues la fricción es una parte importante de la física que sirve de base para conceptos y temas más complejos.
+        </div>
+
+        <h2 id="ejercicios">Ejercicios resueltos</h2>
+        <div class="parrafo">
+            Para comprender mejor el tema de fricción, y poder visualizar algunos ejemplos simples y comunes sobre este tema, se realizarán ejercicios que incluyen los conceptos vistos. <br><br>
+
+            <b>Ejercicio 1.-</b> Una persona empuja un sofá que está en reposo sobre el suelo. El coeficiente de fricción estática es de 0.6 entre el piso y el sofá, mientras que el coeficiente de fricción 
+            dinámica es de 0.48. La persona lo empuja con las siguientes fuerzas: 
+            <ul>
+                <li>300 N</li>
+                <li>700 N</li>
+                <li>1500 N</li>
+            </ul> 
+            Determinar la magnitud de fuerza de fricción entre el sofá y el suelo. <br> <br>
+            <img src="../poten_fric/personaSofa.png"> <br>
+
+            Resolver la cantidad máxima de fricción estática. En este caso, la fuerza normal es igual a masa por la gravedad, quedando la siguiente formula:<br>
+            <img src="../poten_fric/fricFor1Eje1.png"> <br>
+            Sustituir los valores. <br>
+            <img src="../poten_fric/fricFor2Eje1.png"> <br>
+            Calcular. <br>
+            <img src="../poten_fric/fricFor3Eje1.png"> <br>
+            Recordemos la fórmula y equivalencia del Newton, quedando: <br>
+            <img src="../poten_fric/fricFor4Eje1.png"> <br> <br>
+
+            Ahora que conocemos la fuerza de fricción estática máxima, podemos conocer si se moverá el sofá con las diferentes fuerzas aplicadas por la persona.<br>
+            Para el primer caso, la persona empuja con una fuerza <i>F<sub>emp</sub>= 300 N</i>, por tanto habrá una fuerza de fricción estática de <i>F<sub>e</sub>= 300 N</i>, 
+            lo que impedirá que el sofá se mueva. <br>
+            Para el segundo caso, la persona empuja con una fuerza <i>F<sub>emp</sub>= 700 N</i>, por lo que habrá una fuerza de fricción estática de <i>F<sub>e</sub>= 700 N</i>,
+            entonces el sofá no se moverá. <br>
+            En el tercer caso, la fuerza con la que la persona empuja es de <i>F<sub>emp</sub>= 1500 N</i>, es decir, mayor a la fuerza de fricción estática máxima, así que el 
+            sofá se comenzará a mover. Entonces habrá una fuerza de fricción dinámica que actúe en contra, la cual se puede calcular de la siguiente manera: <br>
+            <img src="../poten_fric/fricFor5Eje1.png">  <br>
+            Sustituir valores y calcular. <br>
+            <img src="../poten_fric/fricFor6Eje1.png"> <br>
+            <img src="../poten_fric/fricFor7Eje1.png"> <br>
+            Entonces, si la persona empuja con una fuerza de 1500 N, habrá una fricción dinámica de 706.32 N. <br><br>
+
+            <b>Ejercicio 2.-</b> Una caja de plumas de 4.5 kg se jala con velocidad constante a través de una mesa por medio de una cuerda. La cuerda está a un ángulo de <i>&theta; = 40°</i>
+            y bajo una tensión de 3.3 N. <br>
+            <img src="../poten_fric/cajaPlumas.png"> <br>
+            ¿Cuál es el coeficiente de rozamiento dinámico entre la mesa y la caja? Como no conocemos el coeficiente de fricción dinámica, no se puede resolver directamente con su fórmula.
+            Así que dibujaremos un diagrama de fuerzas usando la segunda ley de Newton. <br>
+            <img src="../poten_fric/diagramaFuerza.png"> <br> <br>
+
+            Comenzaremos con la expresión de dirección horizontal de la segunda ley de Newton. <br>
+            <img src="../poten_fric/leyNewtonH.png"> <br>
+            Se sustituyen las fuerzas, aceleración y masa. <br>
+            <img src="../poten_fric/sustFuerzasLN.png"> <br>
+            Se sustituye la componente horizontal de la tensión y la fórmula de fricción dinámica. <br>
+            <img src="../poten_fric/fricFor1Eje2.png"> <br>
+            Multiplicamos por la masa a ambos lados de la igualdad. <br>
+            <img src="../poten_fric/fricFor2Eje2.png"> <br>
+            Despejamos el coeficiente de fricción dinámica usando algebra. <br>
+            <img src="../poten_fric/fricFor3Eje2.png"> <br>
+            Sustituimos <i>F<sub>n</sub></i> por su fórmula, masa por gravedad, menos la componente vertical del vector tensión <i>T</i>. Esto porque la fuerza normal se verá disminuida 
+            al estar siendo jalada por la cuerda hacia arriba en diagonal, como lo muestra el diagrama de fuerzas. Quedando: <br>
+            <img src="../poten_fric/fricFor4Eje2.png"> <br>
+            Se sustituyen los valores y calculamos. En el denominador se puede observar que el producto de masa con gravedad nos daría en Newtons, quedando en la fracción 
+            términos semejantes, y a la vez cancelándose entre ellos, probando que el coeficiente de fricción es adimensional. <br>
+            <img src="../poten_fric/fricFor5Eje2.png"> <br>
+        </div>
+    </div>
 
     <footer>
         <div class="con-fo">

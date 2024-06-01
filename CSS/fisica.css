@@ -10,6 +10,7 @@ body {
     background-color: black;
     overflow-x: hidden;
     font-family: "Greycliff CF";
+    width: 100vw;
 }
 
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
@@ -206,6 +207,7 @@ body {
 }
 
 .video {
+    width: 100vw !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -1208,7 +1210,7 @@ main .capa {
     }
     .sist .contenido-sist .sec1-sist,
     .sist .contenido-sist .sec2-sist {
-    width: 90%;
+    width: 90% !important;
 }
 }
 #sistemas,
@@ -1436,7 +1438,7 @@ footer .con-fo .cyl {
     footer .con-fo .cyl,
     footer .con-fo .gya,
     footer .con-fo .iyl {
-        width: 100%;
+        width: 100% !important;
         flex-direction: column;
     }
 
@@ -1444,7 +1446,7 @@ footer .con-fo .cyl {
     .con-fo .gya,
     .con-fo .docente,
     .con-fo .iyl {
-        width: 100vw;
+        width: 100vw !important;
     }
 
     .con-fo .docente {
