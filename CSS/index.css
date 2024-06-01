@@ -267,7 +267,7 @@ video, img{
               3px 8px 15px rgba(0,0,0,0.1),
               3px 8px  5px rgba(0,0,0,0.3);
     line-height: 100%;
-
+    text-align: justify;
 }
 .hero-copy  h1 span{
     position: relative;
