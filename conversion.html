@@ -1,4 +1,5 @@
-<html>
+
+<html lang='es'>
     <head>
         <title>Conversiones</title>
         <link rel="stylesheet" href="CSS/conversion.css">
@@ -79,6 +80,9 @@
     <script src="JS/selects.js"></script>    
 
     <script>
+        window.razones=new Array(4);
+        window.exponentes=new Array(4);
+
         let selects;
         let factores,targ;
 
@@ -89,6 +93,7 @@
         for(let index=0;index<selects.length;index++){
             console.log('___',selects[index]);
             // console.log(selects[index].checkVisibility());
+            selects[index].anterior=null
             selects[index].addEventListener('change',escribirSimbolos)
             // selects[index].dispatchEvent(new Event('change'))
         }
@@ -108,6 +113,7 @@
             return false
         }
         let inputs;
+        let pasado;
 
         function conversionAuto(){
             inputs=document.getElementsByClassName('input')
@@ -127,25 +133,51 @@
                     let inputs=document.getElementsByClassName('input')
                     
                     let activo=busacarClase(inputs,'Active')
-                    let pasado;
+                    
                     if(activo==0){
                         pasado=1
                     }else{
                         pasado=0
                     }
-                    // alert(pasado)
                     inputs[pasado].value=''
-                    
-                    // selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
-                    
 
-                    // for(let index=0;index<selects.length;index++){
-                    //     IndexOption.push(selects[selects[index].options[[index].selectedIndex]])
+                    activo=parseFloat(activo)
+                    let incremento=0,decremento=0;
+                    if (activo!=0){
+                        console.log('INCREMENTO ACTIVO');
+                        incremento=2
+                    }
+                    // numerador=window.razones[2-incremento]/window.razones[0+incremento]
+                    // denominador=window.razones[3-incremento]/window.razones[2+incremento1]
+
+                    numerador=window.razones[2-incremento]/window.razones[0+incremento]
+                    // denominador=window.razones[pasado+2]/window.razones[pasado]
+                    if(window.razones[1]==null){
+                        denominador=1
+                    }else{
+                        // denominador=window.razones[pasado+2]/window.razones[pasado]
+                        denominador=Math.pow(window.razones[3-incremento],window.exponentes[3-incremento])/Math.pow(window.razones[1+incremento],window.exponentes[1+incremento])
+                    }
+                    // numerador=Math.pow(window.razones[activo+2],window.exponentes[activo+2])/Math.pow(window.razones[activo],window.exponentes[activo])
+                    // if(window.razones[pasado]==null){
+                    //     denominador=1
+                    // }else{
+                    //     denominador=Math.pow(window.razones[pasado+2],window.exponentes[pasado+2])/Math.pow(window.razones[pasado],window.exponentes[pasado])
                     // }
+                    console.log(numerador+'/'+denominador);
+                    inputs[pasado].value=parseFloat(inputs[activo].value)*numerador/denominador
+                    // input 0
+                        // let numerador=window.razones[2]/window.razones[0]
+                        // let denominador=window.razones[3]/window.razones[1]
+                    // input 1
+                        // let numerador=window.razones[0]/window.razones[2]
+                        // let denominador=window.razones[1]/window.razones[3]
+
                 })
             }
         }
         let IndexOption=[];
+        let numerador,denominador;
 
         function convertirUnidad(cantidad, FactorBase,FactorDestino){
 

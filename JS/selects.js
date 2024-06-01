@@ -66,7 +66,13 @@ function cambiarSelects(e){
     for(let index=0;index<selects.length;index++){
         console.error(index);
         selects[index].innerHTML='' 
-        
+        try {
+            for(let index2=0;index2<inputs.length;index2++){
+                inputs[index2].value=''
+            }
+        } catch (error) {
+            
+        }
         for(let SelIndex=0;SelIndex<factores[index_factores].length;SelIndex++){
             selects[index].innerHTML+='<option class="text-center option-medida" data-simbolo="'
                 +factores[index_factores][SelIndex].getSimbolo()
@@ -82,6 +88,7 @@ function cambiarSelects(e){
             }
             selects[index-1].dispatchEvent(new Event('change'))
             selects[index-1].reset=false
+            window.razones[index]=null
         }else{
             if(index%2==0){ 
                 selects[index].reset=true
@@ -100,32 +107,58 @@ function cambiarSelects(e){
 
 function escribirSimbolos(){
     console.log('this name=',this.name);
+    console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
+    let posicion=parseInt(this.dataset.posicion)
+    let termino=parseInt(this.dataset.target[this.dataset.target.length-1])
+    let expo=this.options[this.selectedIndex].dataset.expo
 
+    posicion-=2
+    if(termino==2){
+        posicion++
+    }
+    let lugar_en_razones =termino+posicion
+    
     if(this.checkVisibility()==false){
         console.log('__NO ES VISIBLE__');
+        window.razones[lugar_en_razones]=null
+        window.exponentes[lugar_en_razones]=null
         return
-    }
+    } 
+
+    let razon=this.options[this.selectedIndex].dataset.razon
+    let simbolo=this.options[this.selectedIndex].dataset.simbolo
+    window.razones[lugar_en_razones]=razon
+    window.exponentes[lugar_en_razones]=expo
     
+    posicion+=1
+    if(termino==1){
+        posicion+=1
+    }
+
     target=document.getElementsByName(this.dataset.target)[0]
     if(this.reset){
         console.log('__RESET');
         target.value=''   
     }
-
-    let simbolo=this.options[this.selectedIndex].dataset.simbolo
-    let expo=this.options[this.selectedIndex].dataset.expo
+    
     // simbolo+='<sup>'+expo+'</sup>'
     if(expo>1){
         simbolo+='^'+expo
     }
-
-    let posicion=this.dataset.posicion
+    
+    // let posicion=this.dataset.posicion
     let pantalla=target.value.split('/')
     
-    console.log('posicion=',posicion);
-    console.log('simbolo=',simbolo);
-    console.error('pantalla=',pantalla);
-
+    // console.log('posicion=',posicion);
+    // console.log('simbolo=',simbolo);
+    // console.error('pantalla=',pantalla);
+    resfrescarSimbolos(pantalla,posicion,target,simbolo)
+    
+    console.error('DEBE REFRESCAR el input');
+    document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
+    this.anterior=this.selectedIndex
+}
+function resfrescarSimbolos(pantalla,posicion,target,simbolo){
     if(pantalla.length==1){
         if (posicion==2){
             target.value+='/'+simbolo
