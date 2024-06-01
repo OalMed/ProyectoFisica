@@ -276,7 +276,7 @@ video, img{
 
 @media(max-width: 900px){
     .overlay-content {
-        width: 75%;
+        width: 75% !important;
     }
     .counter, .logo p{
         font-size: 30px;
