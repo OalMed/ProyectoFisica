@@ -247,17 +247,16 @@ video, img{
     transform: scale(2);
 }
 .hero-copy {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+   position: absolute;
+   top: 35%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-transform: uppercase;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .hero-copy  h1{
     font-weight: 400;
     font-size: 20vw;
-    line-height: 100%;
     color: #9c9c9c;
     text-shadow: 0  2px  0   #000000,
                0  4px  0   #000000,
@@ -267,6 +266,8 @@ video, img{
                0 12px  0   #000000,
               3px 8px 15px rgba(0,0,0,0.1),
               3px 8px  5px rgba(0,0,0,0.3);
+    line-height: 100%;
+
 }
 .hero-copy  h1 span{
     position: relative;
