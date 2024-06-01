@@ -6,11 +6,14 @@ y que no esten todos haste el final*/
     box-sizing: border-box;
 }
 
-body {
+html,body{
+    width: 100%;
     background-color: black;
     overflow-x: hidden;
+}
+
+body {
     font-family: "Greycliff CF";
-    width: 100vw;
 }
 
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
