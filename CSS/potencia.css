@@ -3,15 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     overflow-x: hidden;
     background-color: black;
+    color: white;
 }
 
 body {
     font-family: "Greycliff CF";
 }
+
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
 .header {
     top: 0;
@@ -150,9 +154,417 @@ body {
     }
 }
 
+/*---------------------------------------video del inicio ------------------------------------*/
+#hero {
+    min-height: 100vh;
+    position: relative;
+    mask-image: linear-gradient(black 90%, transparent);
+}
+
+.promo {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.promo .sec1 {
+    width: 70%;
+    padding: 50px;
+}
+
+.promo .sec2 {
+    width: 30%;
+}
+
+.promo .sec1 .titulop {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10%;
+}
+
+.promo h1 {
+    font-size: 100px;
+    margin-bottom: 5%;
+    color: white;
+    text-shadow: 4px 4px 5px black;
+}
+
+.promo .textop {
+    text-align: left;
+}
+
+.promo .textop p {
+    width: 80%;
+    font-size: 25px;
+    margin-bottom: 5%;
+    color: white;
+    text-align: left;
+    text-shadow: 4px 4px 5px black;
+    line-height: 2;
+}
+
+.promo .sec2 .enlaces-hero {
+    padding: 20px;
+}
+
+.promo .sec2 .enlaces-hero li {
+    list-style: none;
+    text-align: right;
+    margin-bottom: 25%;
+}
+
+.promo .sec2 .enlaces-hero li a {
+    text-decoration: none;
+    font-size: 27px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 3px;
+    line-height: 1.5;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px white;
+}
+
+.promo .sec2 .enlaces-hero li a:hover {
+    text-decoration: underline;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+}
+
+@media (max-width:830px) {
+    .hero {
+        width: 100%;
+    }
+
+    .hero .promo {
+        flex-direction: column !important;
+    }
+
+    .hero .promo .sec1,
+    .hero .promo .sec2 {
+        width: 100%;
+    }
+
+    .hero .promo .sec2 .enlaces-hero {
+        width: 100%;
+        font-size: 10px;
+    }
+}
+
+/*---------------------------------------------------formas------------------------------------*/
+.mensaje-form {
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.mensaje-form h1 {
+    text-transform: capitalize;
+    line-height: 1.5;
+}
+
+@media (max-width:600px) {
+    .mensaje-form {
+        width: 90%;
+    }
+}
+
+.form1,
+.form3 {
+    width: 50%;
+    margin-left: 45%;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: black;
+}
+
+.form1::before,
+.form3::before {
+    content: '';
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 20px;
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.form2 {
+    width: 50%;
+    margin-right: 45%;
+    padding: 20px;
+    margin: 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: black;
+}
+
+.form2::before {
+    content: '';
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 20px;
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+    background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/*-------------------------------------------------------------texto con scroll------------------------------------------*/
+
+/*----------------------------------------------tipos de potencia ------------ ------------------------*/
+.container {
+    width: 100%;
+}
+
+.container .contenido .secf1,
+.container .contenido .secf2,
+.container .contenido .secf3,
+.container .contenido .secf4 {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container .contenido .secf1::before,
+.container .contenido .secf2::before,
+.container .contenido .secf3::before,
+.container .contenido .secf4::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.267);
+    z-index: 1;
+}
+
+.container .contenido .secf1 {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('../poten_fric/desierto.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    z-index: 2;
+}
+
+.container .contenido .secf2 {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('../poten_fric/lluvia.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    z-index: 2;
+}
+
+.container .contenido .secf3 {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('../poten_fric/fuego.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    z-index: 2;
+}
+
+.container .contenido .secf4 {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('../poten_fric/ciudad.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(to bottom, black 70%, transparent);
+    z-index: 2;
+}
+
+.container .contenido .secf1 .titulo1,
+.container .contenido .secf2 .titulo1,
+.container .contenido .secf3 .titulo1,
+.container .contenido .secf4 .titulo1 {
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    mask-image: radial-gradient(circle, black, transparent);
+    padding: 10px;
+    z-index: 3;
+    position: relative;
+}
+
+.container .contenido .secf1 .titulo1 h1,
+.container .contenido .secf2 .titulo1 h1,
+.container .contenido .secf3 .titulo1 h1,
+.container .contenido .secf4 .titulo1 h1 {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.container .contenido .secf2,
+.container .contenido .secf3,
+.container .contenido .secf4 {
+    width: 100%;
+    min-height: 150vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
 
 
+/*-----------------------------aplicacones de potencia--------------------*/
+.aplicaciones {
+    width: 100%;
+    min-height: 100vh;
+}
 
+.aplicaciones .contenido-ap {
+    display: flex;
+    width: 100%;
+}
+
+.aplicaciones .contenido-ap .texto-ap,
+.aplicaciones .contenido-ap .imagen-ap {
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.aplicaciones .contenido-ap .texto-ap h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+}
+
+.aplicaciones .contenido-ap .texto-ap p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.aplicaciones .contenido-ap .imagen-ap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:900px) {
+    .aplicaciones .contenido-ap {
+        flex-direction: column;
+    }
+    .aplicaciones .contenido-ap .texto-ap,
+    .aplicaciones .contenido-ap .imagen-ap {
+        width: 100% !important;
+        margin: 0px;
+    }
+}
+
+/*--------------------------------------ejercicios resueltos------------------------*/
+.ejercicios {
+    width: 100%;
+    height: auto;
+    
+    background-image: url('../poten_fric/galaxia.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+}
+.ejercicios .mensajes-ejs {
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+}
+.ejercicios .mensajes-ejs #tit{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.ejercicios .mensajes-ejs #men {
+    color: white;
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    width: 60%;
+}
+.ejercicios .sec1 {
+    width: 100%;
+    min-height:150vh;
+    background-color: black;
+    clip-path: circle(74.3% at 0 54%);
+}
+.ejercicios .sec1 .texto-ej1 {
+    width: 50%;
+    padding: 5%;
+}
+.ejercicios .sec1 .texto-ej1  #sub {
+    font-size: 23px;
+    line-height: 1;
+    letter-spacing: 1px;
+
+}
+.ejercicios .sec1 .texto-ej1 p {
+    margin-bottom: 5%;
+}
+.ejercicios .sec1 .texto-ej1 img {
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
