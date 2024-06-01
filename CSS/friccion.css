@@ -6,10 +6,14 @@
 }
 html,body{
     width: 100%;
-    height: 100%;
-    font-family: "Manrope";
+    background-color: black;
     overflow-x: hidden;
 }
+
+body {
+    font-family: "Greycliff CF";
+}
+
 
 /*--------navegador-----*/
 .header {
