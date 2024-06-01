@@ -11,6 +11,7 @@ html,body{
     height: 100%;
     font-family: "Manrope";
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 video, img{
@@ -28,7 +29,6 @@ video, img{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* z-index: 1000; */
 }
 
 .overlay .overlay-content{
@@ -251,7 +251,7 @@ video, img{
 }
 .hero-copy  h1{
     font-weight: 400;
-    font-size: 30vw;
+    font-size: 25vw;
     line-height: 100%;
     color: #9c9c9c;
     text-shadow: 0  2px  0   #000000,
@@ -273,6 +273,6 @@ video, img{
         width: 75%;
     }
     .counter, .logo p{
-        font-size: 100px;
+        font-size: 30px;
     }
 }    
