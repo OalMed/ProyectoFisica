@@ -253,11 +253,10 @@ video, img{
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    text-align: center;
 }
 .hero-copy  h1{
     font-weight: 400;
-    font-size: 25vw;
+    font-size: 20vw;
     line-height: 100%;
     color: #9c9c9c;
     text-shadow: 0  2px  0   #000000,
