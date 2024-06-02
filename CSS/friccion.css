@@ -296,6 +296,9 @@ body {
         flex-direction: column;
         line-height: 2;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 @media (max-width:500px) {
@@ -339,6 +342,7 @@ body {
 .texteimgej .contenido-eje  .imgpa {
     width: 100%;
     margin: 0px;
+    padding: 20px;
 }
 .texteimgej .contenido-eje  .imgpa  {
     display: flex;
