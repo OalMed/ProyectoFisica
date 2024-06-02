@@ -351,6 +351,24 @@ body {
     padding: 20px;
 }
 }
+
+
+/*----------------------------------------------------------tipos de friccion-------------------------- */
+.contenedor-text {
+    width: 100%;
+}
+.contenedor-text .cont-conttex {
+    width: 100%;
+    display: flex;
+    
+}
+.contenedor-text .cont-conttext .t1-con,
+.contenedor-text .cont-conttext  .t2-con {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
