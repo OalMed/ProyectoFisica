@@ -406,7 +406,115 @@ main .capa {
         font-size: 16px;
     }
 }
+/*-------------------------------formulas utilizadas--------------------------------*/
+.formut {
+    width: 100%;
+    background-image: url('https://cdn.todamateria.com/imagenes/formulas-de-fisica-og.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    position: relative;
+    mask-image: linear-gradient(0deg, black 90%, transparent);
+}
+.formut::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.829);
+    z-index: 1;
+}
+.formut h1,
+.formut .p0,
+.formut .p1,
+.formut .p2,
+.formut .p3,
+.formut .p4,
+.formut .p5 {
+    position: relative;
+    z-index: 3;
+    padding: 15px;
+}
+.formut .p1 p{
+    font-size: 40px;
+}
+.formut .p2 p{
+    text-align: center;
+    font-size: 30px;
+}
+.formut .p3 p {
+    font-size: 30px;
+}
+.formut .p5 p {
+    text-align: center;
+    font-size: 25px;
+}
+@media (max-width:450px) {
+    .formut h1 {
+        font-size: 30px !important;
+    }
+    .formut .p1 p{
+        font-size: 28px;
+    }
+    .formut .p0 {
+        font-size: 17px;
+    }
+    .formut .p2 p,
+    .formut .p3 p  {
+        font-size: 20px;
+    }
+    .formut .p4 h1 {
+        font-size: 22px !important;
+    }
+    .formut .p5 p {
+        font-size: 20px;
+    }
+    }
+/*-----------------------------------------------------------ejercicios--------------------------------------------*/
+.ejercicios {
+    width: 100%;
+}
+.ejercicios .cont-ejer {
+    display: flex;
+}
+.ejercicios .cont-ejer .secej1,
+.ejercicios .cont-ejer .secej2 {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: rgba(19, 18, 18, 0.664);
+}
 
+.ejercicios .cont-ejer .secej1 .mentitej {
+    width: 100%;
+}
+.ejercicios .cont-ejer .secej1 .mentitej h1 {
+    text-align: center;
+    color: green;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.ejercicios .cont-ejer .secej1 .litej p,
+.ejercicios .cont-ejer .secej2 .litej2 p{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    font-size: 17px;
+}
+
+@media (max-width: 650px) {
+    .ejercicios .cont-ejer {
+        flex-direction: column;
+    }
+    .ejercicios .cont-ejer .secej1 ,
+    .ejercicios .cont-ejer .secej2 {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 5%;
+        border: none;
+    }
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
