@@ -41,21 +41,38 @@
         </nav>
     </header>
 
-
-    <main id="hero">
-        <div class="promo">
-            <h1>Trabajo en física</h1>
-
-            <p data-aos="zoom-out" data-aos-duration="1100">En física, se entiende por trabajo al cambio en el estado de
+    <div class="intro">
+        <div class="contint">
+            <div class="sec1">
+                <div class="titulotr">
+                    <h1>Trabajo en física</h1>
+                </div>
+                <div class="cont-dec">
+                    <div class="div-decoracion"></div>
+                </div>
+                <div class="textra">
+                    <p>
+                        En física, se entiende por trabajo al cambio en el estado de
                 movimiento de un cuerpo producido por una fuerza de una magnitud dada o, lo que es lo mismo, será
-                equivalente a la energía necesaria para desplazarlo de una manera acelerada.</p>
-            <a data-aos="zoom-out" data-aos-duration="1500" href="#seccioninf">ver ejemplos</a>
+                equivalente a la energía necesaria para desplazarlo de una manera acelerada.
+                    </p>
+                </div>
+                <div class="link">
+                    <a href="#ejemplos">ver ejemplos</a>
+                </div>
+            </div>
+            <div class="sec2">
+                <div class="imgs">
+                    <img src="https://img.freepik.com/fotos-premium/disparo-vertical-longitud-completa-fuerte-atleta-masculino-tatuado-musculoso-trabajando-gimnasio-entrenamiento-funcional-levantando-pesas_118628-4829.jpg" alt="">
+                    <img src="https://img.freepik.com/fotos-premium/grua-construccion-levantar-objetos-pesados-contra-cielo-azul_3248-2342.jpg" alt="">
+                    <img src="https://static.vecteezy.com/system/resources/previews/031/596/866/large_2x/cycling-under-the-night-sky-a-serene-and-leisurely-ride-vertical-mobile-wallpaper-ai-generated-free-photo.jpg" alt=""> 
+                </div>
+            </div>
         </div>
-        <video class="video" muted autoplay loop>
-            <source src="../imgs_trabajo/press_banca.mp4">
-        </video>
-        <div class="capa"></div>
-    </main>
+    </div>
+
+
+    
     <br><br><br><br><br>
     <div class="iyt">
         <div class="iyt-content">
@@ -182,7 +199,7 @@
 
 
 
-    <div class="container">
+    <div class="container" id="ejemplos">
 
 
         <div class="row">
@@ -332,6 +349,37 @@
             </div>
         </div>
     </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+   
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
 </body>
 
 </html>

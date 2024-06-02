@@ -156,79 +156,115 @@ body {
     }
 }
 
-/*---------------------------------------video------------------------------------*/
-#hero {
+/*---------------------------------------Introduccion------------------------------------*/
+.intro {
+    width: 100%;
+    min-height: 150vh;
+}
+.intro .contint {
+    display: flex;
+    width: 100%;
     min-height: 100vh;
-    position: relative;
-    mask-image: linear-gradient(black 90%, transparent);
 
 }
+.intro .contint .sec1 {
+    width: 40%;
+    background-color: rgba(27, 26, 26, 0.644);
+    height: 90vh;
+    mask-image: linear-gradient(0deg, black 80%, transparent);
 
-.promo {
-    padding-top: 150px;
+}
+.intro .contint .sec1 .titulotr{
+    width: 100%;
+}
+.intro .contint .sec1 .titulotr h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    font-size: 40px;
+    color: rgb(21, 117, 134);
+
+}
+.cont-dec {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    margin: auto;
-    position: relative;
-    z-index: 2;
+    margin-bottom: 10%;
 }
-
-.promo h1 {
-    font-size: 70px;
-    margin-bottom: 5%;
-    color: white;
+.cont-dec .div-decoracion {
+    margin-left: 50%;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(21, 117, 134);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    margin: 5%;
 }
-
-.promo p {
+.textra {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 7%;
+}
+.textra p {
     font-size: 20px;
-    margin-bottom: 5%;
-    color: white;
-    text-align: center;
-
 }
-
-.promo a {
+.link a {
     text-decoration: none;
-    font-size: 20px;
+    text-transform: uppercase;
     color: black;
-    min-width: 20%;
-    text-align: center;
-    padding: 20px;
-    border-radius: 25px;
-    border-style: none;
-    background-color: rgba(24, 186, 214, 0.719);
-    transition: all 1s;
+    padding: 15px;
+    background-color: rgb(49, 180, 185);
 }
-
-.promo a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px black;
-    transition: all 1s;
+.textra p, 
+.link a {
+    margin-left: 5%;
 }
-
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
+.intro .contint .sec2 {
+    width: 60%;
+}
+.intro .contint .sec2 .imgs {
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: 90vh;
+    mask-image: linear-gradient(0deg, black 80%, transparent);
+}
+.intro .contint .sec2 .imgs img {
+    width: 33.5%;
     object-fit: cover;
+    mask-image: linear-gradient(270deg, black 80%, transparent);
+}
+@media (max-width:750px) {
+    .intro .contint {
+        flex-direction: column;
+    }
+    .intro .contint .sec1 ,
+    .intro .contint .sec2 {
+        width: 100%;
+    }
+    .intro .contint .sec1  {
+        height: 100vh;
+    }
 }
 
-main .capa {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.3;
-    mix-blend-mode: overlay;
+@media (max-width:410px) {
+    .intro .contint .sec1 {
+        height: 60vh;
+    }
+    .intro .contint .sec1 .titulotr h1 {
+        font-size: 30px;
+    }
+    .textra p {
+        font-size: 16px;
+    }
+    .link a {
+        padding: 10px;
+    }
+    .intro .contint .sec2 .imgs {
+        height: 50vh;
+    }
 }
-
 /*--------------------------------------------------imagenes y sus textos (ejemplos)--------------------------------*/
 .iyt {
     width: 100%;
