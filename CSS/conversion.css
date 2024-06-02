@@ -1,15 +1,49 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
 
-.text-rigth{
-    text-align: right;
+*{
+    word-wrap: break-word;
 }
-.simbolo-flechas{
-    /* background-image: url(
-        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybwLN4PoxBg-XCAm89zK3jJVzdm57riIni7XE5KVQBQ&s
-    );
-    background-size: 10vh;
-    background-repeat: no-repeat;
-    background-position: center; */
+.blanco{
+    color: white;
+}
+body{
+    width: 100%;
+}
+.fondo{
+    position: absolute;
+    /* left:auto; */
+    width: 100vw;
+    height: 100vh;
+    /* max-width: 100%; */
+}
+.container{
+    position: relative;
+    font-size: calc( min(3.5vw,3.5vh) );
+}
+.fondo{
+    left:0px;
+}
+.container .row{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center;
+    span{
+        padding:0px !important;
+    }
+}
+section.row{
+    justify-content: center;
+    padding:0px 5%;
+}
+.separacion{
+    margin-bottom: 3.5%;
+    /* padding: 0px !important; */
+}
+.separacion2{
+    margin-bottom: 10%;
+    /* justify-content: right; */
+}
+.simbolo-flechas{ 
     display: flex;
     justify-content: center;
 }
@@ -21,28 +55,39 @@ select,input{
 }
 img{ 
     margin: 0;
-    height: 10vh;
-    width: 70%;
+    /* height: 10vh; */
+    /* width: calc(min(80%,6.5vw)); */
+    width: 80%;
     max-width: 100%;
 }
 .active{
     border: 2px solid green;
     background-color: rgb(98, 180, 98);
-    /* color:white; */
 } 
-
-@media screen and (min-width:700px) {
-    #soporte{
-        display: none !important;
-    }
+.text-rigth{
+    text-align: right;
 }
-@media screen and (max-width:768px) {
-    #soporte2{
-        display: none;
+@media screen and (max-width:990px) {
+    .simbolo-flechas{
+        /* width: 20vw !important; */
+        width: calc(min(20vw,15vh)) !important;
+        transform: rotate(90deg);
     }
-}
-
-section.row{
-    justify-content: center;
-    padding:0px 5%;
+} 
+/* @media screen and (max-width:990px and min-width:) {
+    .simbolo-flechas{
+        width: 20vw !important;
+        transform: rotate(90deg);
+    }
+}  */
+@media screen and (max-width:360px) {
+    *{
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .simbolo-flechas{
+        /* width: 20vw !important; */
+        transform: rotate(90deg);
+    }
 }

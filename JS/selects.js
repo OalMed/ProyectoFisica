@@ -51,10 +51,10 @@ function cambiarSelects(e){
     // console.log(e)
     targ=e
     
-    let compuesto=UnidadCompuesta(this.value)
+    window.compuesto=UnidadCompuesta(this.value)
     //console.log(this.value);
-    //console.log(compuesto);
-    ALterarSelectSoporte(compuesto)
+    //console.log(windowcompuesto);
+    ALterarSelectSoporte(window.compuesto)
     
     selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
     factores=TipoMedidaHasUnidades(this.value)
@@ -65,6 +65,7 @@ function cambiarSelects(e){
 
     for(let index=0;index<selects.length;index++){
         console.error(index);
+        //borra toodos los option del select
         selects[index].innerHTML='' 
         try {
             for(let index2=0;index2<inputs.length;index2++){
@@ -73,15 +74,17 @@ function cambiarSelects(e){
         } catch (error) {
             
         }
+        //recorre los factores obtenidos (numerador y denominador)
         for(let SelIndex=0;SelIndex<factores[index_factores].length;SelIndex++){
             selects[index].innerHTML+='<option class="text-center option-medida" data-simbolo="'
                 +factores[index_factores][SelIndex].getSimbolo()
                 +'" data-expo="'+factores[index_factores][SelIndex].getElevacion()
-                +'" data-razon="'+factores[index_factores][SelIndex].getRazon()+'">'+factores[index_factores][SelIndex].getName()
+                +'" data-razon="'+factores[index_factores][SelIndex].getRazon()
+                +'" data-auxiliar="'+factores[index_factores][SelIndex].haveAuxSelect()+'">'+factores[index_factores][SelIndex].getName()
             +'</option>'
         }
         
-        if(compuesto==false){
+        if(window.compuesto==false){
             index+=1
             if(index%2!=0){ 
                 selects[index-1].reset=true
@@ -105,37 +108,86 @@ function cambiarSelects(e){
     } 
 }
 
+let selected
+
+function desaparecerSelectAuxIndividual(posicion,termino,select,target){
+    let supp=document.getElementsByName('selSup'+termino)[0]
+    selected=select.options[select.selectedIndex]
+
+    if(posicion!=1){
+        return
+    }
+    if(window.compuesto==false ){
+        return
+    }
+    if(selected.dataset.auxiliar!='false'){
+        if (buscarEnClase(select.classList,'col-6')==-1){
+            select.classList.add('col-6')
+            select.classList.remove('col-12')
+        }
+        supp.style.display=''
+        supp.dispatchEvent(new Event('change'))
+        return
+    }
+    
+    // el option del select pulsado es el numerador y no tiene select auxiliar        
+    console.log('_____FALSE_');
+    supp.style.display='none'
+    
+    target.value=target.value.split('/')[0]
+
+    if (buscarEnClase(select.classList,'col-12')==-1){
+        select.classList.remove('col-6')
+        select.classList.add('col-12')
+        return
+    }
+    
+}
 function escribirSimbolos(){
-    console.log('this name=',this.name);
-    console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
+    // console.log('this name=',this.name);
+    // console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
+    let termino=(this.dataset.target[this.dataset.target.length-1])
     let posicion=parseInt(this.dataset.posicion)
-    let termino=parseInt(this.dataset.target[this.dataset.target.length-1])
+    
+    target=document.getElementsByName(this.dataset.target)[0]
+    // console.log('termino=',termino+';posicion:',posicion);
+    // alert(this.options[this.selectedIndex].dataset.auxiliar)
+    // console.log('supp=selSup'+termino);
+    desaparecerSelectAuxIndividual(posicion,termino,this,target)
+
+    
+    // alert('posicion:'+posicion+'\nSupport=',supp)
+    
+
+    termino=parseInt(termino)
     let expo=this.options[this.selectedIndex].dataset.expo
 
     posicion-=2
     if(termino==2){
-        posicion++
+        posicion+=1
     }
-    let lugar_en_razones =termino+posicion
     
-    if(this.checkVisibility()==false){
+    let lugar_en_razones =termino+posicion
+    posicion+=1
+
+    if(this.checkVisibility()==false && !window.compuesto){
         console.log('__NO ES VISIBLE__');
         window.razones[lugar_en_razones]=null
         window.exponentes[lugar_en_razones]=null
         return
-    } 
-
+    }     
+    
     let razon=this.options[this.selectedIndex].dataset.razon
+    // alert('index='+lugar_en_razones+' __' +razon+' en '+this.name)
     let simbolo=this.options[this.selectedIndex].dataset.simbolo
+    
     window.razones[lugar_en_razones]=razon
     window.exponentes[lugar_en_razones]=expo
-    
-    posicion+=1
+
     if(termino==1){
         posicion+=1
     }
 
-    target=document.getElementsByName(this.dataset.target)[0]
     if(this.reset){
         console.log('__RESET');
         target.value=''   
@@ -158,6 +210,7 @@ function escribirSimbolos(){
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
     this.anterior=this.selectedIndex
 }
+
 function resfrescarSimbolos(pantalla,posicion,target,simbolo){
     if(pantalla.length==1){
         if (posicion==2){
