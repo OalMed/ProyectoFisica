@@ -295,6 +295,7 @@ body {
     .inicio .contenido-in .prim-sec .navs ul {
         flex-direction: column;
         line-height: 2;
+        text-align: center;
     }
 }
 @media (max-width:500px) {
