@@ -153,121 +153,143 @@ body {
         display: block;
     }
 }
-
-/*---------------------------------------video del inicio ------------------------------------*/
-#hero {
-    min-height: 100vh;
-    position: relative;
-    mask-image: linear-gradient(black 90%, transparent);
-}
-
-.promo {
-    display: flex;
+/*----------------------------introduccion------------------------------*/
+.introd {
     width: 100%;
-    position: relative;
-    z-index: 2;
-}
+    overflow: hidden;
 
-.promo .sec1 {
-    width: 70%;
-    padding: 50px;
 }
-
-.promo .sec2 {
-    width: 30%;
+.introd .contontrod {
+    overflow: hidden;
+    width: 100%;
 }
-
-.promo .sec1 .titulop {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10%;
+.contontrod .primse {
+    margin: 25px;
+    padding: 25px;
 }
-
-.promo h1 {
+.contontrod .primse .titulo-int {
+    width: 100%;
+}
+.contontrod .primse .titulo-int h1 {
+    text-align: center;
     font-size: 100px;
+    text-transform: uppercase;
+}
+.cont-dec {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-dec .div-decoracion {
+    margin-left: 50%;
+    width: 120px;
+    height: 20px;
+    background-color: rgb(21, 117, 134);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    margin: 5%;
+}
+.descrip-int p {
+    font-size: 40px;
+    text-align: center;
+}
+/*-----responsive las letras------------*/
+@media (max-width:650px) {
+    .contontrod .primse .titulo-int h1 {
+        font-size: 60px;
+    }
+    .descrip-int p {
+        font-size: 25px;
+    }
+}
+@media (max-width:450px) {
+    .contontrod .primse .titulo-int h1 {
+        font-size: 35px;
+    }
+    .descrip-int p {
+        font-size: 20px;
+    }
+}
+/*---------------------------------------video------------------------------*/
+.introd .contontrod .video-eimg {
+    display: flex;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 5%;
+    padding: 5%;
+}
+.introd .contontrod .video-eimg  video {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+.imgs {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin-top: -15%;
+}
+.imgs .imgs1 {
+    width: 40%;
+    height: 50%;
     margin-bottom: 5%;
-    color: white;
-    text-shadow: 4px 4px 5px black;
+    margin-left: -8%;
+    overflow: hidden;
+    z-index: 3;
 }
 
-.promo .textop {
-    text-align: left;
-}
-
-.promo .textop p {
-    width: 80%;
-    font-size: 25px;
+.imgs .imgs1 img {
+    width: 100%;
+    height: 100%;
     margin-bottom: 5%;
-    color: white;
-    text-align: left;
-    text-shadow: 4px 4px 5px black;
-    line-height: 2;
+    object-fit: cover;
 }
-
-.promo .sec2 .enlaces-hero {
-    padding: 20px;
+.contontrod .sec2 {
+    width: 100%;
+   
 }
-
-.promo .sec2 .enlaces-hero li {
+.enlaces-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+.enlaces-hero li {
     list-style: none;
-    text-align: right;
-    margin-bottom: 25%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(15, 15, 15, 0.24));
 }
-
-.promo .sec2 .enlaces-hero li a {
+.enlaces-hero li  a {
     text-decoration: none;
-    font-size: 27px;
-    color: rgb(0, 0, 0);
-    letter-spacing: 3px;
-    line-height: 1.5;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px white;
+    font-size: 25px;
+    color: white;
+    letter-spacing: 1.5px;
 }
-
-.promo .sec2 .enlaces-hero li a:hover {
+.enlaces-hero li:hover > a {
+    color: rgb(70, 234, 240);
     text-decoration: underline;
 }
 
-.video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-main .capa {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0);
-    opacity: 0.1;
-    mix-blend-mode: overlay;
-}
-
-@media (max-width:830px) {
-    .hero {
-        width: 100%;
+@media (max-width:800px) {
+    .enlaces-hero {
+        flex-direction: column;
     }
-
-    .hero .promo {
-        flex-direction: column !important;
-    }
-
-    .hero .promo .sec1,
-    .hero .promo .sec2 {
+    .enlaces-hero li {
         width: 100%;
-    }
-
-    .hero .promo .sec2 .enlaces-hero {
-        width: 100%;
-        font-size: 10px;
+        margin-bottom: 5%;
+        text-align: center;
     }
 }
-
+@media (max-width:400px) {
+    .enlaces-hero li {
+        width: 100%;
+        margin-bottom: 15%;
+        text-align: center;
+    }
+}
 /*---------------------------------------------------formas------------------------------------*/
 .mensaje-form {
     width: 60%;
