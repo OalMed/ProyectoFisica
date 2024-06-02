@@ -8,6 +8,7 @@ html,body{
     width: 100%;
     background-color: black;
     overflow-x: hidden;
+    color: white;
 }
 
 body {
@@ -457,7 +458,7 @@ footer .con-fo .cyl {
     footer .con-fo .cyl,
     footer .con-fo .gya,
     footer .con-fo .iyl {
-        width: 100%;
+        width: 100% !important;
         flex-direction: column;
     }
 
@@ -465,7 +466,7 @@ footer .con-fo .cyl {
     .con-fo .gya,
     .con-fo .docente,
     .con-fo .iyl {
-        width: 100vw;
+        width: 100vw !important;
     }
 
     .con-fo .docente {

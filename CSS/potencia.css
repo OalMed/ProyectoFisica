@@ -366,13 +366,13 @@ main .capa {
     content: '';
     inset: 0;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.267);
+    background-color: rgba(0, 0, 0, 0.356);
     z-index: 1;
 }
 
 .container .contenido .secf1 {
     width: 100%;
-    min-height: 150vh;
+    min-height: 280vh;
     background-image: url('../poten_fric/desierto.jpg');
     background-position: 50% 50%;
     background-size: cover;
@@ -463,8 +463,31 @@ main .capa {
     position: relative;
     z-index: 2;
 }
-
-
+/*diseño de primer potencia*/
+.container .contenido .secf1 p,
+.container .contenido .secf1 img,
+.container .contenido .secf2 p,
+.container .contenido .secf2 img,
+.container .contenido .secf3 p,
+.container .contenido .secf3 img,
+.container .contenido .secf4 p,
+.container .contenido .secf4 img    {
+    padding: 10px;
+    position: relative;
+    z-index: 3;
+}
+.container .contenido .secf1 img  {
+ 
+    margin: 20px;
+}
+.container .contenido .secf1 p {
+    text-shadow: 4px 4px 6px black;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+/*diseño de segunda potencia*/
 /*-----------------------------aplicacones de potencia--------------------*/
 .aplicaciones {
     width: 100%;

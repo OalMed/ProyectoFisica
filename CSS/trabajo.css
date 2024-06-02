@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    background-color: black;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+body {
+    font-family: "Greycliff CF";
 }
 
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
@@ -23,6 +31,7 @@ body {
     z-index: 1000;
     position: relative;
 }
+
 .logof {
     font-size: 25px;
     text-transform: uppercase;
@@ -219,32 +228,183 @@ main .capa {
     opacity: 0.3;
     mix-blend-mode: overlay;
 }
+
 /*--------------------------------------------------imagenes y sus textos (ejemplos)--------------------------------*/
 .iyt {
     width: 100%;
 }
 
+.iyt .iyt-content {
+    display: flex;
+    width: 100%;
+}
+
 .iyt .iyt-content .secty1,
 .iyt .iyt-content .secty2 {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    background: rgba(255, 0, 0, 0.384);
-}
-.iyt .iyt-content .secty1 .imagenty1,
-.iyt .iyt-content .secty1  .textosty1,
-.iyt .iyt-content .secty2 .imagenty2 ,
-.iyt .iyt-content .secty2  .textosty2 {
     width: 50%;
+    margin: 20px;
+    padding: 20px;
+
+    background-color: rgba(255, 255, 255, 0.11);
 }
-.iyt .iyt-content .secty1 .imagenty1 {
+
+.iyt .iyt-content .secty1 .imagenty1,
+.iyt .iyt-content .secty2 .imagenty2 {
     width: 100%;
-    height: auto;
-    background: url('https://www.65ymas.com/uploads/s1/22/45/37/que-postura-se-recomienda-para-que-los-mayores-cojan-y-levanten-objetos-de-peso-medio.jpeg');
+    height: 50vh;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
+}
+
+.iyt .iyt-content .secty1 .imagenty1 {
+    background-image: url('https://www.65ymas.com/uploads/s1/22/45/37/que-postura-se-recomienda-para-que-los-mayores-cojan-y-levanten-objetos-de-peso-medio.jpeg');
+}
+
+.iyt .iyt-content .secty2 .imagenty2 {
+    background-image: url('https://st3.depositphotos.com/1006542/16273/i/450/depositphotos_162735146-stock-photo-man-and-woman-pushing-broken.jpg');
+}
+
+.iyt .iyt-content .secty1 .textosty1 h1,
+.iyt .iyt-content .secty2 .textosty2 h1 {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.iyt .iyt-content .secty1 .textosty1 p,
+.iyt .iyt-content .secty2 .textosty2 p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+@media (max-width:600px) {
+    .iyt {
+        width: 100%;
+    }
+
+    .iyt .iyt-content {
+        flex-direction: column;
+    }
+
+    .iyt .iyt-content .secty1,
+    .iyt .iyt-content .secty2 {
+        width: 100%;
+        margin: 10px 0px;
+    }
+
+    .iyt .iyt-content .secty1 .textosty1 p,
+    .iyt .iyt-content .secty2 .textosty2 p {
+        font-size: 16px;
+    }
+}
+
+/*---------------mensaje de explicacion-------------------*/
+.textm1 {
+    width: 100%;
+    padding: 15px;
+}
+
+.textm1 p {
+    font-size: 23px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: center;
+}
+
+@media (max-width:300px) {
+    .textm1 p {
+        font-size: 17px;
+    }
+}
+
+/*-----------------------------ejemplos de la vida cotidiana con ejemplos-----------------------------------------*/
+.mensajestext {
+    width: 100%;
+    height: auto;
+}
+
+.mensajestext .ej1txt {
+    width: 60%;
+    padding: 10px;
+    margin-left: 3%;
+}
+
+.mensajestext img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.mensajestext .ej1txt p {
+    font-size: 25px;
+}
+
+.mensajestext .ultmentxt {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+/*---------------------------------------unidades de medicion-----------------------------------*/
+.unimed {
+    width: 100%;
+}
+
+.unimed .contenido1-un,
+.unimed .contenido2-un {
+    display: flex;
+    width: 100%;
+}
+
+.unimed .contenido1-un .text1-un,
+.unimed .contenido1-un .text2-un,
+.unimed .contenido2-un .text3-un,
+.unimed .contenido2-un .text4-un {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.unimed .contenido1-un .text1-un p,
+.unimed .contenido1-un .text2-un p,
+.unimed .contenido2-un .text3-un,
+.unimed .contenido2-un .text4-un {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: center;
+}
+
+@media (max-width:600px) {
+
+    .unimed .contenido1-un,
+    .unimed .contenido2-un {
+        flex-direction: column;
+    }
+
+    .unimed .contenido1-un .text1-un,
+    .unimed .contenido1-un .text2-un,
+    .unimed .contenido2-un .text3-un,
+    .unimed .contenido2-un .text4-un {
+        width: 100%;
+        padding: 20px;
+        margin-left: 0px;
+    }
+
+    .unimed .contenido1-un .text1-un p,
+    .unimed .contenido1-un .text2-un p,
+    .unimed .contenido2-un .text3-un,
+    .unimed .contenido2-un .text4-un {
+        font-size: 16px;
+    }
 }
 
 /*----------------------------------footer---------------------------*/
@@ -362,7 +522,7 @@ footer .con-fo .cyl {
     footer .con-fo .cyl,
     footer .con-fo .gya,
     footer .con-fo .iyl {
-        width: 100%;
+        width: 100% !important;
         flex-direction: column;
     }
 
@@ -370,7 +530,7 @@ footer .con-fo .cyl {
     .con-fo .gya,
     .con-fo .docente,
     .con-fo .iyl {
-        width: 100vw;
+        width: 100vw !important;
     }
 
     .con-fo .docente {
