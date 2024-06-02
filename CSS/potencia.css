@@ -4,17 +4,17 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html,body{
     width: 100%;
-    overflow-x: hidden;
     background-color: black;
+    overflow-x: hidden;
     color: white;
 }
 
 body {
     font-family: "Greycliff CF";
 }
+
 
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
 .header {
@@ -212,13 +212,17 @@ body {
 }
 /*---------------------------------------video------------------------------*/
 .introd .contontrod .video-eimg {
+  
     display: flex;
     max-width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
     margin: 5%;
     padding: 5%;
+    box-sizing: border-box;
+    position: relative; /* Asegura que los hijos con z-index se posicionen respecto a este contenedor */
+    overflow: hidden; 
 }
-.introd .contontrod .video-eimg  video {
+ .introd .contontrod .video-eimg  video {
     width: 100%;
     height: 100%;
     border: 2px solid white;
@@ -231,12 +235,12 @@ body {
     position: absolute;
     width: 100%;
     margin-top: -15%;
+    z-index: 3;
 }
 .imgs .imgs1 {
-    width: 40%;
+    max-width: 40%;
     height: 50%;
     margin-bottom: 5%;
-    margin-left: -8%;
     overflow: hidden;
     z-index: 3;
 }
@@ -275,11 +279,13 @@ body {
 
 @media (max-width:800px) {
     .enlaces-hero {
+        background-color: red;
         flex-direction: column;
     }
     .enlaces-hero li {
         width: 100%;
         margin-bottom: 5%;
+        margin-top: 0px;
         text-align: center;
     }
 }
@@ -289,7 +295,7 @@ body {
         margin-bottom: 15%;
         text-align: center;
     }
-}
+} 
 /*---------------------------------------------------formas------------------------------------*/
 .mensaje-form {
     width: 60%;
