@@ -710,115 +710,99 @@ body {
 }
 
 /*--------------------------------------ejercicios resueltos------------------------*/
-.ejercicios {
+.ejres {
     width: 100%;
-}
-.ejercicios .contenido-ej {
-    display: flex;
-}
-.ejercicios .contenido-ej .sec1-ej{
-    width: 60%;
-}
-.ejercicios .contenido-ej .sec2-ej {
-    width: 40%;
-}
-.ejercicios .contenido-ej .sec1-ej {
-    background-color: red;
-}
-.ejercicios .contenido-ej .sec1-ej .menaje-ej,
-.ejercicios .contenido-ej .sec1-ej .menaje1-ej {
-    width: 100%;
-    text-align: center;
-}
-.ejercicios .contenido-ej .sec1-ej .menaje-ej h1 {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: rgb(63, 179, 92);
-    font-size: 40px;
-    font-weight: 900;
-}
-.ejercicios .contenido-ej .sec1-ej .mensaje1-ej p {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 5%; 
-}
-
-
-.ejercicios .contenido-ej .cont-ejs {
-    display: flex;
-    width: 100%;
-}
-.ejercicios .contenido-ej .cont-ejs  .ej1,
-.ejercicios .contenido-ej .cont-ejs  .ej2 {
-    width: 50%;
-    border: 2px solid white;
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(17, 17, 19, 0.808);
-}
-
-.ejercicios .contenido-ej .cont-ejs  .ej1 p,
-.ejercicios .contenido-ej .cont-ejs  .ej2 p{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    font-size: 15px;
-}
-
-
-.ejercicios .contenido-ej .sec2-ej .imgs{
-    width: 100%;
-    min-height: 200vh;
-    background-color: rgb(84, 23, 226);
-}
-.ejercicios .contenido-ej .sec2-ej .imgs .img1,
-.ejercicios .contenido-ej .sec2-ej .imgs .img2 {
-    background-color: green;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20%;
-}
-.ejercicios .contenido-ej .sec2-ej .imgs .img1 img,
-.ejercicios .contenido-ej .sec2-ej .imgs .img2 img {
-    margin-bottom: 20%;
-    width: 100%;
-    object-fit: cover;
     height: 100%;
 }
+.ejres .cont-ejre  {
+    display: flex;
+}
+.ejres .cont-ejre .sec1-ejr {
+    width: 70%;
+    padding: 20px;
+}
+.ejres .cont-ejre .sec2-ejr {
+    width: 30%;
+}
+.ejres .cont-ejre .sec2-ejr .imags-ejrs {
+    width: 100%;
+}
+.ejres .cont-ejre .sec2-ejr .imags-ejrs  img {
+    width: 100%;
+    margin-top: 80%;
+    object-fit: cover;
+}
+.ejres .cont-ejre .sec1-ejr  .tit-ejer {
+    padding: 10px;
+}
+.ejres .cont-ejre .sec1-ejr  .tit-ejer h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(51, 156, 51);
 
-
-@media (max-width:1000px) {
-    .ejercicios .contenido-ej {
-        flex-direction: column;
-    }
-    .ejercicios .contenido-ej .sec1-ej,
-    .ejercicios .contenido-ej .sec2-ej {
-        width: 100%;
-    }
-    .ejercicios .contenido-ej .sec2-ej .imgs {
-        display: flex !important;
-    }
-    .ejercicios .contenido-ej .sec2-ej .imgs .img1,
-    .ejercicios .contenido-ej .sec2-ej .imgs .img2 {
-        padding: 5%;
-        margin: 0px;
-        width: 50%;
-        height: 100%;
-    }
-    .ejercicios .contenido-ej .sec2-ej .imgs .img1 img,
-    .ejercicios .contenido-ej .sec2-ej .imgs .img2 img {
-        width: 100%;
-        height: 50%;
-        object-fit: cover;
-    }
-
+}
+.ejres .cont-ejre .sec1-ejr .mens-ejer {
+    margin-bottom: 5%;
+}
+.ejres .cont-ejre .sec1-ejr .mens-ejer p{
+    font-size: 20px;
+    letter-spacing: 1.1px;
+    line-height: 1.2;
 }
 
 
+.ejres .cont-ejre .sec1-ejr .cards {
+    display: flex;
+     width: 100%;
+     margin: 10px;
+}
+.ejres .cont-ejre .sec1-ejr .cards .card1,
+.ejres .cont-ejre .sec1-ejr .cards .card2 {
+    width: 50%;
+    border: 2px solid white;
+    margin: 20px;
+    padding: 10px;
+    background-color: #2a2c2ea2;
+
+}
+.ejres .cont-ejre .sec1-ejr .cards .card1 p,
+.ejres .cont-ejre .sec1-ejr .cards .card2 p {
+    font-size: 17px;
+    margin-bottom: 5%;
+}
 
 
+@media (max-width:950px){
+    .ejres .cont-ejre .sec1-ejr .mens-ejer {
+        text-align: center;
+        padding: 10px;
+    }
+    .ejres .cont-ejre .sec1-ejr {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
 
-
-
+    }
+    .ejres .cont-ejre .sec1-ejr .cards{
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+    }
+    .ejres .cont-ejre .sec1-ejr .cards .card1,
+    .ejres .cont-ejre .sec1-ejr .cards .card2 {
+        width: 100%;
+        margin: 0px;
+        padding: 15px;
+        margin-bottom: 5%;
+    }
+    .ejres .cont-ejre {
+        flex-direction: column;
+    }
+    .ejres .cont-ejre .sec2-ejr .imags-ejrs  img {
+        display: none;
+    }
+}
 
 /*----------------------------------footer---------------------------*/
 footer {
