@@ -2,15 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
-html,body{
+
+html,
+body {
     width: 100%;
     overflow-x: hidden;
 }
 
 body {
     font-family: "Greycliff CF";
+    color: white;
+    background-color: black;
 }
 
 
@@ -26,9 +30,11 @@ body {
     justify-content: space-between;
     z-index: 1000;
     position: relative;
-    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+    box-sizing: border-box;
+    /* Asegura que el padding esté incluido en el ancho total */
     max-width: 100%;
 }
+
 .logof {
     font-size: 25px;
     text-transform: uppercase;
@@ -153,8 +159,152 @@ body {
         display: block;
     }
 }
-/*----------------------------------------img diferente---------------------------*/
 
+/*-------------------------------------------------------introduccion (inicio)---------------------------------------*/
+.inicio {
+    width: 100%;
+}
+
+.inicio .contenido-in {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.inicio .contenido-in .prim-sec,
+.inicio .contenido-in .seg-sec {
+    width: 50%;
+}
+
+.inicio .contenido-in .prim-sec .titulo-sec {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.inicio .contenido-in .prim-sec .texei {
+    display: flex;
+    width: 100%;
+}
+
+.inicio .contenido-in .prim-sec .texei .texto-sec,
+.inicio .contenido-in .prim-sec .texei .img-sec {
+    width: 50%;
+    padding: 15px;
+}
+
+.inicio .contenido-in .prim-sec .texei .img-sec img {
+    width: 190px;
+}
+
+.inicio .contenido-in .prim-sec .navs {
+    width: 100%;
+}
+
+.inicio .contenido-in .prim-sec .navs ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+.inicio .contenido-in .prim-sec .navs ul li a {
+    text-decoration: none;
+    color: rgb(63, 138, 209);
+}
+
+.inicio .contenido-in .prim-sec .navs ul li a:hover {
+    text-decoration: underline;
+    color: rgb(34, 79, 122);
+
+}
+
+.inicio .contenido-in .seg-sec {
+    height: 100%;
+    display: flex;
+}
+
+.inicio .contenido-in .seg-sec .videof {
+    width: 50%;
+    z-index: 777;
+    clip-path: polygon(0 0, 100% 0%, 200% 200%, 40% 100%);
+}
+
+.inicio .contenido-in .seg-sec .videof video {
+    width: 72vw;
+    height: 100%;
+}
+
+.inicio .contenido-in .seg-sec .img-sec2 {
+    z-index: 999;
+}
+
+.inicio .contenido-in .seg-sec .img-sec2 img {
+    position: relative;
+    left: -90%;
+    margin-top: -70px;
+}
+
+
+@media (max-width: 1050px) {
+    .inicio .contenido-in {
+        flex-direction: column;
+    }
+
+    .inicio .contenido-in .prim-sec,
+    .inicio .contenido-in .seg-sec {
+        width: 100%;
+    }
+    .inicio .contenido-in .seg-sec .videof {
+        width: 100vw;
+        clip-path: polygon(0 0, 61% 0, 100% 100%, 40% 100%);
+    }
+    .inicio .contenido-in .seg-sec .videof video {
+        width: 100vw;
+    }
+    .inicio .contenido-in .seg-sec .img-sec2 {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+    .inicio .contenido-in .seg-sec .img-sec2 img {
+        position: relative;
+        left: -110%; 
+        margin-top: -70px;
+    }
+}
+@media (max-width:550px) {
+    .inicio .contenido-in .prim-sec .texei {
+        flex-direction: column;
+    }
+    .inicio .contenido-in .prim-sec .texei .texto-sec,
+    .inicio .contenido-in .prim-sec .texei .img-sec {
+        width: 100%;
+        padding: 15px;
+        margin: 0px;
+    }
+    .inicio .contenido-in .prim-sec .texei .img-sec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inicio .contenido-in .prim-sec .navs ul {
+        flex-direction: column;
+        line-height: 2;
+    }
+}
+@media (max-width:500px) {
+    .inicio .contenido-in .seg-sec .img-sec2 img {
+        position: relative;
+        left: -140%; 
+        margin-top: -70px;
+        width: 200px;
+    }
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
