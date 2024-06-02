@@ -5,9 +5,9 @@
 }
 
 html,body{
-    width: 100%;
+    width: 100% !important; 
     background-color: black;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     color: white;
 }
 
