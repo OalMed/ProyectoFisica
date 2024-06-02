@@ -215,7 +215,6 @@ body {
   
     display: flex;
     max-width: 100%;
-    min-height: 50vh;
     margin: 5%;
     padding: 5%;
     box-sizing: border-box;
@@ -235,6 +234,7 @@ body {
     position: absolute;
     width: 100%;
     margin-top: -15%;
+    margin-left: -5%;
     z-index: 3;
 }
 .imgs .imgs1 {
@@ -278,8 +278,10 @@ body {
 }
 
 @media (max-width:800px) {
+    .introd .contontrod .video-eimg {
+        margin-bottom: 0px;
+    }
     .enlaces-hero {
-        background-color: red;
         flex-direction: column;
     }
     .enlaces-hero li {
@@ -486,7 +488,7 @@ body {
     content: '';
     inset: 0;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(0, 0, 0, 0.418);
     z-index: 1;
 }
 
@@ -506,7 +508,7 @@ body {
 
 .container .contenido .secf2 {
     width: 100%;
-    min-height: 150vh;
+    min-height: 200vh;
     background-image: url('../poten_fric/lluvia.jpg');
     background-position: 50% 50%;
     background-size: cover;
@@ -597,7 +599,6 @@ body {
     z-index: 3;
 }
 .container .contenido .secf1 img  {
- 
     margin: 20px;
 }
 .container .contenido .secf1 p {
@@ -608,6 +609,60 @@ body {
     margin-bottom: 5%;
 }
 /*diseño de segunda potencia*/
+.container .contenido  .secf2 p {
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-shadow: 4px 4px 6px black;
+
+}
+.container .contenido  .secf2  img {
+    width: 17%;
+    margin: 20px;
+}
+/*diseño de tercera potencia*/
+.container .contenido  .secf3 p {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-shadow: 4px 4px 6px black;
+}
+.container .contenido  .secf3  img {
+    width: 12%;
+}
+/*diseño de cuerta potencia*/
+.container .contenido  .secf4 p  {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-shadow: 4px 4px 6px black;
+    color: rgb(255, 255, 255);
+}
+.container .contenido  .secf4  img {
+    width: 17%;
+}
+@media (max-width:650px) {
+    .container .contenido  .secf2 p,
+    .container .contenido  .secf3 p,
+    .container .contenido  .secf4 p {
+        font-size: 23px;
+    }
+    .container .contenido  .secf2 img,
+    .container .contenido  .secf3 img{
+        width: 45%;
+    }
+    .container .contenido  .secf4 img {
+        width: 60%;
+    }
+   
+}
 /*-----------------------------aplicacones de potencia--------------------*/
 .aplicaciones {
     width: 100%;

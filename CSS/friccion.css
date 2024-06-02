@@ -513,7 +513,7 @@ body {
 
 }
 .aplfric  .cont-apl .titl-apl h1 {
-    color: green;
+    color: rgb(51, 156, 51);
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
@@ -532,6 +532,37 @@ body {
         margin: 10px;
         padding: 0px;
     }
+}
+
+/*-------------------------------------ejercicios---------------------*/
+.wrapper {
+    margin: 150px auto;
+    width: 100%;
+}
+
+.wrapper .texteimg {
+    max-width: 320px;
+    float: left;
+    margin: 10%;
+    shape-outside: circle(50%);
+}
+.wrapper .texteimg  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(51, 156, 51);
+    letter-spacing: 2px;
+    margin-bottom: 4%;
+}
+.wrapper .texteimg img {
+    border-radius: 20px;
+}
+.wrapper .pecimg {
+    font-size: 16px;
+    margin: 10px;
+    padding: 15px;
+}
+.wrapper .pecimg  p {
+    margin: 10px;
 }
 /*----------------------------------footer---------------------------*/
 footer {
