@@ -306,6 +306,47 @@ body {
         width: 200px;
     }
 }
+/*---------------------------------------------texto y imagen (ejemplo)-------------------------------------*/
+.texteimgej{
+    width: 100%;
+}
+.texteimgej .contenido-eje {
+    display: flex;
+    width: 100%;
+}
+.texteimgej .contenido-eje  .textopa,
+.texteimgej .contenido-eje  .imgpa {
+    margin: 10px;
+    padding: 10px;
+}
+.texteimgej .contenido-eje  .textopa {
+    width: 60%;
+}
+.texteimgej .contenido-eje  .imgpa  {
+    width: 40%;
+}
+.texteimgej .contenido-eje  .textopa p {
+    font-size: 20px;
+    padding: 5px;
+    letter-spacing: 1.3px;
+    line-height: 1.3;
+}
+@media (max-width:993px) {
+    .texteimgej .contenido-eje {
+        flex-direction: column;
+    }
+    .texteimgej .contenido-eje  .textopa,
+.texteimgej .contenido-eje  .imgpa {
+    width: 100%;
+    margin: 0px;
+}
+.texteimgej .contenido-eje  .imgpa  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
