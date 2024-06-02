@@ -343,8 +343,100 @@ main .capa {
     z-index: -1;
 }
 
-/*-------------------------------------------------------------texto con scroll------------------------------------------*/
-
+/*-------------------------------------------------------------unidades de medida------------------------------------------*/
+.unmed {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('https://cdn.todamateria.com/imagenes/unidades-de-medida-og.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: relative;
+    mask-image: linear-gradient(0deg, black 80%, transparent);
+}
+.unmed::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+.unmed .titulo-unmed,
+.unmed .conten-unmed {
+    position: relative;
+    z-index: 3;
+}
+.unmed .titulo-unmed {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+.unmed .titulo-unmed h1 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 13%;
+    font-size: 70px;
+}
+.unmed .conten-unmed {
+    padding: 5%;
+}
+.unmed .conten-unmed .sec1-un {
+    display: flex;
+    width: 100%;
+}
+.unmed .conten-unmed .sec1-un .p1-un,
+.unmed .conten-unmed .sec1-un .p2-un    {
+    width: 50%;
+    padding: 10px;
+}
+.unmed .conten-unmed .sec1-un .p1-un p,
+.unmed .conten-unmed .sec1-un .p2-un p {
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 900;
+} 
+.unmed .conten-unmed .sec2-un {
+    width: 100%;
+}
+.unmed .conten-unmed .sec2-un p{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5%;
+}
+@media (max-width:800px) {
+    .unmed {
+        width: 100%;
+    }
+    .unmed .titulo-unmed {
+        margin: 0px;
+        padding: 10px;
+    }
+    .unmed .titulo-unmed  h1{
+        font-size: 40px;
+    }
+    .unmed .conten-unmed {
+        margin: 0px;
+    }
+    .unmed .conten-unmed .sec1-un {
+        flex-direction: column;
+    }
+    .unmed .conten-unmed .sec1-un .p1-un,
+    .unmed .conten-unmed .sec1-un .p2-un {
+        width: 100%;
+    }
+    .unmed .conten-unmed .sec1-un .p1-un p,
+    .unmed .conten-unmed .sec1-un .p2-un p {
+        font-size: 17px;
+    }
+    .unmed .conten-unmed .sec2-un {
+        margin: 0px;
+        padding: 10px;
+    }
+    .unmed .conten-unmed .sec2-un p{
+        font-size: 20px;
+    }
+}
 /*----------------------------------------------tipos de potencia ------------ ------------------------*/
 .container {
     width: 100%;
@@ -537,57 +629,114 @@ main .capa {
 /*--------------------------------------ejercicios resueltos------------------------*/
 .ejercicios {
     width: 100%;
-    height: auto;
-    
-    background-image: url('../poten_fric/galaxia.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    background-attachment: fixed;
 }
-.ejercicios .mensajes-ejs {
-    width: 100%;
-    padding: 20px;
-    background-color: black;
-    mask-image: linear-gradient(to bottom, black 60%, transparent);
+.ejercicios .contenido-ej {
+    display: flex;
 }
-.ejercicios .mensajes-ejs #tit{
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-}
-.ejercicios .mensajes-ejs #men {
-    color: white;
-    text-align: left;
-    letter-spacing: 1px;
-    text-transform: capitalize;
+.ejercicios .contenido-ej .sec1-ej{
     width: 60%;
 }
-.ejercicios .sec1 {
+.ejercicios .contenido-ej .sec2-ej {
+    width: 40%;
+}
+.ejercicios .contenido-ej .sec1-ej {
+    background-color: red;
+}
+.ejercicios .contenido-ej .sec1-ej .menaje-ej,
+.ejercicios .contenido-ej .sec1-ej .menaje1-ej {
     width: 100%;
-    min-height:150vh;
-    background-color: black;
-    clip-path: circle(74.3% at 0 54%);
+    text-align: center;
 }
-.ejercicios .sec1 .texto-ej1 {
+.ejercicios .contenido-ej .sec1-ej .menaje-ej h1 {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(63, 179, 92);
+    font-size: 40px;
+    font-weight: 900;
+}
+.ejercicios .contenido-ej .sec1-ej .mensaje1-ej p {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5%; 
+}
+
+
+.ejercicios .contenido-ej .cont-ejs {
+    display: flex;
+    width: 100%;
+}
+.ejercicios .contenido-ej .cont-ejs  .ej1,
+.ejercicios .contenido-ej .cont-ejs  .ej2 {
     width: 50%;
-    padding: 5%;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(17, 17, 19, 0.808);
 }
-.ejercicios .sec1 .texto-ej1  #sub {
-    font-size: 23px;
-    line-height: 1;
-    letter-spacing: 1px;
+
+.ejercicios .contenido-ej .cont-ejs  .ej1 p,
+.ejercicios .contenido-ej .cont-ejs  .ej2 p{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 15px;
+}
+
+
+.ejercicios .contenido-ej .sec2-ej .imgs{
+    width: 100%;
+    min-height: 200vh;
+    background-color: rgb(84, 23, 226);
+}
+.ejercicios .contenido-ej .sec2-ej .imgs .img1,
+.ejercicios .contenido-ej .sec2-ej .imgs .img2 {
+    background-color: green;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20%;
+}
+.ejercicios .contenido-ej .sec2-ej .imgs .img1 img,
+.ejercicios .contenido-ej .sec2-ej .imgs .img2 img {
+    margin-bottom: 20%;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+@media (max-width:1000px) {
+    .ejercicios .contenido-ej {
+        flex-direction: column;
+    }
+    .ejercicios .contenido-ej .sec1-ej,
+    .ejercicios .contenido-ej .sec2-ej {
+        width: 100%;
+    }
+    .ejercicios .contenido-ej .sec2-ej .imgs {
+        display: flex !important;
+    }
+    .ejercicios .contenido-ej .sec2-ej .imgs .img1,
+    .ejercicios .contenido-ej .sec2-ej .imgs .img2 {
+        padding: 5%;
+        margin: 0px;
+        width: 50%;
+        height: 100%;
+    }
+    .ejercicios .contenido-ej .sec2-ej .imgs .img1 img,
+    .ejercicios .contenido-ej .sec2-ej .imgs .img2 img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
 
 }
-.ejercicios .sec1 .texto-ej1 p {
-    margin-bottom: 5%;
-}
-.ejercicios .sec1 .texto-ej1 img {
-    margin-left: 5%;
-    margin-bottom: 10%;
-}
+
+
+
+
+
+
+
+
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
