@@ -343,6 +343,68 @@ body {
 .texto-debajoec h1 {
     font-size: 50px;
 }
+/*--------------------------ejercicios-------------------*/
+.ejercicios {
+    width: 100%;
+    min-height: 150vh;
+    background-image: url('../imgs_e_cinetica/carreteraimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    mask-image: linear-gradient(black 90%, transparent);
+    position: relative;
+}
+.ejercicios::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.568);
+    z-index: 2;
+}
+.ejercicios .con-ej{
+    display: flex;
+    position: relative;
+    z-index: 3;
+}
+.ejercicios .con-ej .sec1,
+.ejercicios .con-ej .sec2 {
+    width: 50%;
+}
+.ejercicios .con-ej .sec1 .titlej {
+    width: 100%;
+    margin-bottom: 10%;
+    padding: 10px;
+}
+.ejercicios .con-ej .sec1  .titlej h1 {
+    font-size: 33px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.ejercicios .con-ej .sec1  .ej1 {
+        padding: 3%;
+}
+.ejercicios .con-ej .sec2 .ej2 {
+    padding: 3%;
+    margin-top: 70%;
+    text-align: center;
+}
+@media (max-width:700px) {
+    .ejercicios .con-ej {
+        flex-direction: column;
+    }
+    .ejercicios .con-ej .sec1,
+    .ejercicios .con-ej .sec2  {
+    width: 100%;
+}
+.ejercicios .con-ej .sec2 .ej2 {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
