@@ -61,6 +61,7 @@ section.row{
 }
 select,input{
     margin: 1vh 0;
+    background-color: white;
 }
 img{ 
     margin: 0;
