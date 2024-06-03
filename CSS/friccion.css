@@ -352,7 +352,59 @@ body {
 }
 }
 
-
+/*------------------------------------------------mas texto e imagenes------------------------*/
+.textoeim { 
+    width: 100%;
+}
+.textoeim  .parr-eeim {
+    margin: 10px;
+    padding: 15px;
+    margin-bottom: 6%;
+}
+.textoeim  .parr-eeim p {
+    font-size: 20px;
+}
+.textoeim .conteeim{
+    display: flex;
+    width: 100%;
+}
+.textoeim .conteeim .sec1-eeim,
+.textoeim .conteeim .sec2-eeim {
+    width: 50%;
+    margin: 10px;
+    padding: 15px;
+}
+.textoeim .conteeim .sec1-eeim .textp-eeim p{
+    font-size: 17px;
+    line-height: 1.4;
+}
+.textoeim .conteeim .sec1-eeim .textp-eeim p ul li{
+    list-style: none;
+}
+.conteeim .sec2-eeim .parr-eeim2  {
+    margin-bottom: 5%;
+    text-align: center;
+}
+.conteeim .sec2-eeim .parr-eeim2 ol{
+    line-height: 1.4;
+}
+@media (max-width:800px) {
+    .textoeim .conteeim {
+        flex-direction: column;
+    }
+    .textoeim .conteeim .sec1-eeim,
+    .textoeim .conteeim .sec2-eeim {
+        width: 100%;
+        margin: 0px;
+        padding: 4%;
+    }
+    .textoeim .conteeim .sec1-eeim .textp-eeim p{
+        font-size: 14px;
+    }
+    .textoeim  .parr-eeim p {
+        font-size: 16px;
+    }
+}
 /*----------------------------------------------------------tipos de friccion-------------------------- */
 .contenedor-text {
     width: 100%;
