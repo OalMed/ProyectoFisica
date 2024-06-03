@@ -4,7 +4,11 @@
         <link rel="stylesheet" href="../CSS/conversion.css">
     </head>
     <body>
-        
+        <div class="row">
+            <span class="col">Tamaño de pantalla</span>
+            <span class="col" id="Tamaño">...</span>
+
+        </div>
         <img class="fondo" src="../imgs_conversion/gay.jpg" alt="">
         
         <!-- el header de las demas paginas -->
@@ -266,6 +270,15 @@
 
         conversionAuto()
 
+        let body=document.getElementsByTagName('body')[0]
+
+        function MostarDimensiones(){
+            body.querySelector('#Tamaño').innerText=body.clientWidth+'x'+body.clientHeight
+        }
+        body.onresize=function(){
+            MostarDimensiones()
+        }
+        MostarDimensiones()
     </script>
     <script src="../JS/Conversiones_unidad/invertir_conversion.js"></script>
 
