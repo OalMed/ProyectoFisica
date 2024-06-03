@@ -1,0 +1,29 @@
+:root{
+    --padding-body:1%;
+}
+iframe{
+    width:100%; 
+    margin: 0px; 
+}
+div{
+    background-color: green;
+}
+body{
+    margin:0px;
+    padding: 0px;
+    
+}
+*{
+    max-width: 100% !important;
+}
+.body{
+    padding: var(--padding-body);
+    max-width: 100%;
+    position: relative;
+    background-color: blue;
+}
+h1{
+    padding: 0px;
+    background-color: rgba(177, 0, 0, 0.686);
+    color:white;
+}

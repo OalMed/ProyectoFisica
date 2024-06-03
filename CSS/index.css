@@ -95,19 +95,6 @@ video, img{
     position: relative;
     top: 200px;
 }
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(1, 1, 1);
-    padding: 0px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    top: -200px;
-    z-index: 1000;
-}
 
 .logof {
     font-size: 25px;
@@ -122,6 +109,26 @@ video, img{
     list-style: none;
 }
 
+
+.menu {
+    width: 45px;
+    height: 35px;
+    
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 1);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: -200px;
+    z-index: 1000;
+}
 .header .navigation ul li  {
     float: left;
     position: relative;
@@ -176,13 +183,6 @@ video, img{
     display: none;
     cursor: pointer;
 }
-
-.menu {
-    width: 45px;
-    height: 35px;
-    
-}
-
 @media (max-width:950px) {
     .header label {
         display: initial;

@@ -1,0 +1,109 @@
+body{
+    max-height: max-content;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(1, 1, 1);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* top: -200px; */
+    z-index: 1000;
+}
+.header .navigation ul li  {
+    float: left;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.336));
+}
+
+.header .navigation ul li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+
+.header .navigation ul li a:hover {
+    background-color: rgba(51, 21, 80, 0.658);
+}
+
+.header .navigation ul li ul {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1,1,1);
+    display: none;
+}
+
+.header .navigation ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+
+}
+
+.header .navigation ul li ul li ul {
+    position: absolute;
+    top: 0;
+    right: 300px;
+
+}
+
+.header .navigation ul li ul li {
+    width: 100%;
+    background-color: black;
+
+}
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+#toggle,
+.header label {
+    display: none;
+    cursor: pointer;
+}
+@media (max-width:950px) {
+    .header label {
+        display: initial;
+    }
+    .header {
+        padding: 20px 10%;
+    }
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+    .header .navigation ul li {
+        width: 100%;
+    }
+
+    .header .navigation ul li a {
+        padding: 8px 30px 8px 10%;
+        
+    }
+    .header .navigation ul li ul  {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    .header .navigation ul li ul li {
+        background-color: rgba(0, 0, 0, 0.438);
+    }
+    .header .navigation ul li ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    #toggle:checked ~ .navigation {
+        display: block;
+    }
+}

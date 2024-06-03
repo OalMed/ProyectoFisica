@@ -1,0 +1,151 @@
+/*----------------------------------footer---------------------------*/
+*{
+    max-width: 100%;
+}
+body{
+    max-height: max-content;
+}
+footer {
+    padding-bottom:0px !important;
+    /* width: 100%; */
+    /* height: 100%; */
+    background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+}
+
+footer .con-fo {
+    color: white;
+    .cyl, .gya,.docente,.iyl{
+        max-width: 90%;
+        margin-left: 10%;
+    }
+    .docente{
+        padding: 0px !important;
+    }
+    .esc{
+        max-width: 90%;
+    }
+}
+
+footer .con-fo .cyl {
+    width: 100%;
+    display: flex;
+    margin-left: 10%;
+
+}
+
+.con-fo .cyl .carrera,
+.con-fo .cyl .lugar {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .cyl .carrera h2,
+.con-fo .cyl .lugar h2 {
+    text-transform: capitalize;
+}
+
+
+.con-fo .gya {
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+
+}
+
+.con-fo .gya .grado,
+.con-fo .gya .asignatura {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.con-fo .docente {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 20px;
+    /* margin: 10px; */
+    padding: 10px;
+    margin-left: 10%;
+
+}
+
+.con-fo .iyl {
+    width: 100%;
+    display: flex;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .integrantes,
+.con-fo .iyl .links {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.con-fo .iyl .integrantes h1,
+.con-fo .iyl .links h1 {
+    font-size: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.con-fo .iyl .integrantes ul li {
+    list-style: none;
+}
+
+.con-fo .iyl .links ul li,
+.con-fo .iyl .integrantes ul li p {
+    list-style: none;
+    padding: 3px;
+    margin-left: 5%;
+}
+
+.con-fo .iyl .links ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.con-fo .iyl .links ul li a:hover {
+    text-decoration: underline;
+}
+
+.con-fo .esc {
+    width: 100%;
+    padding: 25px;
+    /* margin: 10px; */
+    text-align: center;
+    font-size: 23px;
+
+}
+
+@media (max-width:1000px) {
+
+    footer .con-fo,
+    footer .con-fo .cyl,
+    footer .con-fo .gya,
+    footer .con-fo .iyl {
+        width: 100% !important;
+        flex-direction: column;
+    }
+
+    .con-fo .cyl,
+    .con-fo .gya,
+    .con-fo .docente,
+    .con-fo .iyl {
+        width: 100vw !important;
+    }
+
+    .con-fo .docente {
+        margin-left: 0px;
+    }
+
+    .con-fo .esc {
+        font-size: 17px;
+    }
+}

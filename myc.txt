@@ -1,0 +1,85 @@
+ciencia que estudia fenomnos naturales de solo cambios fisicos, nada de cambios en la composicion
+empezo cuando el hombre tomo mayor comprension de su entorno
+disciplina que describe leyes en del universo
+
+tipos:
+    clasica 
+    moderna
+
+sistemas de medicion:
+    internacional
+    ingles
+
+conversion: proceso de cambio de un estado a otro.
+
+Friccion:
+    fuerza de contacto que se opone al desplazamient de un cuerpo
+    generada por imperfecciones microscoicas que provocan rosamiento, lo que a su vez porvoca perdida de energia
+    ademas de las imperfecciones, tambien influyen las fuerzas atractivas de las superficies en contacto.Asi como de las sustancias interactuando
+
+    tipos:
+        estatica:
+            una fuerza que impide que el cuerpo resbale. Actua en cuerpos en reposo
+
+        dinamica o cinetica: 
+            se opone al desplazamineto, y una vez empezado trata de reducir la rapidez de desplazamineto. ACtua en cuerpos en movimiento
+
+    Aplicaciones:
+        correr, caminar, el desplazamineto de un carro(las llantas provocan fricccion con el suelo).
+
+Energia Cinetica:
+    generada por el movimiento de un cuerpo.
+    Depende principalmete de la velocidad y masa
+
+    cantidad de ttrabajo realizado por todas las fuerzas que actuan en un cuerpo
+    una vez aalcanzada la vel final la cantidad de energia se mantiene constannte a menos que otra fuerza actue sobre el.
+
+    puede transferirse entre cuerpos: 
+    ejemplos: 
+        un carro que choca con otro le apsa toda su energia cinetica al carro estatico
+        al caer una pelota va ganando energia cinetica que se traspasa al objeto con el que entre en contacto al final de su recorrido
+
+Energia POtencial:
+    energia almacenada internamente en un objeto
+    gravitacional:
+        ascociada a la altura a la que esta situado el objeto, y se transforma en cinetica cuando cae
+
+    elastica:
+        almacenamiento de energia debido a la deformacion provocada por una fuerza
+
+    electroestatica:
+        no le entendi. tiene que ver a nivel molecular y de atraccion
+
+    quimica:
+        energia almacenada en los enlaces de particulas de un compuesto
+    
+    nuclear:
+        almacenada en el nucleo atomico.
+        puede ser transformada en calor y radiacion
+
+Trabajo:
+    cambio en el estado de un cuerpo produido por una fuerza
+    es la fuerza necesaria para desplazar un objeto de forma acelerada
+
+    se realiza cuabdo se le transfiere energia a un cuerpo
+
+Potencia:
+    medida de la tasa a la que se realiza un trabajo
+    mide la proporcion en la cual alguien reailiza un trabajo en una unidad de tiempo
+    
+    mecanica:
+        producto de la fuerza resultante y la velocidad
+    
+    electrica:
+        potencia instantanea del produccto de la corriente que circula en un dispositivo y la diferencia POtencial
+        parámetro que indica la cantidad de energía eléctrica transferida de una fuente generadora a un elemento consumidor por unidad de tiempo
+
+    calorifica:
+        cantidad de calor que se libera en una unidad de tiempo
+    
+    sonora:
+        cantidad de energia transporta la onda sonora por unidad de tiempo a traves de una superficies
+    
+    ejemplpos:
+        iniciar un movimiento,lanzar un objeto, arrancar el carro
+        principalmente en aparatos electricos 
