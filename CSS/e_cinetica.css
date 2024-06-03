@@ -157,7 +157,6 @@ body {
     min-height: 100vh;
     position: relative;
     mask-image: linear-gradient(black 90%, transparent);
-
 }
 
 .promo {
@@ -229,20 +228,67 @@ main .capa {
     opacity: 0.7;
     mix-blend-mode: overlay;
 }
-@media (max-width:1380px) {
-    .promo h1  {
-        font-size: 60px;
+@media (max-width: 1024px) {
+    .promo {
+        width: 80%;
+    }
+    .promo h1 {
+        font-size: 50px;
+    }
+    .promo p {
+        font-size: 18px;
+    }
+    .promo a {
+        font-size: 18px;
+        padding: 15px;
+    }
+    .video  {
+        height: 70vh;
     }
 }
-@media (max-width:600px) {
-    .promo h1  {
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .promo {
+        width: 90%;
+        padding-top: 100px;
+    }
+    .promo h1 {
         font-size: 40px;
     }
     .promo p {
         font-size: 17px;
         width: 100%;
-        margin: 0px;
+        margin: 0;
         padding: 5px;
+    }
+    main .capa {
+        height: 60vh;
+    }
+    .promo a {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .video  {
+        height: 60vh;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .promo {
+        width: 95%;
+        padding-top: 80px;
+    }
+    .promo h1 {
+        font-size: 30px;
+    }
+    .promo p {
+        font-size: 15px;
+    }
+    .promo a {
+        font-size: 14px;
+        padding: 8px;
     }
 }
 /*-------------------------------------------------------------------texto debajo---------------------------------*/
