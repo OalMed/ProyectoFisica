@@ -241,12 +241,17 @@ body {
 
 .inicio .contenido-in .seg-sec .img-sec2 {
     z-index: 999;
+    width: 80%;
+    height: 80%;
 }
 
 .inicio .contenido-in .seg-sec .img-sec2 img {
     position: relative;
-    left: -90%;
-    margin-top: -70px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: -20%;
+    margin-top: -10px;
 }
 
 
@@ -267,24 +272,26 @@ body {
         width: 100vw;
     }
     .inicio .contenido-in .seg-sec .img-sec2 {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
+        margin-top: 20%;
     }
     .inicio .contenido-in .seg-sec .img-sec2 img {
         position: relative;
-        left: -110%; 
-        margin-top: -70px;
+        left: -180%; 
+        margin-top: -30%;
+        width: 200px;
     }
 }
 @media (max-width:550px) {
     .inicio .contenido-in .prim-sec .texei {
         flex-direction: column;
     }
+    .inicio .contenido-in .prim-sec .texei .texto-sec {
+        text-align: center;
+    }
     .inicio .contenido-in .prim-sec .texei .texto-sec,
     .inicio .contenido-in .prim-sec .texei .img-sec {
         width: 100%;
-        padding: 15px;
+        padding: 20px;
         margin: 0px;
     }
     .inicio .contenido-in .prim-sec .texei .img-sec {
@@ -302,10 +309,13 @@ body {
     }
 }
 @media (max-width:500px) {
+    .inicio .contenido-in .seg-sec .img-sec2 {
+        margin-top: 20%;
+    }
     .inicio .contenido-in .seg-sec .img-sec2 img {
         position: relative;
         left: -140%; 
-        margin-top: -70px;
+        margin-top: -30%;
         width: 200px;
     }
 }
