@@ -1,0 +1,274 @@
+
+<html lang='es'>
+    <head>
+        <title>Conversiones</title>
+        <link rel="stylesheet" href="../CSS/conversion.css">
+    </head>
+    <body>
+        
+        <img class="fondo" src="../imgs_conversion/gay.jpg" alt="">
+        
+        <!-- el header de las demas paginas -->
+        <header class="header relativo" style="display:none">
+            <div class="logof" data-aos="fade-down" data-aos-duration="800"><a href="../index.html">Menu</a></div>
+            <input type="checkbox" id="toggle">
+            <label for="toggle"><i style="font-size: 30px; color: white;" class="fa-solid fa-bars menu"
+                    alt="menu"></i></label>
+            <nav class="navigation">
+                <ul data-aos="fade-down" data-aos-duration="800">
+                    <li><a href="#">Sobre Física</a></li>
+                    <li><a href="#">Temas +</a>
+                        <ul>
+                            <li><a href="./friccion.html">Fricción</a></li>
+                            <li><a href="./e_cinetica.html">Energía Cinética</a></li>
+                            <li><a href="./e_potencial.html">Energía Potencial</a></li>
+                            <li><a href="./trabajo.html">Trabajo</a></li>
+                            <li><a href="./potencia.html">Potencia</a></li>
+                            <li><a href="./conversion.html">Conversion de Unidades</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nosotros +</a>
+                        <ul>
+                            <li><a href="./conclusiones.html">Conclusiones</a></li>
+                            <li><a href="./bibliografias.html">Bibliografias</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/../JS/Conversiones_unidad/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        
+        <div class="container">
+            <h1 class="text-center blanco">CONVERSION DE UNIDADES</h1>
+            <br>
+            <section class="row separacion2">
+                <span class="col-4 col-sm-5 text-rigth blanco">Calcular:</span>                
+                <select class="col-4 col-sm-5" name="UnidadesMedida" id="">
+                    <!-- <option >Rapidez</option> -->
+                    <!-- <option >Presion</option> -->
+                    <!-- <option >Potencia</option>
+                    <option >Masa-energia</option>
+                    <option >Energia</option> -->
+
+                    
+                    <option >Longitud</option>
+                    <option >Area</option>
+                    <option >Volumen</option>
+                    <option >Tiempo</option>
+                    <option >Angulo</option>
+                    <option >Rapidez</option>
+                    <option >Aceleracion</option>
+                    <option >Masa</option>
+                    <option >Fuerza</option>
+                    <option >Presion</option>
+                    <option >Energia</option>
+                    <option >Masa-energia</option>
+                    <option >Potencia</option>
+                </select>
+            </section>
+            <!-- <br><br><br> -->
+
+            <section class="row cuerpo">
+                <!-- columna 1 -->
+                <!-- <span class="col-md-2 col-1"></span> -->
+                <span class="separacion col-lg-5 col-12">
+                    <div class="row">
+                        <select name="select1" class="col-12 mainSelect" data-target="simbolo1" data-posicion="1">
+                            <option >...</option>
+                        </select>
+                        <select name="selSup1" class="SelectSoporte col-6" data-target="simbolo1" data-posicion="2"></select>
+                        <input type="text" data-target="simbolo1" class="col-8 input Active" placeholder="Unidad Base" >
+                        <input name="simbolo1" type="text" class="col-4" disabled>
+                    </div>
+                </span>
+
+                <!-- centro -->
+                <span class="separacion col-4 col-sm-3 col-md-2 simbolo-flechas">
+                    <img id="imagenFlechas"
+                        src="../imgs_conversion/flecha2.png"
+                        src="https://cdn-icons-png.flaticon.com/512/25/25677.png"
+                    alt="Convertir">
+                </span>
+                
+                <!-- <span class="separacion col-1" id="soporte"></span> -->
+                <!-- columna 2 -->
+                <span class="separacion col-lg-5 col-12">
+                    <div class="row">
+                        <select name="select2" class="col-12 mainSelect" data-target="simbolo2" data-posicion="1" id="">
+                            <option >...</option>
+                        </select>
+                        <select name="selSup2" class="SelectSoporte col-6" data-target="simbolo2" data-posicion="2"></select>
+                        <input type="text" data-target="simbolo2" class="col-8 input" placeholder="Unidad Destino">
+                        <input name="simbolo2" type="text" class="col-4" disabled>
+                    </div>
+                </span>
+                
+                <!-- boton de Convertir -->
+                <!-- <span class="col-4"></span> -->
+                <!-- <div class="boton text-center col-4">Convertir</div>                     -->
+
+            </section>
+
+        </div>
+    </body>
+
+
+    <script src="../JS/Conversiones_unidad/elevaciones.js"></script>
+    <script src="../JS/Conversiones_unidad/factores_conv.js"></script>
+    <script src="../JS/Conversiones_unidad/selects.js"></script>    
+
+    <script>
+        function buscarClase(inputs,clase){
+            for(let indexClass=0;indexClass<inputs.length;indexClass++){
+                if(inputs[indexClass].classList.contains(clase)){
+                    return indexClass   
+                }
+            }
+            return false
+        } 
+        
+        function InputClick(){
+            let activo=document.getElementsByClassName('Active')[0]
+            //alert('INPUT;',activo.value)
+            if(isNaN(this.value)){
+                this.value=''
+                this.dispatchEvent(new Event('input'))
+            }
+            if(activo==this){
+                console.log('RETURN');
+                return
+            }
+            activo.classList.remove('Active')
+
+            this.classList.add('Active')
+        }
+
+        function refrescarInputValue(){
+            let inputs=document.getElementsByClassName('input')
+            
+            let activo=buscarClase(inputs,'Active')
+            
+            if(activo==0){
+                pasado=1
+            }else{
+                pasado=0
+            }
+            inputs[pasado].value=''
+
+            activo=parseFloat(activo)
+            let incremento=0,decremento=0;
+            if (activo!=0){
+                console.log('INCREMENTO ACTIVO');
+                incremento=2
+            }
+            // numerador=window.razones[2-incremento]/window.razones[0+incremento]
+            // denominador=window.razones[3-incremento]/window.razones[2+incremento1]
+
+            let n_simbolos
+            
+            console.log(this.dataset);
+            // n_simbolos=document.getElementsByName(this.dataset.target)[0].value.split('/').length
+            numerador=Math.pow(window.razones[2-incremento],window.exponentes[2-incremento])
+            // alert(n_simbolos)
+            numerador=numerador/Math.pow(window.razones[0+incremento],window.exponentes[0+incremento])
+            // if(n_simbolos>1){
+            // }
+            
+            // denominador=window.razones[pasado+2]/window.razones[pasado]
+            if(window.razones[1]==null){
+                denominador=1
+            }else{
+                // denominador=window.razones[pasado+2]/window.razones[pasado]
+                
+                // let target='simbolo'
+                let orden=[]
+                //opuesto, propio
+                if(activo==0){
+                    orden.push(2,1)
+                }else{
+                    orden.push(1,2)
+                }
+                // let target='simbolo'+(activo+1)
+                let n_simbolos2;
+                
+                n_simbolos2=document.getElementsByName('simbolo'+orden[0])[0].value.split('/').length
+                n_simbolos=document.getElementsByName('simbolo'+orden[1])[0].value.split('/').length
+                
+                if(n_simbolos2!=1){
+                    // nosotos, el input Activo es el que no es unidad compuesta
+                    denominador=Math.pow(window.razones[3-incremento],window.exponentes[3-incremento])
+                }else{
+                    // la unidad destino no es unidad compuesta( su denominador es 1)
+                    denominador=1
+                }
+                
+                // alert(n_simbolos)
+                if(n_simbolos!=1){
+                    denominador=denominador/Math.pow(window.razones[1+incremento],window.exponentes[1+incremento])
+                }                    
+            }
+            console.log(numerador+'/'+denominador);
+            let res=parseFloat(inputs[activo].value)*numerador/denominador
+            if(!isNaN(res)){
+                inputs[pasado].value=res;
+            }else if(res!=''){
+                inputs[pasado].value='';
+            }
+            // input 0
+                // let numerador=window.razones[2]/window.razones[0]
+                // let denominador=window.razones[3]/window.razones[1]
+            // input 1
+                // let numerador=window.razones[0]/window.razones[2]
+                // let denominador=window.razones[1]/window.razones[3]
+        }
+
+        function conversionAuto(){
+            inputs=document.getElementsByClassName('input')
+
+            for(let index=0;index<inputs.length;index++){
+                inputs[index].onclick=InputClick
+                // inputs[index].ondblclick=function clean(){
+                //     this.value=''
+                //     this.dispatchEvent(new Event('input'))
+                // }
+                inputs[index].addEventListener('input',refrescarInputValue)
+            }
+        }
+ 
+        window.razones=new Array(4);
+        window.exponentes=new Array(4);
+
+        let selects;
+        let factores,targ;
+        let inputs;
+        let pasado;
+        
+        let IndexOption=[];
+        let numerador,denominador;
+
+        let uni=document.getElementsByName('UnidadesMedida')[0]
+
+        selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
+
+        for(let index=0;index<selects.length;index++){
+            console.log('___',selects[index]);
+            // console.log(selects[index].checkVisibility());
+            selects[index].anterior=null
+            selects[index].addEventListener('change',escribirSimbolos)
+            // selects[index].dispatchEvent(new Event('change'))
+        }
+
+        uni.addEventListener('change',cambiarSelects)
+        
+        uni.dispatchEvent(new Event('change'))   
+
+        centrar_options()
+
+        conversionAuto()
+
+    </script>
+    <script src="../JS/Conversiones_unidad/invertir_conversion.js"></script>
+
+    <!-- <script src="../JS/Conversiones_unidad/bloquear_None.js"></script> -->
+</html>
