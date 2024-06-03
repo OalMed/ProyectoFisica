@@ -739,7 +739,6 @@ body {
 .conc {
     width: 100%;
     min-height: 100vh;
-    margin-top: 0px;
 
 }
 .conc .cont-conc {
@@ -751,10 +750,18 @@ body {
 .conc .cont-conc  .conc4,
 .conc .cont-conc  .conc5 {
     width: 20%;
+    overflow: hidden;
+}
+.conc .cont-conc  .conc1 a:hover > .conc1 ,
+.conc .cont-conc  .conc2 a:hover > .conc2 ,
+.conc .cont-conc  .conc3 a:hover > .conc3 ,
+.conc .cont-conc  .conc4 a:hover > .conc4 ,  
+.conc .cont-conc  .conc5 a:hover > .conc5  {
+    transform: scale(1.1);
 }
 .conc1 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
     background-image: url('https://images.unsplash.com/photo-1564754943164-e83c08469116?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dmVydGljYWx8ZW58MHx8MHx8fDA%3D0');
     background-position: center;
     background-size: cover;
@@ -764,7 +771,9 @@ body {
 }
 .conc2 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
+
+
     background-image: url('    https://media.istockphoto.com/id/1207014981/es/foto/bosque-de-oto%C3%B1o-por-la-ma%C3%B1ana-con-rayos-de-luz-c%C3%A1lida-del-sol.jpg?s=612x612&w=0&k=20&c=MGHLbZBaIyVPFLQn6Gtap6cefXbHiOiVtpP06MCMsgs=');
     background-position: center;
     background-size: cover;
@@ -774,7 +783,9 @@ body {
 }
 .conc3 {
     width: 100%;
-    min-height: 120vh;
+    min-height: 85vh;
+
+
     background-image: url('https://images.unsplash.com/photo-1526512340740-9217d0159da9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVydGljYWx8ZW58MHx8MHx8fDA%3D');
     background-position: center;
     background-size: cover;
@@ -784,7 +795,8 @@ body {
 }
 .conc4 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
+
     background-image: url('https://images.unsplash.com/photo-1560952350-31ef0a40687a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-position: center;
     background-size: cover;
@@ -794,7 +806,8 @@ body {
 }
 .conc5 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 85vh;
+
     background-image: url('https://static.vecteezy.com/system/resources/previews/023/029/142/large_2x/vertical-of-beautiful-landscape-view-sunset-over-the-ocean-free-photo.jpg');
     background-position: center;
     background-size: cover;
@@ -886,7 +899,6 @@ footer {
     height: 100%;
     background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
     padding: 100px 0 30px;
-    border-top-left-radius: 125px;
 }
 
 footer .con-fo {
