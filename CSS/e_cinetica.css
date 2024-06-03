@@ -582,6 +582,8 @@ main .capa {
         width: 100%;
         margin: 0px;
         padding-bottom: 3%;
+    mask-image: linear-gradient(90deg, black 80%, transparent);
+
 
     }
 
