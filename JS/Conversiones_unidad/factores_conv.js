@@ -139,7 +139,7 @@ function getFactoresFor(sistema,auxiliar,elevado){
         factores.push(new Factor('milla','mi',0.0006214,elevacion))
 
         factores.push(new Factor('yarda','yd',1/.94,elevacion))
-        factores.push(new Factor('Amperio','Á',10e-10,elevacion))
+        factores.push(new Factor('Ångström','Å',10e-10,elevacion))
         factores.push(new Factor('milla nautica','A',1/1853.0935690338308,elevacion))
         factores.push(new Factor('año luz','Año Luz',1/(9.461e15),elevacion))
 
