@@ -611,7 +611,47 @@ body {
     }
 }
 
+/*-------------------------------------------------------ejercicios resueltos----------------------------------------*/
+.ejresu {
+    width: 100%;
+}
+.ejresu .conte-ejresu {
+    display: flex;
+    width: 100%;
+}
+.ejresu .conte-ejresu .sec1-ejresu,
+.ejresu .conte-ejresu .sec2-ejresu {
+    width: 50%;
+    background-color: rgba(44, 44, 44, 0.685);
+}
 
+.ejresu .conte-ejresu .sec1-ejresu .titulo-ejresu {
+    text-align: center;
+    height: 5%;
+    mask-image: linear-gradient(to right, black 80%, transparent);
+
+}
+.ejresu .conte-ejresu .sec1-ejresu .titulo-ejresu h1 {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: rgb(51, 156, 51);
+}
+.ejresu .conte-ejresu .sec1-ejresu .mensaje-ejresu {
+    height: 5%;
+}
+.ejresu .conte-ejresu .sec1-ejresu .mensaje-ejresu p {
+    text-align: center;
+    font-size: 17px;
+    padding: 10px;
+}
+.ejresu .conte-ejresu .sec1-ejresu  .primer-ejresu p,
+.ejresu .conte-ejresu .sec1-ejresu  .primer-ejresu p li {
+    margin-bottom: 4%;
+    margin-top: 4%;
+    margin-left: 3%;
+    width: 90%;
+
+}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
