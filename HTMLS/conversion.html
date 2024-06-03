@@ -4,7 +4,11 @@
         <link rel="stylesheet" href="../CSS/conversion.css">
     </head>
     <body>
-        
+        <div class="row">
+            <span class="col">Tamaño de pantalla</span>
+            <span class="col" id="Tamaño">...</span>
+
+        </div>
         <img class="fondo" src="../imgs_conversion/gay.jpg" alt="">
         
         <!-- el header de las demas paginas -->
@@ -43,7 +47,7 @@
             <br>
             <section class="row separacion2">
                 <span class="col-4 col-sm-5 text-rigth blanco">Calcular:</span>                
-                <select class="col-4 col-sm-5" name="UnidadesMedida" id="">
+                <select class="col-4 col-sm-5 First-letter-Upp" name="UnidadesMedida" id="">
                     <!-- <option >Rapidez</option> -->
                     <!-- <option >Presion</option> -->
                     <!-- <option >Potencia</option>
@@ -73,10 +77,10 @@
                 <!-- <span class="col-md-2 col-1"></span> -->
                 <span class="separacion col-lg-5 col-12">
                     <div class="row">
-                        <select name="select1" class="col-12 mainSelect" data-target="simbolo1" data-posicion="1">
+                        <select name="select1" class="col-12 mainSelect First-letter-Upp" data-target="simbolo1" data-posicion="1">
                             <option >...</option>
                         </select>
-                        <select name="selSup1" class="SelectSoporte col-6" data-target="simbolo1" data-posicion="2"></select>
+                        <select name="selSup1" class="SelectSoporte col-6 First-letter-Upp" data-target="simbolo1" data-posicion="2"></select>
                         <input type="text" data-target="simbolo1" class="col-8 input Active" placeholder="Unidad Base" >
                         <input name="simbolo1" type="text" class="col-4" disabled>
                     </div>
@@ -94,10 +98,10 @@
                 <!-- columna 2 -->
                 <span class="separacion col-lg-5 col-12">
                     <div class="row">
-                        <select name="select2" class="col-12 mainSelect" data-target="simbolo2" data-posicion="1" id="">
+                        <select name="select2" class="col-12 mainSelect First-letter-Upp" data-target="simbolo2" data-posicion="1" id="">
                             <option >...</option>
                         </select>
-                        <select name="selSup2" class="SelectSoporte col-6" data-target="simbolo2" data-posicion="2"></select>
+                        <select name="selSup2" class="SelectSoporte col-6 First-letter-Upp" data-target="simbolo2" data-posicion="2"></select>
                         <input type="text" data-target="simbolo2" class="col-8 input" placeholder="Unidad Destino">
                         <input name="simbolo2" type="text" class="col-4" disabled>
                     </div>
@@ -266,6 +270,15 @@
 
         conversionAuto()
 
+        let body=document.getElementsByTagName('body')[0]
+
+        function MostarDimensiones(){
+            body.querySelector('#Tamaño').innerText=body.clientWidth+'x'+body.clientHeight
+        }
+        body.onresize=function(){
+            MostarDimensiones()
+        }
+        MostarDimensiones()
     </script>
     <script src="../JS/Conversiones_unidad/invertir_conversion.js"></script>
 

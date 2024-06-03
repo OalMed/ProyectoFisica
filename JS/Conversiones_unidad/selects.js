@@ -76,7 +76,7 @@ function cambiarSelects(e){
         }
         //recorre los factores obtenidos (numerador y denominador)
         for(let SelIndex=0;SelIndex<factores[index_factores].length;SelIndex++){
-            selects[index].innerHTML+='<option class="text-center option-medida" data-simbolo="'
+            selects[index].innerHTML+='<option class="text-center option-medida First-letter-Upp" data-simbolo="'
                 +factores[index_factores][SelIndex].getSimbolo()
                 +'" data-expo="'+factores[index_factores][SelIndex].getElevacion()
                 +'" data-razon="'+factores[index_factores][SelIndex].getRazon()
