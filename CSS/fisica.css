@@ -1529,7 +1529,10 @@ footer .con-fo .cyl {
 }
 
 @media (max-width:1000px) {
-
+    footer {
+        margin: 0px;
+        padding-left: 0px;
+    }
     footer .con-fo,
     footer .con-fo .cyl,
     footer .con-fo .gya,
@@ -1553,6 +1556,8 @@ footer .con-fo .cyl {
 
     .con-fo .esc {
         font-size: 17px;
+        margin: 0px;
+        padding: 0px;
     }
 
     .con-fo .iyl .links {

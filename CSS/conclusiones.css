@@ -5,11 +5,15 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
     background-color: black;
     overflow-x: hidden;
-    font-family: "Greycliff CF";
+}
 
+body {
+    font-family: "Greycliff CF";
 }
 
 /*------------------------------------------------------------navegador-----------------------------------------------------*/
