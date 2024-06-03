@@ -152,7 +152,7 @@ body {
 }
 /*---------------------------------------video del inicio ------------------------------------*/
 #hero {
-    min-height: 100vh;
+    min-height: 90vh;
     position: relative;
     mask-image: linear-gradient(black 90%, transparent);
 }
@@ -175,38 +175,72 @@ body {
     text-shadow: 4px 4px 5px black;
 }
 
-.promo p {
-    font-size: 23px;
-    margin-bottom: 5%;
-    color: white;
-    text-align: center;
-    text-shadow: 4px 4px 5px black;
-}
+
 .video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 70%;
     height: 100%;
     object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    mask-image: linear-gradient(0deg, black 70%, transparent);
+    z-index: -1;
 }
-
+.video2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    clip-path: polygon(25% 0%, 94% 0, 100% 100%, 64% 100%);
+    mask-image: linear-gradient(90deg, black 90%, transparent);
+}
+.video3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 70%;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(0deg, black 70%, transparent);
+    z-index: -10;
+}
+.promo p {
+    font-size: 25px;
+    margin-bottom: 5%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+}
 main .capa {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: black;
-    opacity: 0.3;
+    background: rgba(0, 0, 0, 0.438);
     mix-blend-mode: overlay;
 }
-@media(max-width:600px) {
+@media(max-width:736px) {
+    #hero {
+        min-height: 60vh;
+    }
+    .promo  {
+        width: 100%;
+        margin: 0px;
+        padding: 15px;
+    }
     .promo h1 {
         font-size: 60px;
     }
 }
-@media(max-width:370px) {
+    @media(max-width:370px) {
     .promo h1 {
         font-size: 40px;
     }
@@ -670,7 +704,7 @@ main .capa {
 .cascada-ej .pregs .ej2 {
     color: white;
     width: 100%;
-    background-color: rgba(31, 99, 67, 0.747);
+    background-color: rgba(10, 32, 22, 0.733);
     clip-path: polygon(25% 0%, 100% 0, 75% 100%, 0% 100%);
     text-align: center;
     left: 50%;
@@ -685,7 +719,7 @@ main .capa {
 }
 .cascada-ej .pregs .ej2 p {
     font-size: 20px;
-    margin-left: 14%;
+    margin-left: 16%;
     width: 80%;
 }
 .cascada-ej .pregs .ej3 {
@@ -732,13 +766,25 @@ main .capa {
     }
     .cascada-ej .pregs .ej2 {
         clip-path: none;
+        margin: 0px;
+        padding: 10px;
+    }
+    .cascada-ej .pregs .ej2 h1 {
+        margin: 0px;
+        padding: 10px;
+        text-align: center;
+    }
+    .cascada-ej .pregs .ej2 p {
+        margin-left: 0px;
+        width: 100%;
+        padding: 15px;
     }
 }
 @media (max-width:400px) {
     .cascada-ej .pregs .ej1 h1,
     .cascada-ej .pregs .ej3 h1
     .cascada-ej .pregs .ej4 h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
 }
 /*----------------------------------footer---------------------------*/

@@ -210,10 +210,11 @@ body {
     }
     .contenido .contenido_del_contenidoxdxd .bib  a {
         padding: 20px;
-        font-size: 4vw;
     }
     .contenido .contenido_del_contenidoxdxd .bib  a p {
         font-size: 10px;
+        margin: 0px;
+        margin-left: 0px;
     }
     .contenido .contenido_del_contenidoxdxd  .bib h1 {
         font-size: 17px;

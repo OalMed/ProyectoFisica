@@ -738,7 +738,7 @@ body {
 /*---------------------------------------------------concluciones-----------------------------------------------*/
 .conc {
     width: 100%;
-    min-height: 150vh;
+    min-height: 100vh;
     margin-top: 0px;
 
 }
@@ -880,37 +880,6 @@ body {
     }
 }
 
-/*----------------------------------conclucion grupal-----------------------------------*/
-.conc-gupal {
-    width: 100%;
-    min-height: 30vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.conc-gupal .text {
-    background-color: rgb(49, 48, 48);
-    width: 85%;
-    color: white;
-    padding: 40px;
-    text-align: center;
-}
-.conc-gupal .text h1 {
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: 600;
-    margin-bottom: 5%;
-    color: rgb(104, 158, 209);
-}
-.conc-gupal .text p {
-    font-size: 17px;
-}
-
-@media (max-width:540px) {
-    .conc-gupal .text h1 {
-        font-size: 25px;
-    }
-}
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
