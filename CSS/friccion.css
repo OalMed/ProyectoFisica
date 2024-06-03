@@ -359,7 +359,7 @@ body {
 .textoeim  .parr-eeim {
     margin: 10px;
     padding: 15px;
-    margin-bottom: 6%;
+    min-height: 30vh;
 }
 .textoeim  .parr-eeim p {
     font-size: 20px;
@@ -373,10 +373,14 @@ body {
     width: 50%;
     margin: 10px;
     padding: 15px;
+    overflow: hidden;
+}
+.textoeim .conteeim .sec1-eeim {
+    height: 83vh;
 }
 .textoeim .conteeim .sec1-eeim .textp-eeim p{
     font-size: 17px;
-    line-height: 1.4;
+    line-height: 2;
 }
 .textoeim .conteeim .sec1-eeim .textp-eeim p ul li{
     list-style: none;

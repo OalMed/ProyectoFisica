@@ -3,10 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+
+html,body{
+    width: 100%;
+    background-color: black;
     overflow-x: hidden;
-    overflow: hidden;
-    background-color: rgb(12, 12, 12);
+    overflow: hidden !important;
+
+}
+
+body {
+    font-family: "Greycliff CF";
 }
 
 /*--------navegador-----*/
@@ -158,8 +165,9 @@ body {
 .contenido .contenido_del_contenidoxdxd  .bib h1 {
     color: white;
     margin-bottom: 2%;
-    font-size: 27px;
+    font-size: 24px;
     text-transform: uppercase;
+    padding: 15px;
 }
 .contenido .contenido_del_contenidoxdxd .bib  {
     width: 100%;
@@ -172,9 +180,10 @@ body {
    width: 100%;
     text-decoration: none;
     text-align: center; 
-    font-size: 20px;
     color: rgb(18, 103, 136);
     font-weight: 600;
+    font-size: 20px;
+    
 }
 .contenido .contenido_del_contenidoxdxd .bib  a p {
     text-align: center;
@@ -191,6 +200,23 @@ body {
     }
     .contenido .contenido_del_contenidoxdxd  .bib h1 {
         font-size: 23px;
+    }
+}
+@media (max-width:750px) {
+    .contenido .contenido_del_contenidoxdxd .bib {
+        margin: 0px;
+        padding: 3%;
+        margin: 0px;
+    }
+    .contenido .contenido_del_contenidoxdxd .bib  a {
+        padding: 20px;
+        font-size: 4vw;
+    }
+    .contenido .contenido_del_contenidoxdxd .bib  a p {
+        font-size: 10px;
+    }
+    .contenido .contenido_del_contenidoxdxd  .bib h1 {
+        font-size: 17px;
     }
 }
 /*-------------------------------------boton---------------------------*/
@@ -242,6 +268,7 @@ body {
     opacity: 0;
     display: none;
 } 
+
 /*-------------------------------------footer---------------------------*/
 footer {
     width: 100%;
