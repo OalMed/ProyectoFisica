@@ -770,7 +770,9 @@ main .capa {
     height: 100%;
     object-fit: cover;
 }
-
+.tipos-fisica2 .contenido2 .derecha .textos2 {
+    overflow: hidden;
+}
 .tipos-fisica2 .contenido2 .derecha .textos2 h1 {
     font-size: 30px;
     font-weight: 600;
@@ -818,6 +820,7 @@ main .capa {
 .tipos-fisica2 .contenido2 .izquierda .b3 .imagen3 {
     width: 50%;
     padding: 10px;
+    overflow: hidden;
 }
 
 .tipos-fisica2 .contenido2 .izquierda .b1 .textob11 h1,
@@ -889,7 +892,31 @@ main .capa {
     }
 
 }
+@media (max-width:624px) {
+    .tipos-fisica2 .contenido2 .izquierda .b1 .textob11 h1,
+.tipos-fisica2 .contenido2 .izquierda .b2 .textob22 h1,
+.tipos-fisica2 .contenido2 .izquierda .b3 .textob11 h1 {
+  
+    font-size: 15px;
+}
+.tipos-fisica2 .contenido2 .izquierda .b1 .textob11,
+.tipos-fisica2 .contenido2 .izquierda .b1 .imagen1,
+.tipos-fisica2 .contenido2 .izquierda .b2 .textob22,
+.tipos-fisica2 .contenido2 .izquierda .b2 .imagen2,
+.tipos-fisica2 .contenido2 .izquierda .b3 .textob11,
+.tipos-fisica2 .contenido2 .izquierda .b3 .imagen3 {
+    text-align: center;
+    margin: 0px;
+    padding: 5px;
+    margin-left: 0px;
+}
+.tipos-fisica2 .contenido2 .izquierda .b1 .textob11,
+.tipos-fisica2 .contenido2 .izquierda .b2 .textob22,
+.tipos-fisica2 .contenido2 .izquierda .b3 .textob11 {
+    font-size: 12px;
+}
 
+}
 /*----------------------------------3era seccion -----------------*/
 .tipos-fisica3 {
     width: 100%;
