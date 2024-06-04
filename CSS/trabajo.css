@@ -865,114 +865,123 @@ body {
 /*---------------------------------------------------ejemplos vida cotidiana 3--------------------------*/
 .ejcot3 {
     width: 100%;
-    background-color: red;
+    overflow: hidden;
+    min-height: 90vh;
 }
 .ejcot3 .contej3 {
     display: flex;
-    min-height: 130vh;
-    overflow: hidden;
+    width: 100%;
 }
 .ejcot3 .contej3 .sec1tej3,
 .ejcot3 .contej3 .sec2tej3 {
-    width: 50%;
-    overflow: hidden;
+    width: 55%;
+    margin: 1%;
+    padding: 15px;
 }
-
-/*primero y cuarto*/
 .ejcot3 .contej3 .sec1tej3 .ejem1,
-.ejcot3  .contej3 .sec2tej3 .ejem4{
+.ejcot3 .contej3 .sec2tej3 .ejem4 {
+    width: 100%;
     display: flex;
-    background-color: rgba(73, 73, 73, 0.527);
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
-.ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-txt
-.ejcot3 .contej3 .sec1tej3 .ejem1  .ejem1-img,
-.ejcot3  .contej3 .sec2tej3 .ejem4 .ejem4-txt,
-.ejcot3  .contej3 .sec2tej3 .ejem4 .ejem4-img{
-    height: 100%;
-}
+.ejcot3 .contej3 .sec2tej3 .ejem4 .ejem4-txt,
+.ejcot3 .contej3 .sec2tej3 .ejem4 .ejem4-img,
 .ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-txt,
-.ejcot3  .contej3 .sec2tej3 .ejem4 .ejem4-txt {
-    width: 70%;
-    padding: 10px;
-    text-align: center;
+.ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-img {
+    max-width: 50%;
+ 
 }
-.ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-txt p,
-.ejcot3  .contej3 .sec2tej3 .ejem4 .ejem4-txt p{
-    font-size: 20px;
-
-}
-.ejcot3 .contej3 .sec1tej3 .ejem1  .ejem1-img img,
-.ejcot3  .contej3 .sec2tej3 .ejem4 .ejem4-img img {
-    width: 100%;
+.ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-img img,
+.ejcot3 .contej3 .sec2tej3 .ejem4 .ejem4-img img {
+    width: 93%;
     height: 100%;
     object-fit: cover;
 }
-/*segundo*/
-.ejem2 {
+.ejcot3 .contej3 .sec2tej3 .ejem4 .ejem4-txt,
+.ejcot3 .contej3 .sec1tej3 .ejem1 .ejem1-txt {
+    padding: 15px;
+    font-size: 17px;
+    text-align: center;
+}
+.ejcot3 .contej3 .sec1tej3 .ejem2 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url('../imgs_trabajo/levanpesas.jpg');
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
 }
-.ejem2::before {
+.ejcot3 .contej3 .sec2tej3 .ejem3 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../imgs_trabajo/bicestatic.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+.ejcot3 .contej3 .sec1tej3 .ejem2::before,
+.ejcot3 .contej3 .sec2tej3 .ejem3::before {
     content: '';
     inset: 0;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.418);
+    background-color: rgba(0, 0, 0, 0.541);
 }
-.ejem2-txt {
+.ejcot3 .contej3 .sec1tej3 .ejem2 .ejem2-txt,
+.ejcot3 .contej3 .sec2tej3 .ejem3 .ejem3-txt {
     position: relative;
-    text-align: center;
-    padding: 3%;
-    z-index: 3;
+    z-index: 2;
 }
-.ejem2-txt  p {
-    margin-top: 60%;
-    font-size: 20px;
+.ejcot3 .contej3 .sec1tej3 .ejem2 .ejem2-txt p,
+.ejcot3 .contej3 .sec2tej3 .ejem3 .ejem3-txt p{
+    text-align: center;
+    padding: 25px;
+    font-size: 23px;
+    line-height: 2;
+    z-index: 3;
 }
 
-/*tercero*/
-.ejem3 {
-    width: 100%;
-    height: 60%;
-    background-image: url('../imgs_trabajo/bicestatic.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    position: relative;
+@media (max-width:850px) {
+    .ejcot3 .contej3 {
+        flex-direction: column !important;
+    }
+    .ejcot3 .contej3 .sec1tej3,
+    .ejcot3 .contej3 .sec2tej3 {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
 }
-.ejem3::before {
-    content: '';
-    inset: 0;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.521);
-    z-index: 1;
-}
-.ejem3 .ejem3-txt {
-    position: relative;
-    text-align: center;
-    padding: 3%;
-    z-index: 3;
-}
-.ejem3 .ejem3-txt p {
-    font-size: 20px;
-    margin-top: 50%;
-}
-/*aplicar margenes*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*----------------------------------footer---------------------------*/
 footer {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
-    padding: 100px 0 30px;
-    border-top-left-radius: 125px;
+    background-color: #141414;
+    padding: 3%;
+    mask-image: linear-gradient(0deg, black 90%, transparent);
 }
 
 footer .con-fo {
@@ -982,8 +991,7 @@ footer .con-fo {
 footer .con-fo .cyl {
     width: 100%;
     display: flex;
-    margin-left: 10%;
-
+    margin-bottom: 3%;
 }
 
 .con-fo .cyl .carrera,
@@ -992,19 +1000,18 @@ footer .con-fo .cyl {
     padding: 10px;
     margin: 10px;
     font-size: 15px;
+    margin-top: 10%;
 }
 
 .con-fo .cyl .carrera h2,
 .con-fo .cyl .lugar h2 {
     text-transform: capitalize;
+    font-size: 25px;
 }
-
 
 .con-fo .gya {
     display: flex;
     width: 100%;
-    margin-left: 10%;
-
 }
 
 .con-fo .gya .grado,
@@ -1018,11 +1025,12 @@ footer .con-fo .cyl {
 .con-fo .docente {
     width: 100%;
     text-transform: capitalize;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 30px;
     padding: 10px;
-    margin-left: 10%;
-
+    margin: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    letter-spacing: 3px;
 }
 
 .con-fo .iyl {
@@ -1039,9 +1047,13 @@ footer .con-fo .cyl {
     font-size: 20px;
 }
 
+.con-fo .iyl .links {
+    border-right: 2px solid white;
+}
+
 .con-fo .iyl .integrantes h1,
 .con-fo .iyl .links h1 {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -1055,6 +1067,7 @@ footer .con-fo .cyl {
     list-style: none;
     padding: 3px;
     margin-left: 5%;
+    font-size: 17.5px;
 }
 
 .con-fo .iyl .links ul li a {
@@ -1068,15 +1081,19 @@ footer .con-fo .cyl {
 
 .con-fo .esc {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     margin: 10px;
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
+    letter-spacing: 2px;
 
 }
 
 @media (max-width:1000px) {
-
+    footer {
+        margin: 0px;
+        padding-left: 0px;
+    }
     footer .con-fo,
     footer .con-fo .cyl,
     footer .con-fo .gya,
@@ -1089,14 +1106,37 @@ footer .con-fo .cyl {
     .con-fo .gya,
     .con-fo .docente,
     .con-fo .iyl {
-        width: 100vw !important;
+        width: 100% !important;
     }
 
     .con-fo .docente {
-        margin-left: 0px;
+        font-size: 19px;
+        margin: 0px;
+        padding: 4%;
     }
 
     .con-fo .esc {
         font-size: 17px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .con-fo .iyl .links {
+        border-right: none;
+        border-bottom: 2px solid white;
+    }
+
+    .con-fo .gya .grado,
+    .con-fo .gya .asignatura {
+        font-size: 14px;
+    }
+
+    .con-fo .cyl .carrera h2 {
+        margin-top: 30%;
+    }
+
+    .con-fo .cyl .carrera h2,
+    .con-fo .cyl .lugar h2 {
+        font-size: 20px;
     }
 }
