@@ -10,6 +10,7 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Trabajo En Física | Física </title>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="../CSS/trabajo.css">
 </head>
 
@@ -77,7 +78,7 @@
                 <div class="imagenty1">
                 </div>
                 <div class="textosty1">
-                    <h1>1.</h1>
+                    <h1 class="ej1h1">1.</h1>
                     <p>Levantar un objeto: Cuando levantas una caja del suelo a una mesa, estás aplicando una fuerza
                         sobre el objeto a lo largo de una distancia vertical. Estás realizando trabajo contra la fuerza
                         de la gravedad.</p>
@@ -85,7 +86,7 @@
             </div>
             <div class="secty2">
                 <div class="textosty2">
-                    <h1>2.</h1>
+                    <h1 class="ej2h1">2.</h1>
                     <p>Empujar un objeto: Si empujas un carro por la calle, estás aplicando una fuerza sobre él en la
                         dirección del movimiento. Estás realizando trabajo para desplazar el carro a lo largo de la
                         distancia.</p>
@@ -101,16 +102,19 @@
         
 
         <div class="ultmentxt">
-            <p>El trabajo se realiza sobre un objeto cuando se le transfiere energía. En otras palabras, el trabajo se
-                realiza cuando una fuerza actúa sobre algo que sufre un desplazamiento de una posición a otra. Las
-                fuerzas pueden variar en función de la posición, y los desplazamientos pueden ser a lo largo de varias
-                trayectorias entre dos puntos. Matemáticamente toma la forma del producto escalar entre los vectores
-                fuerza (F) y desplazamiento (s).</p>
+            <center>
+                <p>El trabajo se realiza sobre un objeto cuando se le transfiere energía. En otras palabras, el trabajo se
+                    realiza cuando una fuerza actúa sobre algo que sufre un desplazamiento de una posición a otra. Las
+                    fuerzas pueden variar en función de la posición, y los desplazamientos pueden ser a lo largo de varias
+                    trayectorias entre dos puntos. Matemáticamente toma la forma del producto escalar entre los vectores
+                    fuerza (F) y desplazamiento (s).</p>
+            </center>
+       
         </div>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <center>
-        <h1  style="font-size: 40px; text-transform: uppercase; letter-spacing: 2px;">Unidades de medición</h1>
+        <h1 class="unidemed" style="font-size: 40px; text-transform: uppercase; letter-spacing: 2px;">Unidades de medición</h1>
     </center>
     <br><br><br><br><br>
     <div class="unimed">
@@ -175,7 +179,7 @@
 </div>
 <br><br><br><br><br><br><br><br><br><br>
 <center>
-    <h1>Ejemplos cotidianos</h1>
+    <h1 class="ejecot">Ejemplos cotidianos</h1>
 </center>
 <br><br><br><br><br>
 <div class="ejemploscot1" id="ejemplos">
@@ -441,6 +445,29 @@
                 } // End if
             });
         });
+    </script>
+    <script>
+        ScrollReveal( {
+            reset:true,
+            distance: '60px',
+            duration: 1500,
+            delay: 100,
+        });
+        ScrollReveal().reveal('.titulotr', {delay: 200, origin: 'left'} );
+        ScrollReveal().reveal('.cont-dec', {delay: 500, origin: 'left' } );
+        ScrollReveal().reveal('.textra p', {delay: 800, origin: 'left'} );
+        ScrollReveal().reveal('.link', {delay: 1200, origin: 'left' } );
+        ScrollReveal().reveal('.ej1h1', {delay: 200, origin: 'left'} );
+        ScrollReveal().reveal('.ej2h1', {delay: 200, origin: 'right' } );
+        ScrollReveal().reveal('.unidemed', {delay: 200, origin: 'top'} );
+        ScrollReveal().reveal('.text1-un', {delay: 200, origin: 'left' } );
+        ScrollReveal().reveal('.text3-un', {delay: 500, origin: 'left'} );
+        ScrollReveal().reveal('.text2-un', {delay: 200, origin: 'right' } );
+        ScrollReveal().reveal('.text4-un', {delay: 500, origin: 'right'} );
+        ScrollReveal().reveal('.ejecot', {delay: 400, origin: 'top' } );
+        
+    
+    
     </script>
 </body>
 
