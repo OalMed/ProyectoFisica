@@ -734,7 +734,7 @@ body {
     margin-top: 15%;
 }
 
-@media (max-width:1400px) {
+@media (max-width:1300px) {
     .ejresu .conte-ejresu {
         flex-direction: column;
     }
@@ -773,8 +773,9 @@ body {
 footer {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(33, 107, 167, 0.37), black);
-    padding: 100px 0 30px;
+    background-color: #141414;
+    padding: 3%;
+    mask-image: linear-gradient(0deg, black 90%, transparent);
 }
 
 footer .con-fo {
@@ -784,8 +785,7 @@ footer .con-fo {
 footer .con-fo .cyl {
     width: 100%;
     display: flex;
-    margin-left: 10%;
-
+    margin-bottom: 3%;
 }
 
 .con-fo .cyl .carrera,
@@ -794,19 +794,18 @@ footer .con-fo .cyl {
     padding: 10px;
     margin: 10px;
     font-size: 15px;
+    margin-top: 10%;
 }
 
 .con-fo .cyl .carrera h2,
 .con-fo .cyl .lugar h2 {
     text-transform: capitalize;
+    font-size: 25px;
 }
-
 
 .con-fo .gya {
     display: flex;
     width: 100%;
-    margin-left: 10%;
-
 }
 
 .con-fo .gya .grado,
@@ -820,11 +819,12 @@ footer .con-fo .cyl {
 .con-fo .docente {
     width: 100%;
     text-transform: capitalize;
-    font-size: 20px;
-    margin: 10px;
+    font-size: 30px;
     padding: 10px;
-    margin-left: 10%;
-
+    margin: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    letter-spacing: 3px;
 }
 
 .con-fo .iyl {
@@ -841,9 +841,13 @@ footer .con-fo .cyl {
     font-size: 20px;
 }
 
+.con-fo .iyl .links {
+    border-right: 2px solid white;
+}
+
 .con-fo .iyl .integrantes h1,
 .con-fo .iyl .links h1 {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -857,6 +861,7 @@ footer .con-fo .cyl {
     list-style: none;
     padding: 3px;
     margin-left: 5%;
+    font-size: 17.5px;
 }
 
 .con-fo .iyl .links ul li a {
@@ -870,20 +875,24 @@ footer .con-fo .cyl {
 
 .con-fo .esc {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     margin: 10px;
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
+    letter-spacing: 2px;
 
 }
 
 @media (max-width:1000px) {
-
+    footer {
+        margin: 0px;
+        padding-left: 0px;
+    }
     footer .con-fo,
     footer .con-fo .cyl,
     footer .con-fo .gya,
     footer .con-fo .iyl {
-        width: 100%;
+        width: 100% !important;
         flex-direction: column;
     }
 
@@ -891,14 +900,37 @@ footer .con-fo .cyl {
     .con-fo .gya,
     .con-fo .docente,
     .con-fo .iyl {
-        width: 100vw;
+        width: 100% !important;
     }
 
     .con-fo .docente {
-        margin-left: 0px;
+        font-size: 19px;
+        margin: 0px;
+        padding: 4%;
     }
 
     .con-fo .esc {
         font-size: 17px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .con-fo .iyl .links {
+        border-right: none;
+        border-bottom: 2px solid white;
+    }
+
+    .con-fo .gya .grado,
+    .con-fo .gya .asignatura {
+        font-size: 14px;
+    }
+
+    .con-fo .cyl .carrera h2 {
+        margin-top: 30%;
+    }
+
+    .con-fo .cyl .carrera h2,
+    .con-fo .cyl .lugar h2 {
+        font-size: 20px;
     }
 }

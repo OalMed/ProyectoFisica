@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +11,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <title>Energía Cinética | Física</title>
         <link rel="stylesheet" href="../CSS/e_cinetica.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     </head>
 </head>
 
@@ -50,14 +49,14 @@
         <center>
             <div class="promo">
                 <center>
-                    <h1 data-aos="fade-up" data-aos-duration="950">Energía Cinética</h1>
-                    <p>La <strong>energía cinética</strong> es aquella energía que posee un cuerpo o sistema debido a su
+                    <h1 class="titenci">Energía Cinética</h1>
+                    <p class="pdebajtit">La <strong>energía cinética</strong> es aquella energía que posee un cuerpo o sistema debido a su
                         movimiento. Se produce cuando un objeto, sustancia o partícula está en movimiento. Esta energía
                         depende principalmente de la velocidad del objeto, además de su masa. Por ejemplo, cuando
                         corremos, nuestro cuerpo está en movimiento, por lo que produce energía cinética.</p>
-                    <p>La energía cinética está ligada a otros conceptos de la física como el trabajo y la fuerza. El
+                    <p class="pdebajtit2">La energía cinética está ligada a otros conceptos de la física como el trabajo y la fuerza. El
                         objeto, al estar en movimiento, origina un trabajo y fuerza determinados.</p> <br><br><br><br><br>
-                    <a data-aos="zoom-out" data-aos-duration="1500" href="#ejercicios">Ver ejercicios</a>
+                    <a class="adebajtxt" href="#ejercicios">Ver ejercicios</a>
                 </center>
                
             </div>
@@ -160,7 +159,8 @@
 </div>
 <br><br><br><br><br><br><br><br><br><br>
     <center>
-        <h1 style="text-transform: uppercase; letter-spacing: 1.5px; text-align: center;">EJEMPLOS COTIDIANOS</h1>
+        <h1 class="ejemcot" style="text-transform: uppercase; letter-spacing: 1.5px; 
+        text-align: center;">EJEMPLOS COTIDIANOS</h1>
     </center>
     <div class="ejemploc1">
         <div class="contenidoejc1">
@@ -204,10 +204,10 @@
 <br><br><br><br><br><br><br><br><br><br>
 <center>
     <div class="formutil">
-        <h1>FÓRMULAS UTILIZADAS</h1>
-        <p>Para calcular la energía cinética(Ec) generalmente se utiliza la siguiente fórmula.</p>
+        <h1 class="formutilh1" >FÓRMULAS UTILIZADAS</h1>
+        <p class="pformuti">Para calcular la energía cinética(Ec) generalmente se utiliza la siguiente fórmula.</p>
         <br>
-        <p>Ec=1/2*m*v<sup>2</sup> ó Ec=m*v<sup>2</sup>/2</p>
+        <p class="formformuti">Ec=1/2*m*v<sup>2</sup> ó Ec=m*v<sup>2</sup>/2</p>
     </div>
 </center>
 <br><br><br><br><br><br><br><br><br><br>
@@ -296,7 +296,10 @@
                 </div>
             </div>
             <div class="docente">
-                <p>Docente: M.C. Mirna Patricia Talamantes Carlos</p>
+                <center>
+                    <p>Docente: M.C. Mirna Patricia Talamantes Carlos</p>
+
+                </center>
             </div>
             <div class="iyl">
                 <div class="links">
@@ -326,7 +329,10 @@
                 </div>
             </div>
             <div class="esc">
-                <p>CENTRO DE ESTUDIOS TECNOLÓGICOS, INDUSTRIAL Y DE SERVICIOS NO.155.“Josefa Ortíz de Domínguez”.</p>
+                <center>
+                    <p>CENTRO DE ESTUDIOS TECNOLÓGICOS, INDUSTRIAL Y DE SERVICIOS NO.155.“Josefa Ortíz de Domínguez”.</p>
+
+                </center>
             </div>
         </div>
     </footer>
@@ -362,6 +368,28 @@
             });
         });
     </script>
+
+<script>
+    ScrollReveal( {
+        reset:true,
+        distance: '60px',
+        duration: 1500,
+        delay: 100,
+    });
+    ScrollReveal().reveal('.titenci', {delay: 200, origin: 'top'} );
+    ScrollReveal().reveal('.pdebajtit', {delay: 500, origin: 'bottom' } );
+    ScrollReveal().reveal('.pdebajtit2', {delay: 700, origin: 'bottom' } );
+    ScrollReveal().reveal('.img1', {delay: 200, origin: 'right' } );
+    ScrollReveal().reveal('.img2', {delay: 500, origin: 'right' } );
+
+    ScrollReveal().reveal('.titulo-ec', {delay: 300, origin: 'top' } );
+    ScrollReveal().reveal('.ejemcot', {delay: 300, origin: 'top' } );
+    ScrollReveal().reveal('.formutilh1', {delay: 300, origin: 'left' } );
+    ScrollReveal().reveal('.pformuti', {delay: 300, origin: 'right' } );
+    ScrollReveal().reveal('.formformuti', {delay: 300, origin: 'top' } );
+
+
+</script>
 </body>
 
 
