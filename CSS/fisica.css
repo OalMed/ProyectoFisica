@@ -1258,7 +1258,7 @@ main .capa {
 
 .sist .contenido-sist .sec1-sist .text1-sist h1,
 .sist .contenido-sist .sec2-sist h1 {
-    text-align: left;
+    text-align: justify;
     text-transform: uppercase;
     border-bottom: 10px solid white;
     margin-bottom: 5%;
@@ -1269,8 +1269,8 @@ main .capa {
 }
 
 .sist .contenido-sist .sec1-sist .text1-sist {
-    text-align: center;
-    font-size: 17px;
+    /*text-align: center;*/
+    font-size: 18.5px;
 }
 
 @media (max-width:750px) {
