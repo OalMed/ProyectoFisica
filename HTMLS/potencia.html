@@ -9,6 +9,7 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="../CSS/potencia.css">
     <title>Potencia | Física</title>
 </head>
@@ -52,7 +53,7 @@
 
             </div>
             <div class="descrip-int">
-                <p data-aos="zoom-out" data-aos-duration="1100">  La <strong>potencia</strong> es 
+                <p >  La <strong>potencia</strong> es 
                     una medida de la tasa a la que se realiza un trabajo o a la que se
                     transfiere energía;
                     dicho de otra manera, mide la proporción en la cuál alguien o algo realiza <strong>trabajo</strong> en
@@ -253,8 +254,8 @@
         <div class="aplicaciones" id="aplicaciones">
             <div class="contenido-ap">
                 <div class="texto-ap">
-                    <h1>Aplicaciones de la potencia</h1>
-                    <p>  En nuestro día a día hacemos uso de la potencia sin que nos demos cuenta, la usamos para todo: para
+                    <h1 class="aplipont">Aplicaciones de la potencia</h1>
+                    <p class="peaplipont">  En nuestro día a día hacemos uso de la potencia sin que nos demos cuenta, la usamos para todo: para
                         iniciar un movimiento, para lanzar un objeto,
                         para arrancar nuestro carro, para levantar cosas, y un infinito etcétera. Pero en donde más se
                         identifica el uso de la potencia es en los aparatos
@@ -484,5 +485,32 @@
                 });
             });
         </script>
+
+
+<script>
+    ScrollReveal( {
+        reset:true,
+        distance: '60px',
+        duration: 1500,
+        delay: 100,
+    });
+    ScrollReveal().reveal('.titulo-int', {delay: 200, origin: 'left'} );
+    ScrollReveal().reveal('.cont-dec', {delay: 500, origin: 'right' } );
+    ScrollReveal().reveal('.descrip-int', {delay: 700, origin: 'left'} );
+    ScrollReveal().reveal('.avion', {delay: 300, origin: 'left' } );
+    ScrollReveal().reveal('.bugatti', {delay: 500, origin: 'left'} );
+    ScrollReveal().reveal('.enlaces-hero li', {delay: 300, origin: 'bottom', interval:300 } );
+    ScrollReveal().reveal('.form1', {delay: 200, origin: 'right'} );
+    ScrollReveal().reveal('.form2', {delay: 300, origin: 'left' } );
+    ScrollReveal().reveal('.form3', {delay: 200, origin: 'right'} );
+    ScrollReveal().reveal('.titulo-unmed', {delay: 300, origin: 'top' } );
+    ScrollReveal().reveal('#tiposPotencia', {delay: 200, origin: 'bottom'} );
+    ScrollReveal().reveal('.aplipont', {delay: 300, origin: 'left' } );
+    ScrollReveal().reveal('.peaplipont', {delay: 600, origin: 'left'} );
+    ScrollReveal().reveal('.imagen-ap', {delay: 900, origin: 'right' } );
+    ScrollReveal().reveal('.tit-ejer', {delay: 200, origin: 'left'} );
+    ScrollReveal().reveal('.mens-ejer', {delay: 500, origin: 'left' } );
+    ScrollReveal().reveal('.imags-ejrs', {delay: 800, origin: 'right'} );
+</script>
     </body>
 </html>
