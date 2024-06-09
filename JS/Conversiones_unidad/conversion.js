@@ -430,17 +430,17 @@ boton_confir.addEventListener('click',function isResultRigth(e){
     if(!correcto){
         target.classList.add('corregido')
         if(correcto==null){
-            alert('SIN TRAMPAS.DEBES LLENAR EL SEGUNDO CUADRO')
+            alert_w_asteroids('SIN TRAMPAS.DEBES LLENAR EL SEGUNDO CUADRO')
             ocultarCorrecto()
             return
         }
-        alert('CONVERSION INCORRECTA')
+        alert_w_asteroids('CONVERSIÓN INCORRECTA')
         // target.value=res
         document.getElementById('ResCorrecto').innerText=res
         return
     }
     ocultarCorrecto()
-    alert('CONVERSION CORRECTA')
+    alert_w_asteroids('CONVERSIÓN CORRECTA')
     target.classList.add('correcto')
     
 })
