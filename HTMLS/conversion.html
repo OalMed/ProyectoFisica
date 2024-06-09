@@ -47,20 +47,21 @@
         <span class="col" id="Tamaño">...</span>
 
     </div>
-    
-    
+
+
     <div class="container">
-            
+
         <h1 class="text-center blanco">CONVERSIÓN DE UNIDADES</h1>
         <br>
         <section class="row separacion">
             <div name="config" class="col-12 bordes contraer space-between config" data-alterar_texto="false">
-                <h5 class="max-content">Configuraciones</h5>
-                <img class="imagen-contraer" 
+                <!-- <h5 class="max-content">CONFIGURACIONES</h5> -->
+                CONFIGURACIONES
+                <img class="imagen-contraer"
                 src="../imgs_conversion/flecha_ocultar.png"
                 alt="">
             </div>
-            
+
             <div class="col-12 contraerTarget blanco">
                 <section class="row blanco">
                     <span class="col-12 ">
@@ -68,12 +69,12 @@
                                 <span class="col-6 col-sm-7 col-md-6 col-lg-4  text-rigth">
                                     Redondeo(decimales):
                                 </span>
-                                <input name="redondeo" class="col-6 col-sm-3 col-md-1 redondeo" placeholder="(decimales):" type="number" value="2">
+                                <input name="redondeo" class="col-6 col-sm-3 col-md-3 col-lg-2 redondeo" placeholder="(decimales):" type="number" value="2">
                             <!-- <span class="col-2 espacioConfig"></span> -->
                                 <span class="col-6 col-sm-7 col-md-6 col-lg-4  text-rigth">
                                     Límite de cifra generada:
                                 </span>
-                                <input name="lim-digitos" class="col-6 col-sm-3 col-md-1 cifra" placeholder="Límite de digitos" type="number" value="1000">
+                                <input name="lim-digitos" class="col-6 col-sm-3 col-md-3 col-lg-2 cifra" placeholder="Límite de digitos" type="number" value="100">
                         </section>
                     </span>
 
@@ -81,34 +82,34 @@
                         <div class="row bordes">
                             <span class="col-12 contraer space-between text-center bordes" data-alterar_texto="false">
                                 Aleatorizar
-                                
-                                <img class="imagen-contraer" 
+
+                                <img class="imagen-contraer"
                                 src="../imgs_conversion/flecha_ocultar.png"
                                 alt="">
                             </span>
-                                
-        
+
+
                             <span class="col-12 contraerTarget text-center">
                                 <section class="row align-center">
                                     <span class="col-6 col-md-12">
-                                        Tipo de Unidad de medida:
+                                        Tipo de Unidad de Medida:
                                         <input name="unid-medida-aleatoria" type="checkbox" checked>
                                     </span>
                                     <span class="col-6 col-md-12">
                                         Magnitud:
                                         <input name="magnitud-aleatoria" type="checkbox" checked>
                                     </span>
-                                    
+
                                     <span class="col-6 col-md-4 col-lg-3 boton" name="aplicarConfiguracion">Aplicar</span>
                                 </section>
                             </span>
                         </div>
                     </span>
                 </section>
-                
+
             </div>
         </section>
-        
+
         <section class="row separacion2">
             <span class="blanco col-12 col-lg-5" >
                 <section class="row justify-content">
@@ -121,12 +122,12 @@
             </span>
 
             <span class="col-2 espacioConfig"></span>
-            
+
             <span class="blanco col-12 col-lg-5">
                 <section class="row justify-content">
                     Calcular:
                     <select class="col-9 col-md-6 First-letter-Upp magnitudes" name="UnidadesMedida" id="">
-                        
+
                         <option >Longitud</option>
                         <option >Área</option>
                         <option >Volumen</option>
@@ -165,7 +166,7 @@
                 src="../imgs_conversion/flecha2.png"
                 src="https://cdn-icons-png.flaticon.com/512/25/25677.png"
                 alt="Convertir">
-                
+
             </span>
 
             <!-- <span class="separacion col-1" id="soporte"></span> -->
@@ -178,20 +179,31 @@
                     <select name="selSup2" class="SelectSoporte col-6 minusculas" data-target="simbolo2" data-posicion="2"></select>
                     <input required name="destino" type="number" data-target="simbolo2" class="col-8 input" placeholder="Unidad Destino">
                     <input name="simbolo2" type="text" class="col-4" disabled>
-                    <span class="col-12">
-                        <section class="row justify-content">
-                            <span class="col-6 text-rigth borrado-limpieza">Resultado Correcto:</span>
-                            <h4 class="col-6" id="ResCorrecto">...</h4>
-                        </section>
-                    </span>
+
                 </div>
             </span>
-            
+            <span class="col-12">
+                <section class="row justify-content">
+                    <span class="max-content text-rigth borrado-limpieza">Resultado Correcto:</span>
+                    <h4 class="max-content text-center" id="ResCorrecto">...</h4>
+                    <!-- <span class="col-6 text-rigth borrado-limpieza">Resultado Correcto:</span>
+                    <h4 class="col-6 text-center" id="ResCorrecto">...</h4> -->
+                </section>
+            </span>
+
             <span class="col-12">
                 <div class="row center-content">
                     <div name="comprobar" class="col-6 text-center verif-butt bordes">Comprobar Conversión</div>
                     <!-- <input name="comprobar" class="col-6 text-center verif-butt bordes" value="Comprobar Conversion"></input> -->
                     <input class="col-4" name="resultado" disabled style="display:none"></input>
+                </div>
+            </span>
+            <span class="col-12">
+                <div class="row center-content">
+                    <br><br><br>
+                    <a class="col-8 text-center blanco" target="_blank" href="../imgs_conversion/Factores de conversión.pdf">
+                        Ver Hojas de Conversiónes
+                    </a>
                 </div>
             </span>
 
@@ -260,7 +272,7 @@
     </footer>
 </body>
 
-<script type="module" src='../JS/Conversiones_unidad/conversion.js'></script>
+<!-- <script type="module" src='../JS/Conversiones_unidad/conversion.js'></script> -->
 <script src="../JS/Conversiones_unidad/funcionesGenerales.js"></script>
 
 <script src="../JS/Conversiones_unidad/elevaciones.js"></script>
