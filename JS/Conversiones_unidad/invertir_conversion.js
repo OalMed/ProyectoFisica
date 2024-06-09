@@ -3,6 +3,11 @@ function invertirUnidadIngresada(){
     let inputs;
     
     inversor.addEventListener('click',function cambiarLugares(){
+        if(getModoInWindow()==1){
+            getSelectModoTag().dispatchEvent(new Event('change'))
+            return 
+        }
+
         inputs=document.getElementsByClassName('input') 
         let aux;
 

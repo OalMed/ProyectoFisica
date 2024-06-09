@@ -36,10 +36,10 @@ function elevacionToString(elevacion,sujeto){
     }
     
     if (elevacion==3){ 
-        elevaString= 'cubic'
+        elevaString= 'cúbic'
     } 
 
-    if ((sujeto.endsWith('a') || sujeto.charAt(sujeto.length-2)=='a') && sujeto!='dia' ){
+    if (sujeto.split('dia').length==1 && (sujeto.endsWith('a') || sujeto.charAt(sujeto.length-2)=='a') && sujeto!='dia' ){
         elevaString+='a'
     }else{
         elevaString+='o'

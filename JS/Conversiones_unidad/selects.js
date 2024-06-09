@@ -10,15 +10,6 @@ function centrar_options(){
     }
 }
 
-function buscarEnClase(class_list,incidencia){
-    for(let index=0;index<class_list.length;index++){
-        if(class_list[index].split(incidencia).length!=1){
-            return index
-        }
-    }
-    return -1
-}
-
 function ALterarSelectSoporte(activo){
     let soportes=document.getElementsByClassName('SelectSoporte')
     let mainSelects=document.getElementsByClassName('mainSelect')
@@ -67,6 +58,9 @@ function cambiarSelects(e){
         console.error(index);
         //borra toodos los option del select
         selects[index].innerHTML='' 
+        if(index%2==0){
+            document.getElementsByName(selects[index].dataset.target)[0].value=''
+        }
         try {
             for(let index2=0;index2<inputs.length;index2++){
                 inputs[index2].value=''
@@ -76,7 +70,8 @@ function cambiarSelects(e){
         }
         //recorre los factores obtenidos (numerador y denominador)
         for(let SelIndex=0;SelIndex<factores[index_factores].length;SelIndex++){
-            selects[index].innerHTML+='<option class="text-center option-medida First-letter-Upp" data-simbolo="'
+            // selects[index].innerHTML+='<option class="text-center option-medida First-letter-Upp" data-simbolo="'
+            selects[index].innerHTML+='<option class="text-center option-medida minusculas" data-simbolo="'
                 +factores[index_factores][SelIndex].getSimbolo()
                 +'" data-expo="'+factores[index_factores][SelIndex].getElevacion()
                 +'" data-razon="'+factores[index_factores][SelIndex].getRazon()
@@ -112,7 +107,7 @@ let selected
 
 function desaparecerSelectAuxIndividual(posicion,termino,select,target){
     let supp=document.getElementsByName('selSup'+termino)[0]
-    selected=select.options[select.selectedIndex]
+    selected=select.options[select.options.selectedIndex]
 
     if(posicion!=1){
         return
@@ -143,7 +138,9 @@ function desaparecerSelectAuxIndividual(posicion,termino,select,target){
     }
     
 }
-function escribirSimbolos(){
+let fallido=[];
+function escribirSimbolos(e){
+    console.log(e);
     // console.log('this name=',this.name);
     // console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
     let termino=(this.dataset.target[this.dataset.target.length-1])
@@ -154,13 +151,23 @@ function escribirSimbolos(){
     // alert(this.options[this.selectedIndex].dataset.auxiliar)
     // console.log('supp=selSup'+termino);
     desaparecerSelectAuxIndividual(posicion,termino,this,target)
-
     
     // alert('posicion:'+posicion+'\nSupport=',supp)
     
 
     termino=parseInt(termino)
-    let expo=this.options[this.selectedIndex].dataset.expo
+    // console.log(this);
+    let expo;
+    try {
+        expo=this.options[this.options.selectedIndex].dataset.expo
+        // console.log('CORRECTO');
+    } catch (error) {
+        console.log('FALLIDO');
+        // console.log('options=',this.options);
+        // console.log('yo=',this);
+        // console.log(this.checkVisibility());
+        return 
+    }
 
     posicion-=2
     if(termino==2){
@@ -170,16 +177,25 @@ function escribirSimbolos(){
     let lugar_en_razones =termino+posicion
     posicion+=1
 
-    if(this.checkVisibility()==false && !window.compuesto){
-        console.log('__NO ES VISIBLE__');
-        window.razones[lugar_en_razones]=null
-        window.exponentes[lugar_en_razones]=null
+    if(this.checkVisibility()==false){
+        if(window.compuesto==true){
+            console.log('__NO ES VISIBLE__');
+            window.razones[lugar_en_razones]=null
+            window.exponentes[lugar_en_razones]=null
+            return
+        }
+        // return
+    }
+    let pantalla=target.value.split('/')
+
+    if(this.checkVisibility()==false){
+        target.value=target.value.split('/')[0]
         return
-    }     
+    }
     
-    let razon=this.options[this.selectedIndex].dataset.razon
+    let razon=this.options[this.options.selectedIndex].dataset.razon
     // alert('index='+lugar_en_razones+' __' +razon+' en '+this.name)
-    let simbolo=this.options[this.selectedIndex].dataset.simbolo
+    let simbolo=this.options[this.options.selectedIndex].dataset.simbolo
     
     window.razones[lugar_en_razones]=razon
     window.exponentes[lugar_en_razones]=expo
@@ -199,7 +215,6 @@ function escribirSimbolos(){
     }
     
     // let posicion=this.dataset.posicion
-    let pantalla=target.value.split('/')
     
     // console.log('posicion=',posicion);
     // console.log('simbolo=',simbolo);
@@ -208,7 +223,7 @@ function escribirSimbolos(){
     
     console.error('DEBE REFRESCAR el input');
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
-    this.anterior=this.selectedIndex
+    this.anterior=this.options.selectedIndex
 }
 
 function resfrescarSimbolos(pantalla,posicion,target,simbolo){
