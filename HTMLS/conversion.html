@@ -54,7 +54,7 @@
         <h1 class="text-center blanco">CONVERSIÓN DE UNIDADES</h1>
         <br>
         <section class="row separacion">
-            <div name="config" class="col-12 bordes contraer space-between" data-alterar_texto="false">
+            <div name="config" class="col-12 bordes contraer space-between config" data-alterar_texto="false">
                 <h5 class="max-content">Configuraciones</h5>
                 <img class="imagen-contraer" 
                 src="../imgs_conversion/flecha_ocultar.png"
@@ -68,19 +68,19 @@
                                 <span class="col-6 col-sm-7 col-md-6 col-lg-4  text-rigth">
                                     Redondeo(decimales):
                                 </span>
-                                <input name="redondeo" class="col-6 col-sm-3 col-md-1" placeholder="(decimales):" type="number" value="2">
+                                <input name="redondeo" class="col-6 col-sm-3 col-md-1 redondeo" placeholder="(decimales):" type="number" value="2">
                             <!-- <span class="col-2 espacioConfig"></span> -->
                                 <span class="col-6 col-sm-7 col-md-6 col-lg-4  text-rigth">
                                     Límite de cifra generada:
                                 </span>
-                                <input name="lim-digitos" class="col-6 col-sm-3 col-md-1" placeholder="Límite de digitos" type="number" value="1000">
+                                <input name="lim-digitos" class="col-6 col-sm-3 col-md-1 cifra" placeholder="Límite de digitos" type="number" value="1000">
                         </section>
                     </span>
 
                     <span class="col-12">
                         <div class="row bordes">
                             <span class="col-12 contraer space-between text-center bordes" data-alterar_texto="false">
-                                ALEATORIZAR
+                                Aleatorizar
                                 
                                 <img class="imagen-contraer" 
                                 src="../imgs_conversion/flecha_ocultar.png"
@@ -113,7 +113,7 @@
             <span class="blanco col-12 col-lg-5" >
                 <section class="row justify-content">
                         Modo:
-                        <select class="col-9 col-md-6" name="modo" id="">
+                        <select class="col-9 col-md-6 modos" name="modo" id="">
                             <option class="text-center" id="2">Verificación</option>
                             <option class="text-center" id="1">Práctica</option>
                         </select>
@@ -125,7 +125,7 @@
             <span class="blanco col-12 col-lg-5">
                 <section class="row justify-content">
                     Calcular:
-                    <select class="col-9 col-md-6 First-letter-Upp" name="UnidadesMedida" id="">
+                    <select class="col-9 col-md-6 First-letter-Upp magnitudes" name="UnidadesMedida" id="">
                         
                         <option >Longitud</option>
                         <option >Área</option>

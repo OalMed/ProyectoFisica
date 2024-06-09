@@ -48,7 +48,7 @@ img{
     max-height: 100%
 }
 .max-content{
-    background-color: red;
+    /*background-color: red;*/
     max-width: max-content;
 }
 img{
@@ -60,10 +60,13 @@ img{
     align-items: center;
 }
 .boton{
-    background-color: green;
+    color: black;
+    background-color: rgb(79, 123, 137);
+    border-radius: 50px;
 }
 .contraer{
     background-color: gray;
+    color: black;
 }
 .bordes{
     border: 3px solid black !important;
@@ -89,8 +92,10 @@ img{
     justify-content: center;
 }
 .verif-butt{
-    background-color: green;
+    color: black;
+    background-color: rgb(79, 123, 137);
     padding: 1% 1%;
+    border-radius: 50px;
 }
 html,
 body {
@@ -159,6 +164,7 @@ section.row{
     border: 2px solid black !important;
 }
 select,input{
+    border-radius: 50px;
     margin: 1vh 0;
     background-color: white;
 }
@@ -208,4 +214,11 @@ img{
     /* .genNew{
         transform: none;
     } */
+}
+
+
+/*Diseño de botones e inputs*/
+
+.modos, .magnitudes, .config, .redondeo, .cifra, .contraer {
+    border-radius: 50px;
 }
