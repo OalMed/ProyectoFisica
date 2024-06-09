@@ -173,7 +173,7 @@ function getFactoresFor(sistema,auxiliar,elevado){
     else if(sistema==='Ángulo'){
          
         // respecto a los grados
-        factores.push(new Factor('Grados celsius','°',1,elevacion))
+        factores.push(new Factor('Grados','°',1,elevacion))
         factores.push(new Factor('Radiánes','rad',1/57.3,elevacion))
         factores.push(new Factor('Revolución','revolución',1/360,elevacion))
     }

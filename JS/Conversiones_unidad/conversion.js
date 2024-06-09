@@ -94,6 +94,7 @@ function isMagnitudAleatoria(){
     return document.getElementsByName('magnitud-aleatoria')[0].checked
 }
 function aleatorizarTipoUnidadMedida(){
+    console.log('aleatorizar Tipo Unidad  Medida');
     let uni=document.getElementsByName('UnidadesMedida')[0]
     if(getModoInWindow()!=3){
         let aleatorio=parseInt(Math.random()*(uni.options.length))
@@ -169,117 +170,6 @@ function aleatorizarMedidas(){
         selects[index].dispatchEvent(new Event('change'))
     }
 }
-
-
-
-
-//init variables
-window.razones=new Array(4);
-window.exponentes=new Array(4);
-
-let selects,factores,targ,inputs,pasado,IndexOption=[],numerador,denominador;
-
-let uni=document.getElementsByName('UnidadesMedida')[0]
-
-selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
-let modo=getSelectModoTag()
-let aplicar=document.getElementsByName('aplicarConfiguracion')[0]
-let boton_confir=document.getElementsByClassName('verif-butt')[0]
-
-
-
-//asignacion de eventos
-    //asignacion del evento escribir simbolo de los selects 
-for(let index=0;index<selects.length;index++){
-    selects[index].anterior=null
-    selects[index].addEventListener('change',escribirSimbolos)
-}
-    //evento encargado de la conversion automatica de los datos en el modo 3
-conversionAuto()
-
-    //evento para cambiar entre los tipos de unidad de medida
-uni.addEventListener('change',cambiarSelects)
-
-modo.addEventListener('change',function cambiarModo(){
-    actualizarModo(this)
-    AlterarImagenCentro()
-
-    if(getModoInWindow()==1){
-        if(isTipoUnidadAleatoria()){
-            aleatorizarTipoUnidadMedida()
-        }   
-        uni.dispatchEvent(new Event('change'))
-        aleatorizarMedidas()
-    }else{
-        uni.dispatchEvent(new Event('change'))
-    }
-
-    if(getModoInWindow()==1 && isMagnitudAleatoria()){
-        let magnitud=generarCifra()
-        document.getElementsByName('magnitud1')[0].value=magnitud
-    }
-})
-aplicar.addEventListener('click',function(){
-    getSelectModoTag().dispatchEvent(new Event('change'))
-})
-//asigna el evento al boton de contraer 
-// contraerAleatorioInit()   
-function isConversionRigth(res,target){
-    let decimas=getDecimasRedondeo()
-    let valor_Ingresado=target.value
-
-    if((valor_Ingresado)==''){
-        return null
-    }
-    
-    return (valor_Ingresado<=res+decimas && valor_Ingresado>=res-decimas)    
-}
-boton_confir.addEventListener('click',function isResultRigth(e){
-    console.log('click');
-    if(document.querySelectorAll('.correcto,.corregido').length!=0){
-        return
-    }
-
-    limpiarClasesVerificacion(false)
-    
-    let res=getResultado()
-    // let target=document.getElementsByName('destino')[0]
-    let target=document.getElementsByName('destino')[0]
-
-    let correcto=isConversionRigth(res,target)
-
-    
-    if(!correcto){
-        target.classList.add('corregido')
-        if(correcto==null){
-            alert('SIN TRAMPAS.DEBES LLENAR EL SEGUNDO CUADRO')
-            ocultarCorrecto()
-            return
-        }
-        alert('BOT DETECTADO')
-        // target.value=res
-        document.getElementById('ResCorrecto').innerText=res
-        return
-    }
-    ocultarCorrecto()
-    alert('CONVERSION CORRECTA')
-    target.classList.add('correcto')
-    
-})
-
-
-
-//activacion de los eventos
-//activa el evento de selccion de modo
-modo.dispatchEvent(new Event('change'))
-
-//oculta las configuraciones
-// aqui deberia de estar :
-    // document.getElementsByName('config')[0].dispatchEvent(new Event('click'))
-// pero el desgraciado de 
-    // contraerAleatorioInit()
-// no quiere servir aqui, el espacialito solo sirve en el archivo html
-
 function InputClick(){
     let activo=document.getElementsByClassName('Active')[0]
     //alert('INPUT;',activo.value)
@@ -386,15 +276,20 @@ function getResultado(){
     return parseFloat(inputs[activo].value)*numerador/denominador
 }
 function refrescarInputValue(){
+    if(getModoInWindow()!=3){
+        limpiarClasesVerificacion()
+        return
+    }
     // if(window.modo!=3){
-    //     //modo 3 seria para volver al modo de conversion automatica(no posible para el usuario)
-    //     return
-    // }
-    limpiarClasesVerificacion()
+        //     //modo 3 seria para volver al modo de conversion automatica(no posible para el usuario)
+        //     return
+        // }
+    console.log('modo=',getModoInWindow());
+    console.log('refresh input value');
+
     
     let resultadoInput
     if(getModoInWindow()!=3){
-        // resultadoInput=document.getElementsByName('resultado')[0]
         resultadoInput=document.getElementById('ResCorrecto')
     }else{
         resultadoInput=inputs[pasado]
@@ -408,8 +303,6 @@ function refrescarInputValue(){
         resultadoInput.value='';
     } 
 }
-
-let key;
 function conversionAuto(){
     inputs=document.getElementsByClassName('input')
 
@@ -417,7 +310,7 @@ function conversionAuto(){
         inputs[index].onclick=InputClick 
         inputs[index].addEventListener('input',refrescarInputValue)
         inputs[index].addEventListener('keydown',function(tecla,numInput=index){
-            console.error('key=',tecla.key);
+            // console.error('key=',tecla.key);
             key=tecla
             if(tecla.key=='Enter' || tecla.key=='Tab'){
                 // alert(numInput)
@@ -434,6 +327,146 @@ function conversionAuto(){
         })
     }
 }
+function isConversionRigth(res,target){
+    let decimas=getDecimasRedondeo()
+    let valor_Ingresado=target.value
+
+    if((valor_Ingresado)==''){
+        return null
+    }
+    
+    return (valor_Ingresado<=res+decimas && valor_Ingresado>=res-decimas)    
+}
+function aleatorizarSelects(pressed_from_uni){
+    console.log('Aleatorizar selects');
+    
+    if(getModoInWindow()==1){
+        if(isTipoUnidadAleatoria() && pressed_from_uni==null){
+            aleatorizarTipoUnidadMedida()
+        }   
+        if(pressed_from_uni==null){
+            uni.dispatchEvent(new Event('change'))
+        }
+        aleatorizarMedidas()
+    }else{
+        if(pressed_from_uni==null){
+            uni.dispatchEvent(new Event('change'))
+        }
+    }
+
+    if(getModoInWindow()==1 && isMagnitudAleatoria()){
+        let magnitud=generarCifra()
+        console.log('magnitud=',magnitud);
+        document.getElementsByName('magnitud1')[0].value=magnitud
+    }
+    console.log('   |-----FIN');
+}
+
+
+
+//init variables
+window.razones=new Array(4);
+window.exponentes=new Array(4);
+
+let selects,factores,targ,inputs,pasado,IndexOption=[],numerador,denominador;
+
+let uni=document.getElementsByName('UnidadesMedida')[0]
+
+selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
+let modo=getSelectModoTag()
+let aplicar=document.getElementsByName('aplicarConfiguracion')[0]
+let boton_confir=document.getElementsByClassName('verif-butt')[0]
+let key;
+
+
+
+
+
+
+
+
+
+
+
+
+//asignacion de eventos
+    //asignacion del evento escribir simbolo de los selects 
+for(let index=0;index<selects.length;index++){
+    selects[index].anterior=null
+    selects[index].addEventListener('change',escribirSimbolos)
+}
+    //evento encargado de la conversion automatica de los datos en el modo 3
+conversionAuto()
+
+    //evento para cambiar entre los tipos de unidad de medida
+uni.addEventListener('change',cambiarSelects)
+
+modo.addEventListener('change',function cambiarModo(e,pressed_from_uni){
+    actualizarModo(this)
+    AlterarImagenCentro()
+
+    aleatorizarSelects()
+})
+aplicar.addEventListener('click',function(){
+    getSelectModoTag().dispatchEvent(new Event('change'))
+})
+//asigna el evento al boton de contraer 
+// contraerAleatorioInit()   
+boton_confir.addEventListener('click',function isResultRigth(e){
+    console.log('click');
+    if(document.querySelectorAll('.correcto,.corregido').length!=0){
+        return
+    }
+
+    limpiarClasesVerificacion(false)
+    
+    let res=getResultado()
+    // let target=document.getElementsByName('destino')[0]
+    let target=document.getElementsByName('destino')[0]
+
+    let correcto=isConversionRigth(res,target)
+
+    
+    if(!correcto){
+        target.classList.add('corregido')
+        if(correcto==null){
+            alert('SIN TRAMPAS.DEBES LLENAR EL SEGUNDO CUADRO')
+            ocultarCorrecto()
+            return
+        }
+        alert('CONVERSION INCORRECTA')
+        // target.value=res
+        document.getElementById('ResCorrecto').innerText=res
+        return
+    }
+    ocultarCorrecto()
+    alert('CONVERSION CORRECTA')
+    target.classList.add('correcto')
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+//activacion de los eventos
+//activa el evento de selccion de modo
+
+modo.dispatchEvent(new Event('change'))
+
+//oculta las configuraciones
+// aqui deberia de estar :
+    // document.getElementsByName('config')[0].dispatchEvent(new Event('click'))
+// pero el desgraciado de 
+    // contraerAleatorioInit()
+// no quiere servir aqui, el espacialito solo sirve en el archivo html
 
 //otras funciones no eventos
 centrar_options()

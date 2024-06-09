@@ -41,6 +41,7 @@ function cambiarSelects(e){
     // alert('pressed')
     // console.log(e)
     targ=e
+    // console.error(e.srcElement)
     
     window.compuesto=UnidadCompuesta(this.value)
     //console.log(this.value);
@@ -54,8 +55,9 @@ function cambiarSelects(e){
     let index_factores=0;
     let target=1
 
+    console.log('inicia el bucle');
     for(let index=0;index<selects.length;index++){
-        console.error(index);
+        console.error('index=',index);
         //borra toodos los option del select
         selects[index].innerHTML='' 
         if(index%2==0){
@@ -100,7 +102,16 @@ function cambiarSelects(e){
             target++
         }
         index_factores++ 
-    } 
+    }
+
+    console.log('<-----fin cambiar select');
+    if(getModoInWindow()==1){
+        console.log('estamos en el modo 2 y se cambio de tipo de unidad');
+        aleatorizarSelects(true)
+        
+    }
+    console.log('');
+    // getSelectModoTag().dispatchEvent(new Event('change'))
 }
 
 let selected
@@ -140,7 +151,8 @@ function desaparecerSelectAuxIndividual(posicion,termino,select,target){
 }
 let fallido=[];
 function escribirSimbolos(e){
-    console.log(e);
+    // console.log(e);
+    console.log('__escribir simbolo');
     // console.log('this name=',this.name);
     // console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
     let termino=(this.dataset.target[this.dataset.target.length-1])
@@ -205,7 +217,7 @@ function escribirSimbolos(e){
     }
 
     if(this.reset){
-        console.log('__RESET');
+        // console.log('__RESET');
         target.value=''   
     }
     
@@ -221,7 +233,7 @@ function escribirSimbolos(e){
     // console.error('pantalla=',pantalla);
     resfrescarSimbolos(pantalla,posicion,target,simbolo)
     
-    console.error('DEBE REFRESCAR el input');
+    // console.error('DEBE REFRESCAR el input');
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
     this.anterior=this.options.selectedIndex
 }
