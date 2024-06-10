@@ -1,8 +1,8 @@
 // let target='void'
 // document.body.onresize=function (){
-//     // console.error('cambio el header')
+//     // //console.error('cambio el header')
 //     cambiarTamaño(document.body)
-//     // console.log();
+//     // //console.log();
 // }
 
 // function cambiarTamaño(target){

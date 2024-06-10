@@ -47,8 +47,8 @@ function contraerAleatorioInit(){
         boton_contraer[index].addEventListener('click',function(e,target_hide=target[index],alt_text=alterar_texto,imagen=img[index]){
             contraer(target_hide,alt_text,imagen)
         })
-        // console.log(boton_contraer);
-        // console.log('index=',index);
+        // //console.log(boton_contraer);
+        // //console.log('index=',index);
         // boton_contraer[index]=function (e,target_hide=target[index],alt_text=alterar_texto,imagen=img[index]){
         //     contraer(target_hide,alt_text,imagen)
         // }
@@ -94,14 +94,14 @@ function isMagnitudAleatoria(){
     return document.getElementsByName('magnitud-aleatoria')[0].checked
 }
 function aleatorizarTipoUnidadMedida(){
-    console.log('aleatorizar Tipo Unidad  Medida');
+    //console.log('aleatorizar Tipo Unidad  Medida');
     let uni=document.getElementsByName('UnidadesMedida')[0]
     if(getModoInWindow()!=3){
         let aleatorio=parseInt(Math.random()*(uni.options.length))
         if(aleatorio>=uni.options.length){
             aleatorio=uni.options.length-1
         }
-        // console.log('aleatorio=',aleatorio);
+        // //console.log('aleatorio=',aleatorio);
         uni.options.selectedIndex=aleatorio
     }
     // alert('debes iniciar primero la asignacion de eventos de los objetos')
@@ -165,7 +165,7 @@ function aleatorizarMedidas(){
         }
 
         selects[index].options.selectedIndex=prob_Actual
-        console.log('random=',selects[index].options.selectedIndex);
+        //console.log('random=',selects[index].options.selectedIndex);
         
         selects[index].dispatchEvent(new Event('change'))
     }
@@ -178,7 +178,7 @@ function InputClick(){
         this.dispatchEvent(new Event('input'))
     }
     if(activo==this){
-        console.log('RETURN');
+        //console.log('RETURN');
         return
     }
     activo.classList.remove('Active')
@@ -227,7 +227,7 @@ function getResultado(){
     activo=parseFloat(activo)
     let incremento=0,decremento=0;
     if (activo!=0){
-        console.log('INCREMENTO ACTIVO');
+        //console.log('INCREMENTO ACTIVO');
         incremento=2
     } 
     let n_simbolos
@@ -272,7 +272,7 @@ function getResultado(){
             denominador=denominador/Math.pow(window.razones[1+incremento],window.exponentes[1+incremento])
         }                    
     }
-    console.log(numerador+'/'+denominador);
+    //console.log(numerador+'/'+denominador);
     return parseFloat(inputs[activo].value)*numerador/denominador
 }
 function refrescarInputValue(){
@@ -284,8 +284,8 @@ function refrescarInputValue(){
         //     //modo 3 seria para volver al modo de conversion automatica(no posible para el usuario)
         //     return
         // }
-    console.log('modo=',getModoInWindow());
-    console.log('refresh input value');
+    //console.log('modo=',getModoInWindow());
+    //console.log('refresh input value');
 
     
     let resultadoInput
@@ -310,16 +310,16 @@ function conversionAuto(){
         inputs[index].onclick=InputClick 
         inputs[index].addEventListener('input',refrescarInputValue)
         inputs[index].addEventListener('keydown',function(tecla,numInput=index){
-            // console.error('key=',tecla.key);
+            // //console.error('key=',tecla.key);
             key=tecla
             if(tecla.key=='Enter' || tecla.key=='Tab'){
                 // alert(numInput)
                 tecla.preventDefault()
                 if(numInput==0){
                     inputs[1].focus()
-                    // console.log('');
+                    // //console.log('');
                 }else{
-                    // console.log('DEBE ENVUAR');
+                    // //console.log('DEBE ENVUAR');
                     document.getElementsByName('comprobar')[0].dispatchEvent(new Event('click'))
                     // inputs[0].focus()
                 }
@@ -338,7 +338,7 @@ function isConversionRigth(res,target){
     return (valor_Ingresado<=res+decimas && valor_Ingresado>=res-decimas)    
 }
 function aleatorizarSelects(pressed_from_uni){
-    console.log('Aleatorizar selects');
+    //console.log('Aleatorizar selects');
     
     if(getModoInWindow()==1){
         if(isTipoUnidadAleatoria() && pressed_from_uni==null){
@@ -356,10 +356,10 @@ function aleatorizarSelects(pressed_from_uni){
 
     if(getModoInWindow()==1 && isMagnitudAleatoria()){
         let magnitud=generarCifra()
-        console.log('magnitud=',magnitud);
+        //console.log('magnitud=',magnitud);
         document.getElementsByName('magnitud1')[0].value=magnitud
     }
-    console.log('   |-----FIN');
+    //console.log('   |-----FIN');
 }
 
 
@@ -413,7 +413,7 @@ aplicar.addEventListener('click',function(){
 //asigna el evento al boton de contraer 
 // contraerAleatorioInit()   
 boton_confir.addEventListener('click',function isResultRigth(e){
-    console.log('click');
+    //console.log('click');
     if(document.querySelectorAll('.correcto,.corregido').length!=0){
         return
     }

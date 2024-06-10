@@ -61,7 +61,7 @@ function addElement(posicion_Elemento,techo){
     }
     for(let b=0;b<elementos.length;b++){
         if(elementos[b].techo==techo){
-            //__ console.log(nulos[posicion_Elemento],"techo=",techo)
+            //__ //console.log(nulos[posicion_Elemento],"techo=",techo)
             elementos[b].addElement(nulos[posicion_Elemento]);
             return;
         }
@@ -74,7 +74,7 @@ function addElement(posicion_Elemento,techo){
 function getNoneExtension(b){
     for(let b2=0;b2<opciones.length;b2++){
         if((nulos[b].getAttribute("class")).split("None-"+opciones[b2]).length!=1){
-            //__ console.log(nulos[b],"__",opciones[b2])
+            //__ //console.log(nulos[b],"__",opciones[b2])
             return tamaños[b2];
         }
     }
@@ -82,7 +82,7 @@ function getNoneExtension(b){
     // (nulos[b].getAttribute("class")).split("margin").length;
 }
 function adaptarVisibilidad(){
-    //__ console.log("cambio de tamaño");
+    //__ //console.log("cambio de tamaño");
     for(let b=0;b<body.elementos.length;b++){
         AlterarIntegrantes(b);
     }
@@ -136,7 +136,7 @@ function init(){
     
     for(let b=0;b<nulos.length;b++){
         let tech=getNoneExtension(b);
-        //__ console.log("techo del elemento="+tech)
+        //__ //console.log("techo del elemento="+tech)
         addElement(b,tech);
     }
     body.onresize=adaptarVisibilidad
@@ -161,9 +161,9 @@ NoneInvisible()
 
 // const resizeObserver = new ResizeObserver(entries => {
 //     for (let entry of entries) {
-//         console.log('Size changed:', entry.contentRect);
-//         console.log('New width:', entry.contentRect.width);
-//         console.log('New height:', entry.contentRect.height);
+//         //console.log('Size changed:', entry.contentRect);
+//         //console.log('New width:', entry.contentRect.width);
+//         //console.log('New height:', entry.contentRect.height);
 //     }
 // });
 

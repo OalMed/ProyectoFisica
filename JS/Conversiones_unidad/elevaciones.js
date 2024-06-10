@@ -26,8 +26,8 @@ function obtener(cadena){
 function elevacionToString(elevacion,sujeto){
     let elevaString=''
     // alert(sujeto+' tiene '+elevacion)
-    //console.error('ELEVACION=',elevacion);
-    //console.error('SUJETO=',sujeto);
+    ////console.error('ELEVACION=',elevacion);
+    ////console.error('SUJETO=',sujeto);
     if (elevacion==1|| elevacion=='' || elevacion==null){
         return ''
     }
@@ -49,7 +49,7 @@ function elevacionToString(elevacion,sujeto){
         elevaString+='s'
     }
 
-    //console.log(elevaString);
+    ////console.log(elevaString);
     return elevaString
 }
-//console.log(getElevaciones('16 m ^  2 / 34kg^ 3 '));
+////console.log(getElevaciones('16 m ^  2 / 34kg^ 3 '));

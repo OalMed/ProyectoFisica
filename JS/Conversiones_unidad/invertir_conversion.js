@@ -11,9 +11,9 @@ function invertirUnidadIngresada(){
         inputs=document.getElementsByClassName('input') 
         let aux;
 
-        console.log('in',inputs); 
+        //console.log('in',inputs); 
         for(let index=0;index<selects.length-2;index++){
-            console.log(selects[index].value+'\n'+selects[index+2]+'\n\n___');
+            //console.log(selects[index].value+'\n'+selects[index+2]+'\n\n___');
             aux=selects[index].value
             selects[index].value=selects[index+2].value 
             selects[index+2].value=aux

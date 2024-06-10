@@ -39,25 +39,25 @@ function ALterarSelectSoporte(activo){
 
 function cambiarSelects(e){
     // alert('pressed')
-    // console.log(e)
+    // //console.log(e)
     targ=e
-    // console.error(e.srcElement)
+    // //console.error(e.srcElement)
     
     window.compuesto=UnidadCompuesta(this.value)
-    //console.log(this.value);
-    //console.log(windowcompuesto);
+    ////console.log(this.value);
+    ////console.log(windowcompuesto);
     ALterarSelectSoporte(window.compuesto)
     
     selects=document.querySelectorAll('.mainSelect, .SelectSoporte')
     factores=TipoMedidaHasUnidades(this.value)
-    //console.log(factores);
+    ////console.log(factores);
 
     let index_factores=0;
     let target=1
 
-    console.log('inicia el bucle');
+    //console.log('inicia el bucle');
     for(let index=0;index<selects.length;index++){
-        console.error('index=',index);
+        //console.error('index=',index);
         //borra toodos los option del select
         selects[index].innerHTML='' 
         if(index%2==0){
@@ -104,13 +104,13 @@ function cambiarSelects(e){
         index_factores++ 
     }
 
-    console.log('<-----fin cambiar select');
+    //console.log('<-----fin cambiar select');
     if(getModoInWindow()==1){
-        console.log('estamos en el modo 2 y se cambio de tipo de unidad');
+        //console.log('estamos en el modo 2 y se cambio de tipo de unidad');
         aleatorizarSelects(true)
         
     }
-    console.log('');
+    //console.log('');
     // getSelectModoTag().dispatchEvent(new Event('change'))
 }
 
@@ -137,7 +137,7 @@ function desaparecerSelectAuxIndividual(posicion,termino,select,target){
     }
     
     // el option del select pulsado es el numerador y no tiene select auxiliar        
-    console.log('_____FALSE_');
+    //console.log('_____FALSE_');
     supp.style.display='none'
     
     target.value=target.value.split('/')[0]
@@ -151,33 +151,33 @@ function desaparecerSelectAuxIndividual(posicion,termino,select,target){
 }
 let fallido=[];
 function escribirSimbolos(e){
-    // console.log(e);
-    console.log('__escribir simbolo');
-    // console.log('this name=',this.name);
-    // console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
+    // //console.log(e);
+    //console.log('__escribir simbolo');
+    // //console.log('this name=',this.name);
+    // //console.log('anterior=',this.anterior,'\nactual=',this.selectedIndex+'\n\n__');
     let termino=(this.dataset.target[this.dataset.target.length-1])
     let posicion=parseInt(this.dataset.posicion)
     
     target=document.getElementsByName(this.dataset.target)[0]
-    // console.log('termino=',termino+';posicion:',posicion);
+    // //console.log('termino=',termino+';posicion:',posicion);
     // alert(this.options[this.selectedIndex].dataset.auxiliar)
-    // console.log('supp=selSup'+termino);
+    // //console.log('supp=selSup'+termino);
     desaparecerSelectAuxIndividual(posicion,termino,this,target)
     
     // alert('posicion:'+posicion+'\nSupport=',supp)
     
 
     termino=parseInt(termino)
-    // console.log(this);
+    // //console.log(this);
     let expo;
     try {
         expo=this.options[this.options.selectedIndex].dataset.expo
-        // console.log('CORRECTO');
+        // //console.log('CORRECTO');
     } catch (error) {
-        console.log('FALLIDO');
-        // console.log('options=',this.options);
-        // console.log('yo=',this);
-        // console.log(this.checkVisibility());
+        //console.log('FALLIDO');
+        // //console.log('options=',this.options);
+        // //console.log('yo=',this);
+        // //console.log(this.checkVisibility());
         return 
     }
 
@@ -191,7 +191,7 @@ function escribirSimbolos(e){
 
     if(this.checkVisibility()==false){
         if(window.compuesto==true){
-            console.log('__NO ES VISIBLE__');
+            //console.log('__NO ES VISIBLE__');
             window.razones[lugar_en_razones]=null
             window.exponentes[lugar_en_razones]=null
             return
@@ -217,7 +217,7 @@ function escribirSimbolos(e){
     }
 
     if(this.reset){
-        // console.log('__RESET');
+        // //console.log('__RESET');
         target.value=''   
     }
     
@@ -228,12 +228,12 @@ function escribirSimbolos(e){
     
     // let posicion=this.dataset.posicion
     
-    // console.log('posicion=',posicion);
-    // console.log('simbolo=',simbolo);
-    // console.error('pantalla=',pantalla);
+    // //console.log('posicion=',posicion);
+    // //console.log('simbolo=',simbolo);
+    // //console.error('pantalla=',pantalla);
     resfrescarSimbolos(pantalla,posicion,target,simbolo)
     
-    // console.error('DEBE REFRESCAR el input');
+    // //console.error('DEBE REFRESCAR el input');
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
     this.anterior=this.options.selectedIndex
 }

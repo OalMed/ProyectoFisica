@@ -13,7 +13,7 @@ class Factor{
         // if(elevaciones.length>0){
             // this.nombre+=' ',elevacionToString(elevaciones[0],this.nombre)
             let nombre_elevado=elevacionToString(elevacion,this.nombre)
-            //console.log('nombre elevado=',nombre_elevado);
+            ////console.log('nombre elevado=',nombre_elevado);
             this.nombre+=' '+nombre_elevado
         }        
     }
