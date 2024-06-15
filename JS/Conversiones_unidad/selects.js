@@ -60,6 +60,7 @@ function cambiarSelects(e){
         //console.error('index=',index);
         //borra toodos los option del select
         selects[index].innerHTML='' 
+        
         if(index%2==0){
             document.getElementsByName(selects[index].dataset.target)[0].value=''
         }
@@ -80,7 +81,9 @@ function cambiarSelects(e){
                 +'" data-auxiliar="'+factores[index_factores][SelIndex].haveAuxSelect()+'">'+factores[index_factores][SelIndex].getName()
             +'</option>'
         }
-        
+        // console.log('termino de reasignar options a ',selects[index].name);
+        // selects[index].selectedIndex=0
+
         if(window.compuesto==false){
             index+=1
             if(index%2!=0){ 
@@ -132,7 +135,7 @@ function desaparecerSelectAuxIndividual(posicion,termino,select,target){
             select.classList.remove('col-12')
         }
         supp.style.display=''
-        supp.dispatchEvent(new Event('change'))
+        // supp.dispatchEvent(new Event('change'))
         return
     }
     
@@ -180,10 +183,17 @@ function escribirSimbolos(e){
         // //console.log(this.checkVisibility());
         return 
     }
+    let soporte=false
+
+    if(posicion==2){
+        soporte=true
+    }
 
     posicion-=2
+    let termino_compañero=2;
     if(termino==2){
         posicion+=1
+        termino_compañero=1
     }
     
     let lugar_en_razones =termino+posicion
@@ -204,6 +214,11 @@ function escribirSimbolos(e){
         target.value=target.value.split('/')[0]
         return
     }
+    let compañero
+
+    // console.log(posicion)
+
+    
     
     let razon=this.options[this.options.selectedIndex].dataset.razon
     // alert('index='+lugar_en_razones+' __' +razon+' en '+this.name)
@@ -228,7 +243,7 @@ function escribirSimbolos(e){
     
     // let posicion=this.dataset.posicion
     
-    // //console.log('posicion=',posicion);
+    // //console.log('posicion='+posicion);
     // //console.log('simbolo=',simbolo);
     // //console.error('pantalla=',pantalla);
     resfrescarSimbolos(pantalla,posicion,target,simbolo)
@@ -236,6 +251,17 @@ function escribirSimbolos(e){
     // //console.error('DEBE REFRESCAR el input');
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
     this.anterior=this.options.selectedIndex
+
+    if(soporte){
+        compañero=document.getElementsByName('selSup'+termino_compañero)[0]
+    }
+
+    if(compañero.value=='Unidad' && this.value!='Unidad' && soporte){
+        // console.log(this.name+'='+this.value+'\n    reset='+this.reset+'\n    terminio='+termino+'\n   posicion='+posicion)
+        // console.log('------PASó');
+        compañero.selectedIndex=this.selectedIndex
+        compañero.dispatchEvent(new Event('change'))
+    }
 }
 
 function resfrescarSimbolos(pantalla,posicion,target,simbolo){
