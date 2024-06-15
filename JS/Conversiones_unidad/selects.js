@@ -252,11 +252,12 @@ function escribirSimbolos(e){
     document.getElementsByClassName('Active')[0].dispatchEvent(new Event('input'))
     this.anterior=this.options.selectedIndex
 
-    if(soporte){
-        compañero=document.getElementsByName('selSup'+termino_compañero)[0]
+    if(!soporte){
+        return 
     }
+    compañero=document.getElementsByName('selSup'+termino_compañero)[0]
 
-    if(compañero.value=='Unidad' && this.value!='Unidad' && soporte){
+    if(compañero.value=='Unidad' && this.value!='Unidad'){
         // console.log(this.name+'='+this.value+'\n    reset='+this.reset+'\n    terminio='+termino+'\n   posicion='+posicion)
         // console.log('------PASó');
         compañero.selectedIndex=this.selectedIndex
