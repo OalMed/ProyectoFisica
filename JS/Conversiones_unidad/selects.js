@@ -262,6 +262,13 @@ function escribirSimbolos(e){
         // console.log('------PASó');
         compañero.selectedIndex=this.selectedIndex
         compañero.dispatchEvent(new Event('change'))
+        return
+    }
+    if(compañero.value!='Unidad' && this.value=='Unidad'){
+        // console.log(this.name+'='+this.value+'\n    reset='+this.reset+'\n    terminio='+termino+'\n   posicion='+posicion)
+        // console.log('------PASó');
+        compañero.selectedIndex=0
+        compañero.dispatchEvent(new Event('change'))
     }
 }
 
