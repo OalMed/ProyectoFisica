@@ -93,6 +93,35 @@ function isTipoUnidadAleatoria(){
 function isMagnitudAleatoria(){
     return document.getElementsByName('magnitud-aleatoria')[0].checked
 }
+function addOtherEventListeners(){
+    window.onkeypress=function(key){
+        if(this.startReadingKeys){
+            this.keysPressed+=key.key
+        }
+    }
+    
+    window.onkeydown=e=>{
+        //console.log('down',e);
+        if(e.key=='Shift'){
+        //console.log('start')
+            this.startReadingKeys=true
+            this.keysPressed=''
+        }
+    }
+    
+    window.onkeyup=e=>{
+        if(e.key=='Shift'){
+            this.startReadingKeys=false
+            //console.log('stop')
+    
+            if(this.keysPressed=='ADDMODE#' && this.modeAdded==null){
+                //console.log('si')
+                this.modeAdded=true
+                document.getElementsByName('modo')[0].innerHTML+='<option class="text-center" id="3">Automatico</option>'
+            }
+        }
+    }
+}
 function aleatorizarTipoUnidadMedida(){
     //console.log('aleatorizar Tipo Unidad  Medida');
     let uni=document.getElementsByName('UnidadesMedida')[0]
@@ -274,34 +303,33 @@ function getResultado(){
     }
     //console.log(numerador+'/'+denominador);
     return parseFloat(inputs[activo].value)*numerador/denominador
+}function getResultInputBox(){
+    if(getModoInWindow()!=3){
+        return document.getElementById('ResCorrecto')
+    }else{
+        return inputs[pasado]
+    }
 }
 function refrescarInputValue(){
     if(getModoInWindow()!=3){
         limpiarClasesVerificacion()
         return
     }
-    // if(window.modo!=3){
-        //     //modo 3 seria para volver al modo de conversion automatica(no posible para el usuario)
-        //     return
-        // }
-    //console.log('modo=',getModoInWindow());
-    //console.log('refresh input value');
-
     
-    let resultadoInput
-    if(getModoInWindow()!=3){
-        resultadoInput=document.getElementById('ResCorrecto')
-    }else{
-        resultadoInput=inputs[pasado]
-    }
+    let resultadoInput=getResultInputBox()
+    
     let res=getResultado()
 
     if(!isNaN(res)){
-        // resultadoInput.value=res;
-        resultadoInput.innerText=res;
+         resultadoInput.value=res;
+        //resultadoInput.innerText=res;
     }else if(res!=''){
-        resultadoInput.value='';
-    } 
+	try{
+         	     resultadoInput.value='';
+	}catch(error){
+	
+	}    
+     } 
 }
 function conversionAuto(){
     inputs=document.getElementsByClassName('input')
@@ -444,12 +472,7 @@ boton_confir.addEventListener('click',function isResultRigth(e){
     target.classList.add('correcto')
     
 })
-
-
-
-
-
-
+addOtherEventListeners()
 
 
 
