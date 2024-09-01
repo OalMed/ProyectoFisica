@@ -472,6 +472,8 @@ boton_confir.addEventListener('click',function isResultRigth(e){
     target.classList.add('correcto')
     
 })
+
+//modo 3 secreto
 addOtherEventListeners()
 
 
